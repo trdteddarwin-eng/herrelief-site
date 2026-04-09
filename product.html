@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HerRelief — Heating & Vibration Massage Belt for Period Cramp Relief</title>
+<meta name="description" content="HerRelief electric heating &amp; vibration massage belt. 5 heat modes, 4 massage patterns, USB-C rechargeable. Now $39.99 (50% off). Free shipping &amp; 90-day guarantee."/>
+<meta property="og:title" content="HerRelief — Electric Heating Massage Belt for Period Cramp Relief"/>
+<meta property="og:description" content="Drug-free period cramp relief with 5 heat modes and vibration massage. 50% off + free shipping."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://herrelief.com"/>
+<meta property="og:image" content="https://herrelief.com/images/branded/hero-clean.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-tint": "#70585b",
+          "primary-container": "#fadadd",
+          "on-primary-fixed": "#281719",
+          "on-secondary-container": "#6b1f00",
+          "on-tertiary-fixed": "#22191a",
+          "tertiary-fixed": "#efdfdf",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "background": "#faf9f6",
+          "on-primary": "#ffffff",
+          "surface-container-low": "#f4f3f1",
+          "on-secondary-fixed": "#380c00",
+          "on-primary-container": "#765e61",
+          "primary": "#70585b",
+          "tertiary-fixed-dim": "#d3c3c3",
+          "surface-bright": "#faf9f6",
+          "outline-variant": "#d2c3c4",
+          "primary-fixed": "#fbdbde",
+          "secondary": "#a43c12",
+          "secondary-container": "#fe7e4f",
+          "inverse-on-surface": "#f2f1ee",
+          "on-error-container": "#93000a",
+          "tertiary-container": "#efdede",
+          "primary-fixed-dim": "#debfc2",
+          "on-primary-fixed-variant": "#574144",
+          "inverse-primary": "#debfc2",
+          "secondary-fixed": "#ffdbcf",
+          "surface-variant": "#e3e2e0",
+          "surface": "#faf9f6",
+          "inverse-surface": "#2f312f",
+          "error-container": "#ffdad6",
+          "outline": "#807475",
+          "surface-dim": "#dbdad7",
+          "on-secondary-fixed-variant": "#822800",
+          "error": "#ba1a1a",
+          "on-surface-variant": "#4f4445",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#6d6161",
+          "surface-container-highest": "#e3e2e0",
+          "on-tertiary-fixed-variant": "#4f4444",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#ffb59c",
+          "surface-container": "#efeeeb",
+          "on-background": "#1a1c1a",
+          "surface-container-high": "#e9e8e5",
+          "tertiary": "#675c5c",
+          "on-surface": "#1a1c1a"
+        },
+        fontFamily: {
+          "headline": ["Noto Serif"],
+          "body": ["Plus Jakarta Sans"],
+          "label": ["Plus Jakarta Sans"]
+        },
+        borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .relief-pulse {
+    background: radial-gradient(circle, #fe7e4f33 0%, transparent 70%);
+    filter: blur(10px);
+  }
+  .ghost-border {
+    border: 1px solid rgba(210, 195, 196, 0.15);
+  }
+  @keyframes urgency-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  .urgency-pulse { animation: urgency-pulse 2s ease-in-out infinite; }
+  .sticky-bar-enter { transform: translateY(100%); animation: slideUp 0.3s ease-out forwards; }
+  @keyframes slideUp { to { transform: translateY(0); } }
+
+  /* Image gallery */
+  .thumb-btn { border: 2px solid transparent; transition: border-color 0.2s; }
+  .thumb-btn.active { border-color: #a43c12; }
+
+  /* Tabs — visible on desktop, hidden on mobile */
+  .tab-btn { position: relative; }
+  .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #a43c12;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .tab-btn.active::after { transform: scaleX(1); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Star bar fill */
+  .star-bar-fill { transition: width 0.6s ease-out; }
+
+  /* Countdown digit */
+  .countdown-digit {
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  /* [NEW] Image hover zoom (#11) */
+  .product-image-zoom {
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  .product-image-zoom img {
+    transition: transform 0.4s ease;
+  }
+  .product-image-zoom:hover img {
+    transform: scale(1.5);
+  }
+
+  /* [NEW] Bundle selector styling (#3) */
+  .bundle-option {
+    cursor: pointer;
+    border: 2px solid #d2c3c4;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .bundle-option:hover {
+    border-color: #a43c12;
+  }
+  .bundle-option.selected {
+    border-color: #a43c12;
+    background: #fadadd;
+    box-shadow: 0 0 0 1px #a43c12;
+  }
+  .bundle-badge {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* [NEW] Add-to-cart checkmark animation (#4) */
+  @keyframes checkPop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .check-pop {
+    animation: checkPop 0.4s ease-out forwards;
+  }
+
+  /* [NEW] Photo review badge (#5) */
+  .photo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    border: 1px solid #bbf7d0;
+  }
+
+  /* [NEW] Mobile accordion styles (#7) */
+  @media (max-width: 767px) {
+    .desktop-tabs { display: none !important; }
+    .desktop-tab-panels .tab-panel { display: none !important; }
+    .mobile-accordions { display: block !important; }
+  }
+  @media (min-width: 768px) {
+    .mobile-accordions { display: none !important; }
+  }
+  .mobile-accordions details {
+    border: 1px solid #d2c3c4;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+  }
+  .mobile-accordions summary {
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    background: #f4f3f1;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile-accordions summary::-webkit-details-marker { display: none; }
+  .mobile-accordions summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #a43c12;
+    transition: transform 0.2s;
+  }
+  .mobile-accordions details[open] summary::after {
+    content: '-';
+  }
+  .mobile-accordions .accordion-content {
+    padding: 1.25rem;
+  }
+
+  /* [NEW] Frequently bought together checkbox */
+  .fbt-check {
+    accent-color: #a43c12;
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ===== CART DRAWER ===== */
+  .cart-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 60;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .cart-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 70;
+    background: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+  }
+  @media (max-width: 767px) {
+    .cart-drawer { width: 100%; }
+  }
+  .cart-drawer.open {
+    transform: translateX(0);
+  }
+  .cart-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 1.5rem 1.5rem;
+  }
+  @keyframes giftShimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .free-gift-shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(254,126,79,0.08) 25%, rgba(250,218,221,0.25) 50%, rgba(254,126,79,0.08) 75%, transparent 100%);
+    background-size: 200% 100%;
+    animation: giftShimmer 3s ease-in-out infinite;
+  }
+  .drawer-divider {
+    height: 1px;
+    background: #e3e2e0;
+    margin: 0.75rem 0;
+  }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-container">
+
+<!-- ============================================ -->
+<!-- ANNOUNCEMENT BAR -->
+<!-- ============================================ -->
+<div class="bg-primary text-on-primary text-center py-2.5 px-4 text-sm font-medium tracking-wide">
+  <span class="urgency-pulse inline-flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+    Spring Sale &mdash; 50% Off + Free Shipping on all orders
+    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+  </span>
+</div>
+
+<!-- ============================================ -->
+<!-- TOP NAV BAR -->
+<!-- ============================================ -->
+<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm shadow-rose-900/5">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="flex items-center gap-1">
+     <svg width="180" height="36" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+       <defs>
+         <linearGradient id="nav-logo-grad-prod" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" stop-color="#a43c12"/>
+           <stop offset="100%" stop-color="#fe7e4f"/>
+         </linearGradient>
+       </defs>
+       <g transform="translate(5, 3)">
+         <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#nav-logo-grad-prod)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#nav-logo-grad-prod)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#nav-logo-grad-prod)" stroke-width="2" stroke-linecap="round"/>
+         <circle cx="4" cy="16" r="3" fill="#a43c12" opacity="0.3"/>
+         <circle cx="56" cy="16" r="3" fill="#fe7e4f" opacity="0.3"/>
+       </g>
+       <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+         <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+       </text>
+     </svg>
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-stone-600 hover:text-rose-900 transition-colors inline-flex items-center gap-1" href="index.html">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        Back to Home
+      </a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#reviews-section">Reviews</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#details-section">Details</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="about.html">About</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="contact.html">Contact</a>
+      <a href="javascript:void(0)" onclick="openCartDrawer()" class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-semibold hover:opacity-80 transition-all duration-300 active:scale-95 inline-block">Shop Now</a>
+    </div>
+    <button class="md:hidden text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
+    <a class="block text-stone-600 hover:text-rose-900 inline-flex items-center gap-1" href="index.html">
+      <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Home
+    </a>
+    <a class="block text-stone-600 hover:text-rose-900" href="#reviews-section">Reviews</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="#details-section">Details</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="about.html">About</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="contact.html">Contact</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="javascript:void(0)" onclick="openCartDrawer()">Shop Now</a>
+  </div>
+</nav>
+
+<main class="overflow-hidden">
+
+<!-- ============================================ -->
+<!-- BREADCRUMBS -->
+<!-- ============================================ -->
+<div class="max-w-7xl mx-auto px-6 py-4">
+  <nav class="text-sm text-on-surface-variant">
+    <a href="index.html" class="hover:text-secondary transition-colors">Home</a>
+    <span class="mx-2">/</span>
+    <span class="text-on-surface font-medium">HerRelief</span>
+  </nav>
+</div>
+
+<!-- ============================================ -->
+<!-- PRODUCT HERO SECTION (Two Columns) -->
+<!-- ============================================ -->
+<section class="px-6 pb-16 max-w-7xl mx-auto">
+  <div class="flex flex-col lg:flex-row gap-12">
+
+    <!-- LEFT COLUMN: Image Gallery -->
+    <div class="flex-1 lg:max-w-[55%]">
+      <!-- Main Image — [#11] Hover zoom -->
+      <div class="relative bg-surface-container-low rounded-lg overflow-hidden mb-4 aspect-square flex items-center justify-center product-image-zoom">
+        <div class="absolute inset-0 relief-pulse scale-110 opacity-50"></div>
+        <img id="main-product-image"
+             alt="HerRelief heating belt — clean product shot on white background"
+             class="relative z-10 w-full h-full object-contain p-8"
+             src="images/branded/hero-clean.jpg"/>
+        <!-- Sale badge -->
+        <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1.5 rounded-full z-20 shadow-md">
+          50% OFF
+        </div>
+        <!-- Stock badge -->
+        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-on-surface text-xs font-bold px-3 py-1.5 rounded-full z-20 shadow-sm">
+          Only 47 left
+        </div>
+      </div>
+
+      <!-- Thumbnail Row -->
+      <div class="grid grid-cols-3 gap-3">
+        <button class="thumb-btn active rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/hero-clean.jpg', 'HerRelief heating belt — clean product shot on white background')">
+          <img src="images/branded/hero-clean.jpg" alt="HerRelief product front view" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/hero-duo.jpg', 'HerRelief — Pink and White color variants side by side')">
+          <img src="images/branded/hero-duo.jpg" alt="HerRelief Pink and White color variants" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/lifestyle-couch.jpg', 'Woman relaxing on couch wearing HerRelief heating belt')">
+          <img src="images/branded/lifestyle-couch.jpg" alt="Woman relaxing on couch wearing HerRelief belt" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/flatlay-unbox.jpg', 'HerRelief unboxing flat lay — everything in the box')">
+          <img src="images/branded/flatlay-unbox.jpg" alt="HerRelief unboxing flat lay — what's in the box" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/detail-heat.jpg', 'HerRelief far infrared heat technology cross-section')">
+          <img src="images/branded/detail-heat.jpg" alt="HerRelief far infrared heat technology detail" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/branded/lifestyle-desk.jpg', 'Woman at desk wearing HerRelief belt — discreet all-day wear')">
+          <img src="images/branded/lifestyle-desk.jpg" alt="Woman at desk wearing HerRelief belt" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/psychology/unboxing-flatlay.jpg', 'HerRelief unboxing — everything in the box')">
+          <img src="images/psychology/unboxing-flatlay.jpg" alt="HerRelief unboxing flat lay" class="w-full h-full object-contain"/>
+        </button>
+        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                onclick="switchImage(this, 'images/psychology/gift-ready.jpg', 'HerRelief in rose-gold gift box — perfect gift')">
+          <img src="images/psychology/gift-ready.jpg" alt="HerRelief gift-ready presentation" class="w-full h-full object-contain"/>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Product Buy Box — [#1] Sticky on desktop -->
+    <div class="flex-1 space-y-6 lg:sticky lg:top-[8rem] lg:self-start">
+
+      <!-- Sale Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-container text-on-primary-container rounded-full text-sm font-medium">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+        Spring Sale &mdash; 50% Off
+      </div>
+
+      <!-- Product Title -->
+      <h1 class="font-headline text-3xl md:text-4xl text-on-surface leading-tight">
+        HerRelief &mdash; Heating &amp; Vibration Massage Belt
+      </h1>
+
+      <!-- Star Rating -->
+      <a href="#reviews-section" class="inline-flex items-center gap-3 group">
+        <div class="flex text-orange-400">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <span class="text-sm font-semibold text-on-surface">4.9/5</span>
+        <span class="text-sm text-on-surface-variant group-hover:text-secondary transition-colors underline decoration-dotted">(678 reviews)</span>
+      </a>
+
+      <!-- Price Block -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <span id="display-price" class="text-4xl font-headline text-secondary font-bold">$39.99</span>
+        <span id="display-original-price" class="text-xl text-stone-400 line-through">$79.99</span>
+        <span id="display-savings" class="bg-secondary/10 text-secondary text-sm font-bold px-3 py-1 rounded-full">Save $40.00</span>
+      </div>
+
+      <!-- [Conversion #5] Afterpay / Pay in 4 messaging -->
+      <p class="text-sm text-on-surface-variant">
+        or 4 interest-free payments of <strong class="text-on-surface">$10.00</strong> with <span class="font-bold">Afterpay</span>
+      </p>
+      <p class="text-xs text-on-surface-variant">
+        That's just <strong class="text-on-surface">$0.11/day</strong> over a year — less than a single coffee per month
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="bg-surface-container-low rounded-lg p-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2">
+          <span class="material-symbols-outlined text-xs align-middle mr-1" style="font-variation-settings: 'FILL' 1;">timer</span>
+          Sale ends in:
+        </p>
+        <div id="countdown" class="flex items-center gap-2 text-on-surface">
+          <div class="bg-primary text-on-primary rounded-lg px-3 py-2 countdown-digit">
+            <span id="cd-days" class="text-xl font-bold">00</span>
+            <p class="text-[10px] uppercase tracking-wider opacity-80">Days</p>
+          </div>
+          <span class="text-xl font-bold text-primary">:</span>
+          <div class="bg-primary text-on-primary rounded-lg px-3 py-2 countdown-digit">
+            <span id="cd-hours" class="text-xl font-bold">00</span>
+            <p class="text-[10px] uppercase tracking-wider opacity-80">Hrs</p>
+          </div>
+          <span class="text-xl font-bold text-primary">:</span>
+          <div class="bg-primary text-on-primary rounded-lg px-3 py-2 countdown-digit">
+            <span id="cd-mins" class="text-xl font-bold">00</span>
+            <p class="text-[10px] uppercase tracking-wider opacity-80">Min</p>
+          </div>
+          <span class="text-xl font-bold text-primary">:</span>
+          <div class="bg-primary text-on-primary rounded-lg px-3 py-2 countdown-digit">
+            <span id="cd-secs" class="text-xl font-bold">00</span>
+            <p class="text-[10px] uppercase tracking-wider opacity-80">Sec</p>
+          </div>
+        </div>
+        <!-- [#9] Dynamic "Order Within" timer -->
+        <p id="order-within" class="text-xs font-semibold text-secondary mt-3">
+          <span class="material-symbols-outlined text-xs align-middle mr-0.5" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          Order within <span id="ow-hours">0</span>h <span id="ow-mins">0</span>m for same-day processing
+        </p>
+      </div>
+
+      <!-- Short Description -->
+      <p class="text-on-surface-variant text-base leading-relaxed">
+        Wrap yourself in soothing warmth that melts away cramps in minutes. Five adjustable heat levels and four gentle vibration massage patterns work together to deliver deep, drug-free relief &mdash; wherever you are.
+      </p>
+
+      <!-- [Conversion #3] Mini review quotes -->
+      <div class="space-y-2 bg-surface-container-low rounded-lg p-4">
+        <p class="text-sm italic text-on-surface-variant">"Reduced my cramps in about 10 minutes. Game changer." <span class="font-bold not-italic text-on-surface">— Jessica N.</span></p>
+        <p class="text-sm italic text-on-surface-variant">"I wear it at my desk and nobody notices." <span class="font-bold not-italic text-on-surface">— Maria A.</span></p>
+      </div>
+
+      <!-- Expert Endorsement -->
+      <div class="flex items-start gap-3 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
+        <span class="material-symbols-outlined text-2xl text-blue-600" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+        <div>
+          <p class="text-sm text-blue-900 italic">"Heat therapy is one of the most effective non-pharmacological methods for relieving menstrual cramps. Combining heat with vibration massage can significantly reduce dysmenorrhea symptoms."</p>
+          <p class="text-xs text-blue-700 font-bold mt-1">— Dr. Sarah Mitchell, OB-GYN, Board Certified</p>
+        </div>
+      </div>
+
+      <!-- Color Selector -->
+      <div>
+        <p class="text-sm font-semibold text-on-surface mb-2">Color: <span class="font-normal text-on-surface-variant">Pink</span></p>
+        <div class="flex items-center gap-3">
+          <button class="w-9 h-9 rounded-full bg-pink-300 ring-2 ring-secondary ring-offset-2 transition-all" title="Pink (selected)"></button>
+        </div>
+      </div>
+
+      <!-- [#3] Bundle / Quantity Deal Selector -->
+      <div>
+        <p class="text-sm font-semibold text-on-surface mb-3">Choose Your Deal</p>
+        <div class="space-y-3" id="bundle-selector">
+          <!-- 1x -->
+          <div class="bundle-option selected rounded-lg p-4 flex items-center justify-between" data-bundle="1" data-unit-price="39.99" data-total="39.99" data-discount="50" data-original="79.99" onclick="selectBundle(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center">
+                <div class="bundle-dot w-3 h-3 rounded-full bg-secondary"></div>
+              </div>
+              <div>
+                <p class="font-bold text-sm">1x HerRelief</p>
+                <p class="text-xs text-on-surface-variant">50% off</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-secondary">$39.99</p>
+              <p class="text-xs text-stone-400 line-through">$79.99</p>
+            </div>
+          </div>
+          <!-- 2x — Most Popular -->
+          <div class="bundle-option rounded-lg p-4 flex items-center justify-between" data-bundle="2" data-unit-price="23.99" data-total="47.98" data-discount="60" data-original="119.98" onclick="selectBundle(this)">
+            <div class="bundle-badge bg-secondary text-white">Most Popular</div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center">
+                <div class="bundle-dot w-3 h-3 rounded-full bg-transparent"></div>
+              </div>
+              <div>
+                <p class="font-bold text-sm">2x HerRelief</p>
+                <p class="text-xs text-on-surface-variant">60% off &mdash; $23.99 each</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-secondary">$47.98</p>
+              <p class="text-xs text-stone-400 line-through">$119.98</p>
+            </div>
+          </div>
+          <!-- 3x — Best Value -->
+          <div class="bundle-option rounded-lg p-4 flex items-center justify-between" data-bundle="3" data-unit-price="20.99" data-total="62.97" data-discount="65" data-original="179.97" onclick="selectBundle(this)">
+            <div class="bundle-badge bg-green-600 text-white">Best Value</div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center">
+                <div class="bundle-dot w-3 h-3 rounded-full bg-transparent"></div>
+              </div>
+              <div>
+                <p class="font-bold text-sm">3x HerRelief</p>
+                <p class="text-xs text-on-surface-variant">65% off &mdash; $20.99 each</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-secondary">$62.97</p>
+              <p class="text-xs text-stone-400 line-through">$179.97</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [#2] Benefit-driven CTA: Add to Cart — with [#4] animation -->
+      <button id="add-to-cart-btn" onclick="handleAddToCart()" class="block w-full px-10 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95 text-center cursor-pointer border-0">
+        <span id="atc-icon" class="material-symbols-outlined text-lg align-middle mr-2" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+        <span id="atc-text">Add to Cart &mdash; Relief in Minutes</span>
+      </button>
+
+      <!-- [#2] Buy Now — benefit-driven -->
+      <a href="javascript:void(0)" onclick="openCartDrawer()" class="block w-full px-10 py-3.5 bg-surface-container-lowest text-primary border-2 border-primary rounded-full font-bold text-lg hover:bg-primary-container transition-all active:scale-95 text-center">
+        Get Yours Now
+      </a>
+
+      <!-- Buy Now — skip cart, direct to Stripe -->
+      <a href="https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e" class="block w-full px-10 py-3.5 bg-transparent text-secondary border-2 border-secondary rounded-full font-bold text-lg hover:bg-secondary/10 transition-all active:scale-95 text-center">
+        <span class="material-symbols-outlined text-lg align-middle mr-1" style="font-variation-settings: 'FILL' 1;">bolt</span>
+        Buy Now
+      </a>
+
+      <!-- [Conversion #4] Satisfaction guarantee — "Try FREE for 90 Days" reframe -->
+      <div class="flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+        <span class="material-symbols-outlined text-2xl text-green-600" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+        <div>
+          <p class="font-bold text-sm text-green-800">Try It FREE for 90 Days</p>
+          <p class="text-xs text-green-700">Use it for 3 full months. If your cramps don't improve, return it for a complete refund — we even pay for return shipping. Zero risk.</p>
+        </div>
+      </div>
+
+      <!-- Visual Guarantee Badge -->
+      <div class="flex justify-center">
+        <img src="images/psychology/guarantee-badge.jpg" alt="90-Day Risk-Free Trial guarantee seal" class="w-24 h-24 object-contain"/>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-6 pt-2 border-t border-surface-container mt-2">
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+          Free Shipping
+        </div>
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          90-Day Guarantee
+        </div>
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">lock</span>
+          Secure Checkout
+        </div>
+      </div>
+
+      <!-- [Conversion #2] Shipping estimate -->
+      <div class="flex items-center gap-2 text-sm text-on-surface-variant bg-surface-container-low rounded-lg px-4 py-3">
+        <span class="material-symbols-outlined text-base text-secondary" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+        <div>
+          <p class="font-semibold text-on-surface">Arrives Mar 27–30</p>
+          <p class="text-xs">Free Express Shipping — Ships from US warehouse</p>
+        </div>
+      </div>
+
+      <!-- [#12] Trust Badge Enhancement: FDA + Payment Icons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pb-2">
+        <div class="flex items-center gap-1.5 text-green-700 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
+          FDA-Registered Materials
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-3">
+        <span class="text-xs text-stone-400 font-semibold uppercase tracking-wider">We accept:</span>
+        <!-- Visa -->
+        <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="24" rx="4" fill="#1A1F71"/>
+          <path d="M15.6 16.2L17.2 7.8H19.6L18 16.2H15.6ZM25.8 8C25.2 7.8 24.3 7.5 23.2 7.5C20.8 7.5 19.1 8.8 19.1 10.5C19.1 11.8 20.2 12.5 21.1 12.9C22 13.3 22.3 13.6 22.3 14C22.3 14.6 21.6 14.9 21 14.9C20.1 14.9 19.6 14.7 18.8 14.4L18.5 14.3L18.2 16.1C18.8 16.4 19.9 16.6 21 16.6C23.6 16.6 25.2 15.3 25.2 13.5C25.2 12.5 24.6 11.7 23.2 11.1C22.4 10.7 21.9 10.4 21.9 10C21.9 9.6 22.4 9.2 23.3 9.2C24.1 9.2 24.7 9.4 25.1 9.5L25.4 9.7L25.8 8ZM30.2 7.8H28.3C27.7 7.8 27.2 8 27 8.6L23.6 16.2H26.2L26.7 14.8H29.8L30.1 16.2H32.4L30.2 7.8ZM27.4 13.1C27.6 12.5 28.5 10.2 28.5 10.2L29.2 13.1H27.4ZM13.8 7.8L11.4 13.5L11.1 12C10.6 10.6 9.2 9 7.6 8.2L9.8 16.2H12.4L16.4 7.8H13.8Z" fill="white"/>
+          <path d="M10.2 7.8H6.2L6.2 8C9.2 8.8 11.2 10.6 11.1 12L10.2 7.8Z" fill="#F9A533"/>
+        </svg>
+        <!-- Mastercard -->
+        <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="24" rx="4" fill="#252525"/>
+          <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+          <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+          <path d="M19 7.1C20.5 8.3 21.5 10 21.5 12C21.5 14 20.5 15.7 19 16.9C17.5 15.7 16.5 14 16.5 12C16.5 10 17.5 8.3 19 7.1Z" fill="#FF5F00"/>
+        </svg>
+        <!-- Amex -->
+        <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="24" rx="4" fill="#006FCF"/>
+          <path d="M7 10L9 6H11L13 10L15 6H17L13.5 13H11.5L9 8L6.5 13H4.5L7 10ZM18 6H26V8H20V9H25.5V11H20V12H26V14H18V6ZM27 14L31 10L27 6H30L32.5 8.5L35 6H38L34 10L38 14H35L32.5 11.5L30 14H27Z" fill="white"/>
+        </svg>
+        <!-- PayPal -->
+        <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="24" rx="4" fill="#F5F7FA"/>
+          <path d="M14.5 6H18C19.8 6 21 7 20.8 8.8C20.5 11 18.8 12 17 12H15.8L15.2 16H12.5L14.5 6Z" fill="#003087"/>
+          <path d="M16.5 8H17.8C18.5 8 19 8.3 18.9 9C18.8 9.8 18.2 10.2 17.4 10.2H16.2L16.5 8Z" fill="white"/>
+          <path d="M19.5 8H23C24.8 8 26 9 25.8 10.8C25.5 13 23.8 14 22 14H20.8L20.2 18H17.5L19.5 8Z" fill="#009CDE"/>
+          <path d="M21.5 10H22.8C23.5 10 24 10.3 23.9 11C23.8 11.8 23.2 12.2 22.4 12.2H21.2L21.5 10Z" fill="white"/>
+        </svg>
+      </div>
+
+      <!-- Scarcity -->
+      <div class="flex items-center justify-center gap-2 text-secondary text-sm font-semibold urgency-pulse">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+        Only 47 left in stock &mdash; order soon!
+      </div>
+
+      <!-- [Conversion #1] Social proof — people bought today -->
+      <p class="text-xs text-on-surface-variant flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">group</span>
+        <strong class="text-on-surface">23 people</strong> bought this today
+      </p>
+      <p class="text-xs text-on-surface-variant flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm text-green-500" style="font-variation-settings: 'FILL' 1;">visibility</span>
+        <span id="live-viewers" class="font-bold text-on-surface">14</span> people are viewing this right now
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- Scroll anchor for reviews link -->
+<div id="reviews-section" style="position: relative; top: -80px;"></div>
+
+<!-- ============================================ -->
+<!-- TABBED DETAILS SECTION -->
+<!-- ============================================ -->
+<section class="bg-surface-container-low py-16 px-6" id="details-section">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Tab Navigation — [#7] Hidden on mobile -->
+    <div class="desktop-tabs flex border-b-2 border-surface-container mb-8 overflow-x-auto">
+      <button class="tab-btn active px-6 py-4 font-semibold text-on-surface whitespace-nowrap" data-tab="description">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">description</span>
+        Description
+      </button>
+      <button class="tab-btn px-6 py-4 font-semibold text-on-surface-variant whitespace-nowrap hover:text-on-surface transition-colors" data-tab="specifications">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">settings</span>
+        Specifications
+      </button>
+      <button class="tab-btn px-6 py-4 font-semibold text-on-surface-variant whitespace-nowrap hover:text-on-surface transition-colors" data-tab="reviews">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">reviews</span>
+        Reviews (678)
+      </button>
+    </div>
+
+    <!-- ===== DESKTOP TAB PANELS ===== -->
+    <div class="desktop-tab-panels">
+
+    <!-- ===== DESCRIPTION TAB ===== -->
+    <div id="tab-description" class="tab-panel active">
+
+      <!-- [#8] Sensory Description Upgrade -->
+      <div class="bg-secondary/5 border border-secondary/20 p-6 rounded-lg mb-10">
+        <h4 class="font-headline text-xl mb-3 text-secondary">Imagine This...</h4>
+        <p class="text-on-surface-variant leading-relaxed text-base italic">
+          Imagine wrapping yourself in a warm, soothing hug that melts away your cramps in minutes. You press one button, feel the gentle heat spread across your lower abdomen, and within moments the tension releases. That's your life with HerRelief.
+        </p>
+      </div>
+
+      <!-- Key Features -->
+      <h3 class="font-headline text-2xl mb-6">Key Features</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+          <div>
+            <p class="font-bold text-sm">5 Intelligent Heat Modes</p>
+            <p class="text-on-surface-variant text-sm">From a gentle 95&deg;F warm hug to 140&deg;F deep-tissue therapy. Find your perfect temperature.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">vibration</span>
+          <div>
+            <p class="font-bold text-sm">4 Vibration Massage Patterns</p>
+            <p class="text-on-surface-variant text-sm">Gentle pulse, steady wave, deep rhythmic, and soothing constant &mdash; designed for your abdomen and lower back.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">battery_charging_full</span>
+          <div>
+            <p class="font-bold text-sm">USB-C Rechargeable</p>
+            <p class="text-on-surface-variant text-sm">2+ hours of relief per charge. Fully recharges in just 90 minutes via USB-C.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">straighten</span>
+          <div>
+            <p class="font-bold text-sm">Adjustable Strap (25"&ndash;45")</p>
+            <p class="text-on-surface-variant text-sm">Stretchy, elastic velcro strap fits most body types comfortably and stays in place.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">timer</span>
+          <div>
+            <p class="font-bold text-sm">Auto-Shutoff Safety Timer</p>
+            <p class="text-on-surface-variant text-sm">Choose 15 or 30-minute auto-shutoff. Safe for naps, safe for sleeping &mdash; it turns off for you.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-surface-container-lowest p-5 rounded-lg">
+          <span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+          <div>
+            <p class="font-bold text-sm">Lightweight &mdash; Only 180g</p>
+            <p class="text-on-surface-variant text-sm">Lighter than your phone. Ultra-slim profile hides under any outfit at work, school, or home.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heat Technology Infographic — Authority -->
+      <div class="mb-10">
+        <h3 class="font-headline text-2xl mb-6">How It Works: Heat Technology</h3>
+        <img src="images/psychology/heat-technology.jpg" alt="Far Infrared Heat Technology — showing 3 temperature zones penetrating into the body for deep cramp relief" class="w-full max-w-xs mx-auto rounded-lg shadow-sm"/>
+      </div>
+
+      <!-- Scientific Evidence — Authority + Trust -->
+      <div class="mb-10 bg-blue-50/50 border border-blue-100 rounded-xl p-6 md:p-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-blue-600" style="font-variation-settings: 'FILL' 1;">science</span>
+          <h4 class="font-headline text-lg text-blue-900">Clinically Proven: Why Heat Therapy Works</h4>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+          Heat therapy for menstrual pain isn't just folk wisdom — it's backed by rigorous clinical research. Here's what the science says:
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-blue-500 text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+            <div>
+              <p class="text-sm text-on-surface leading-relaxed"><strong>Continuous low-level topical heat (40&deg;C/104&deg;F) was shown to be as effective as ibuprofen (400mg) for relieving menstrual cramp pain</strong>, with faster onset and no side effects.</p>
+              <p class="text-xs text-blue-700 mt-1">Akin, M. et al. (2001). &ldquo;Continuous low-level topical heat in the treatment of dysmenorrhea.&rdquo; <em>Obstetrics &amp; Gynecology</em>, 97(3), 343&ndash;349. <a href="https://pubmed.ncbi.nlm.nih.gov/11239634/" target="_blank" rel="noopener" class="underline hover:text-blue-900">PubMed: 11239634</a></p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-blue-500 text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+            <div>
+              <p class="text-sm text-on-surface leading-relaxed"><strong>Heat activates TRPV1 receptors in the skin, which block pain signals at the spinal cord level</strong> — the same mechanism as capsaicin cream, but without the burning sensation. Heat also increases blood flow to the uterus, reducing ischemia (oxygen deprivation) that causes cramping.</p>
+              <p class="text-xs text-blue-700 mt-1">Abdel-Salam, O. (2014). &ldquo;Capsaicin as a therapeutic molecule.&rdquo; <em>Progress in Drug Research</em>, 68. &amp; Proctor, M. &amp; Farquhar, C. (2006). &ldquo;Dysmenorrhoea.&rdquo; <em>BMJ Clinical Evidence</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/16973981/" target="_blank" rel="noopener" class="underline hover:text-blue-900">PubMed: 16973981</a></p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-blue-500 text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+            <div>
+              <p class="text-sm text-on-surface leading-relaxed"><strong>Adding vibration to heat therapy further reduces pain intensity.</strong> A 2019 study found that combined heat + vibration produced significantly greater pain relief than heat alone for primary dysmenorrhea.</p>
+              <p class="text-xs text-blue-700 mt-1">Lee, B. et al. (2019). &ldquo;Effect of vibration on pain during local heat therapy in primary dysmenorrhea.&rdquo; <em>Journal of Physical Therapy Science</em>, 31(2), 159&ndash;163.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-blue-100 flex items-center gap-2">
+          <span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+          <p class="text-xs text-on-surface-variant">All citations are from peer-reviewed medical journals. Click the PubMed links to verify.</p>
+        </div>
+      </div>
+
+      <!-- What's in the box -->
+      <div class="bg-surface-container-lowest p-6 rounded-lg mb-10">
+        <h4 class="font-headline text-lg mb-4">
+          <span class="material-symbols-outlined text-base align-middle mr-1" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+          What's in the Box
+        </h4>
+        <ul class="space-y-2 text-on-surface-variant">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            1x HerRelief Heating &amp; Vibration Massage Belt
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            1x USB-C Charging Cable
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            1x Instruction Manual &amp; Quick Start Guide
+          </li>
+        </ul>
+      </div>
+
+      <!-- Lifestyle / Endowment paragraph -->
+      <div class="bg-primary-container/30 p-8 rounded-lg">
+        <h4 class="font-headline text-xl mb-4">Imagine This</h4>
+        <p class="text-on-surface-variant leading-relaxed text-base">
+          Imagine yourself curled up on the couch after a long day, the soft warmth of your HerRelief melting away the tension in your lower belly. You press a button &mdash; a gentle vibration begins to pulse against your muscles, untangling the knots that have kept you from sleeping, working, and living your life. No pills to swallow. No messy hot water bottles. No waiting 30 minutes for a painkiller to kick in. Just <em>your</em> belt, <em>your</em> setting, and relief that starts in minutes. This is what 600+ women have already discovered &mdash; and once it's yours, you'll wonder how you ever got through a cycle without it.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== SPECIFICATIONS TAB ===== -->
+    <div id="tab-specifications" class="tab-panel">
+      <h3 class="font-headline text-2xl mb-6">Technical Specifications</h3>
+      <div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm">
+        <table class="w-full text-left">
+          <tbody>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Material</td>
+              <td class="p-5 text-on-surface-variant text-sm">ABS + Breathable Nylon</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Weight</td>
+              <td class="p-5 text-on-surface-variant text-sm">180g (6.3 oz)</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Voltage</td>
+              <td class="p-5 text-on-surface-variant text-sm">&lt;50V (safe low-voltage)</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Battery</td>
+              <td class="p-5 text-on-surface-variant text-sm">1200mAh Lithium Rechargeable</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Battery Life</td>
+              <td class="p-5 text-on-surface-variant text-sm">Up to 2 hours per charge</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Charging</td>
+              <td class="p-5 text-on-surface-variant text-sm">USB-C, ~1.5 hours to full charge</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Heat Modes</td>
+              <td class="p-5 text-on-surface-variant text-sm">5 levels (95&deg;F / 35&deg;C &ndash; 140&deg;F / 60&deg;C)</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Vibration Modes</td>
+              <td class="p-5 text-on-surface-variant text-sm">4 massage patterns</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Strap Length</td>
+              <td class="p-5 text-on-surface-variant text-sm">Adjustable 25"&ndash;45" (63&ndash;114 cm)</td>
+            </tr>
+            <tr class="border-b border-surface-container">
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Display</td>
+              <td class="p-5 text-on-surface-variant text-sm">LED with temperature &amp; mode indicators</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-sm w-1/3 bg-surface-container-low">Safety</td>
+              <td class="p-5 text-on-surface-variant text-sm">Auto-shutoff timer (15 / 30 min), overheat protection</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== REVIEWS TAB ===== -->
+    <div id="tab-reviews" class="tab-panel">
+
+      <!-- [#10] Review Summary Bar — Overall Rating + Star Bars -->
+      <div class="flex flex-col md:flex-row gap-10 mb-10">
+        <!-- Left: Big number -->
+        <div class="text-center md:text-left">
+          <p class="text-6xl font-headline text-secondary">4.9</p>
+          <div class="flex text-orange-400 justify-center md:justify-start my-2">
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">Based on 678 verified reviews</p>
+        </div>
+        <!-- Right: Star breakdown bars -->
+        <div class="flex-1 space-y-2">
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-semibold w-12">5 star</span>
+            <div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+              <div class="star-bar-fill bg-orange-400 h-full rounded-full" style="width: 85%"></div>
+            </div>
+            <span class="text-sm text-on-surface-variant w-10 text-right">85%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-semibold w-12">4 star</span>
+            <div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+              <div class="star-bar-fill bg-orange-400 h-full rounded-full" style="width: 10%"></div>
+            </div>
+            <span class="text-sm text-on-surface-variant w-10 text-right">10%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-semibold w-12">3 star</span>
+            <div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+              <div class="star-bar-fill bg-orange-300 h-full rounded-full" style="width: 3%"></div>
+            </div>
+            <span class="text-sm text-on-surface-variant w-10 text-right">3%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-semibold w-12">2 star</span>
+            <div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+              <div class="star-bar-fill bg-orange-200 h-full rounded-full" style="width: 1%"></div>
+            </div>
+            <span class="text-sm text-on-surface-variant w-10 text-right">1%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-semibold w-12">1 star</span>
+            <div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+              <div class="star-bar-fill bg-orange-200 h-full rounded-full" style="width: 1%"></div>
+            </div>
+            <span class="text-sm text-on-surface-variant w-10 text-right">1%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Filter Buttons -->
+      <div class="flex flex-wrap gap-2 mb-6" id="review-filters">
+        <button class="review-filter-btn active px-4 py-1.5 rounded-full text-sm font-semibold bg-secondary text-white" data-filter="all">All (678)</button>
+        <button class="review-filter-btn px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-primary-container transition-colors" data-filter="cramps">Cramps</button>
+        <button class="review-filter-btn px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-primary-container transition-colors" data-filter="back-pain">Back Pain</button>
+        <button class="review-filter-btn px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-primary-container transition-colors" data-filter="discreet">Discreet</button>
+        <button class="review-filter-btn px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-primary-container transition-colors" data-filter="fast-shipping">Fast Shipping</button>
+        <button class="review-filter-btn px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-primary-container transition-colors" data-filter="with-photo">With Photo</button>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="space-y-6" id="review-cards">
+
+        <!-- Review 1 — [#5] With Photo badge -->
+        <div class="review-card p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20" data-tags="cramps back-pain with-photo">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">SJ</div>
+              <div>
+                <p class="font-bold text-sm">Sarah J., 26</p>
+                <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Feb 2026</p>
+              </div>
+              <span class="photo-badge">
+                <span class="material-symbols-outlined" style="font-size: 12px; font-variation-settings: 'FILL' 1;">photo_camera</span>
+                With Photo
+              </span>
+            </div>
+            <div class="flex text-orange-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed italic">"Way better than disposable heating pads. It stays warm, doesn't fall off, and the vibration is a game changer for my lower back pain too."</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20" data-tags="cramps fast-shipping">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">ER</div>
+              <div>
+                <p class="font-bold text-sm">Emily R., 23</p>
+                <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Feb 2026</p>
+              </div>
+            </div>
+            <div class="flex text-orange-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed italic">"I got mine in 2 days and it works exactly as advertised. I used to rely on painkillers every month &mdash; now I just wrap this on and I'm good to go."</p>
+        </div>
+
+        <!-- Review 3 — [#5] With Photo badge -->
+        <div class="review-card p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20" data-tags="cramps with-photo">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">JN</div>
+              <div>
+                <p class="font-bold text-sm">Jessica N., 29</p>
+                <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Jan 2026</p>
+              </div>
+              <span class="photo-badge">
+                <span class="material-symbols-outlined" style="font-size: 12px; font-variation-settings: 'FILL' 1;">photo_camera</span>
+                With Photo
+              </span>
+            </div>
+            <div class="flex text-orange-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed italic">"So much better than one-time-use heating pads. Saves me money every month and the warmth is consistent the whole time. Reduced my cramps in about 10 minutes."</p>
+        </div>
+
+        <!-- Review 4 — [#5] With Photo badge -->
+        <div class="review-card p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20" data-tags="discreet with-photo">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">MA</div>
+              <div>
+                <p class="font-bold text-sm">Maria A., 24</p>
+                <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Oct 2025</p>
+              </div>
+              <span class="photo-badge">
+                <span class="material-symbols-outlined" style="font-size: 12px; font-variation-settings: 'FILL' 1;">photo_camera</span>
+                With Photo
+              </span>
+            </div>
+            <div class="flex text-orange-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed italic">"I wear it at my desk during work and nobody even notices. The highest setting is seriously warm &mdash; I usually keep it at level 3. Absolute lifesaver during my cycle."</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card p-6 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20" data-tags="cramps fast-shipping">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">DW</div>
+              <div>
+                <p class="font-bold text-sm">Diane W., 45</p>
+                <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Dec 2025</p>
+              </div>
+            </div>
+            <div class="flex text-orange-400">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed italic">"Bought this for my daughter who has really bad cramps and she says it's the only thing that actually helps her get through school days. We're buying a second one as backup. Shipping was super fast &mdash; arrived in 2 days."</p>
+        </div>
+
+      </div>
+    </div>
+
+    </div><!-- end desktop-tab-panels -->
+
+    <!-- ===== [#7] MOBILE ACCORDIONS ===== -->
+    <div class="mobile-accordions" style="display: none;">
+
+      <!-- Description Accordion -->
+      <details open>
+        <summary>
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">description</span>
+            Description
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <!-- Sensory paragraph -->
+          <div class="bg-secondary/5 border border-secondary/20 p-5 rounded-lg mb-6">
+            <h4 class="font-headline text-lg mb-2 text-secondary">Imagine This...</h4>
+            <p class="text-on-surface-variant leading-relaxed text-sm italic">
+              Imagine wrapping yourself in a warm, soothing hug that melts away your cramps in minutes. You press one button, feel the gentle heat spread across your lower abdomen, and within moments the tension releases. That's your life with HerRelief.
+            </p>
+          </div>
+          <h4 class="font-headline text-lg mb-4">Key Features</h4>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+              <div>
+                <p class="font-bold text-sm">5 Intelligent Heat Modes</p>
+                <p class="text-on-surface-variant text-sm">From 95&deg;F to 140&deg;F deep-tissue therapy.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">vibration</span>
+              <div>
+                <p class="font-bold text-sm">4 Vibration Massage Patterns</p>
+                <p class="text-on-surface-variant text-sm">Gentle pulse, steady wave, deep rhythmic, and soothing constant.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">battery_charging_full</span>
+              <div>
+                <p class="font-bold text-sm">USB-C Rechargeable</p>
+                <p class="text-on-surface-variant text-sm">2+ hours per charge. Recharges in 90 min.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">straighten</span>
+              <div>
+                <p class="font-bold text-sm">Adjustable Strap (25"&ndash;45")</p>
+                <p class="text-on-surface-variant text-sm">Fits most body types comfortably.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+              <div>
+                <p class="font-bold text-sm">Lightweight &mdash; Only 180g</p>
+                <p class="text-on-surface-variant text-sm">Hides under any outfit at work, school, or home.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Specifications Accordion -->
+      <details>
+        <summary>
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">settings</span>
+            Specifications
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Material</span><span class="text-on-surface-variant">ABS + Breathable Nylon</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Weight</span><span class="text-on-surface-variant">180g (6.3 oz)</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Battery</span><span class="text-on-surface-variant">1200mAh Lithium</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Battery Life</span><span class="text-on-surface-variant">Up to 2 hours</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Charging</span><span class="text-on-surface-variant">USB-C, ~1.5 hours</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Heat Modes</span><span class="text-on-surface-variant">5 levels (95&deg;F&ndash;140&deg;F)</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Vibration</span><span class="text-on-surface-variant">4 massage patterns</span></div>
+            <div class="flex justify-between border-b border-surface-container pb-2"><span class="font-bold">Strap</span><span class="text-on-surface-variant">25"&ndash;45" adjustable</span></div>
+            <div class="flex justify-between"><span class="font-bold">Safety</span><span class="text-on-surface-variant">Auto-shutoff (15/30 min)</span></div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Reviews Accordion -->
+      <details>
+        <summary>
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">reviews</span>
+            Reviews (678)
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <!-- Star summary -->
+          <div class="flex items-center gap-4 mb-6">
+            <p class="text-4xl font-headline text-secondary">4.9</p>
+            <div>
+              <div class="flex text-orange-400">
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <p class="text-xs text-on-surface-variant">678 verified reviews</p>
+            </div>
+          </div>
+          <!-- Compact review cards -->
+          <div class="space-y-4">
+            <div class="p-4 bg-surface-container-lowest rounded-lg border border-primary-container/20">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-bold text-sm">Sarah J.</span>
+                <div class="flex text-orange-400"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span></div>
+                <span class="photo-badge"><span class="material-symbols-outlined" style="font-size: 11px; font-variation-settings: 'FILL' 1;">photo_camera</span>Photo</span>
+              </div>
+              <p class="text-on-surface-variant text-sm italic">"Way better than disposable heating pads. The vibration is a game changer."</p>
+            </div>
+            <div class="p-4 bg-surface-container-lowest rounded-lg border border-primary-container/20">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-bold text-sm">Emily R.</span>
+                <div class="flex text-orange-400"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span></div>
+              </div>
+              <p class="text-on-surface-variant text-sm italic">"Works exactly as advertised. No more painkillers every month."</p>
+            </div>
+            <div class="p-4 bg-surface-container-lowest rounded-lg border border-primary-container/20">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-bold text-sm">Jessica N.</span>
+                <div class="flex text-orange-400"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span></div>
+                <span class="photo-badge"><span class="material-symbols-outlined" style="font-size: 11px; font-variation-settings: 'FILL' 1;">photo_camera</span>Photo</span>
+              </div>
+              <p class="text-on-surface-variant text-sm italic">"Reduced my cramps in about 10 minutes. Saves money every month."</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- end mobile-accordions -->
+
+  </div>
+</section>
+
+<!-- TikTok Section (loaded from component) -->
+<div id="tiktok-mount"></div>
+<script>
+  fetch('tiktok-section.html').then(r=>r.text()).then(html=>{
+    document.getElementById('tiktok-mount').innerHTML=html;
+    // Re-execute scripts in the loaded HTML
+    document.getElementById('tiktok-mount').querySelectorAll('script').forEach(s=>{
+      const ns=document.createElement('script');
+      ns.textContent=s.textContent;
+      s.parentNode.replaceChild(ns,s);
+    });
+  });
+</script>
+
+<!-- ============================================ -->
+<!-- INTERACTIVE PRODUCT TOUR — Animated Feature Reveal -->
+<!-- ============================================ -->
+<section class="py-20 px-6 bg-surface overflow-hidden" id="product-tour">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">360</span>
+        Product Tour
+      </div>
+      <h2 class="font-headline text-3xl md:text-5xl text-on-surface">Every detail, designed for you</h2>
+      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Tap each feature to learn more about what makes HerRelief different.</p>
+    </div>
+
+    <!-- FEATURE CARDS — Small Mobile-Friendly Images -->
+    <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto mb-20">
+      <!-- LED Display -->
+      <div class="tour-card bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+        <img src="images/product-tour/led-display.jpg" alt="HerRelief LED display close-up showing temperature and mode controls" class="w-full aspect-square object-cover"/>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Smart LED Display</h4>
+          <p class="text-xs text-on-surface-variant">See your temperature, mode, and battery at a glance. 3 intuitive buttons.</p>
+        </div>
+      </div>
+      <!-- Flannel Material -->
+      <div class="tour-card bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+        <img src="images/product-tour/flannel-material.jpg" alt="Soft grey flannel inner material of HerRelief belt" class="w-full aspect-square object-cover"/>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Skin-Soft Flannel</h4>
+          <p class="text-xs text-on-surface-variant">Ultra-soft grey flannel lining — gentle, breathable, cozy against skin.</p>
+        </div>
+      </div>
+      <!-- USB-C Charging -->
+      <div class="tour-card bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+        <img src="images/product-tour/usb-charging.jpg" alt="USB-C charging port on HerRelief belt" class="w-full aspect-square object-cover"/>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">USB-C Fast Charge</h4>
+          <p class="text-xs text-on-surface-variant">Full charge in 90 min. 2+ hours of relief per charge. Same cable as your phone.</p>
+        </div>
+      </div>
+      <!-- Adjustable Strap -->
+      <div class="tour-card bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+        <img src="images/product-tour/adjustable-strap.jpg" alt="Adjustable grey strap with pink buckle fitting around waist" class="w-full aspect-square object-cover"/>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Adjustable Fit</h4>
+          <p class="text-xs text-on-surface-variant">Elastic strap fits 25" to 45". Slim 180g profile hides under any outfit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASSAGE MODES — Animated Cards -->
+    <div class="mb-20">
+      <h3 class="font-headline text-2xl md:text-3xl text-center mb-4">3 Massage Modes + 3 Heat Levels</h3>
+      <p class="text-on-surface-variant text-center mb-10 max-w-xl mx-auto">Customize your relief — from gentle daily warmth to deep therapeutic heat.</p>
+
+      <!-- Vibration Demo Banner (mobile only) -->
+      <div id="vibration-banner" class="hidden max-w-md mx-auto mb-6 bg-secondary/10 border border-secondary/30 rounded-xl p-4 text-center">
+        <p class="text-sm text-on-surface font-semibold mb-1">
+          <span class="material-symbols-outlined text-sm align-middle mr-1 text-secondary" style="font-variation-settings: 'FILL' 1;">vibration</span>
+          Tap each mode to feel the vibration pattern on your phone
+        </p>
+        <p class="text-xs text-on-surface-variant">Your phone will vibrate to simulate each massage mode</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+        <!-- Mode 1 — Gentle: soft single pulse -->
+        <div class="tour-card bg-surface-container-lowest p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer active:scale-95" onclick="vibrateMode(1)">
+          <div class="w-16 h-16 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-3xl text-amber-500" style="font-variation-settings: 'FILL' 1;">vibration</span>
+          </div>
+          <h4 class="font-headline text-lg mb-1">Mode 1</h4>
+          <p class="text-secondary font-bold text-sm mb-2">Gentle Soothing</p>
+          <p class="text-on-surface-variant text-sm">Light vibration for everyday comfort and mild cramps.</p>
+          <p class="text-xs text-secondary mt-3 font-semibold md:hidden">Tap to feel it</p>
+        </div>
+        <!-- Mode 2 — Rhythm: pulsing pattern -->
+        <div class="tour-card bg-surface-container-lowest p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer active:scale-95" onclick="vibrateMode(2)">
+          <div class="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-3xl text-orange-500" style="font-variation-settings: 'FILL' 1;">vibration</span>
+          </div>
+          <h4 class="font-headline text-lg mb-1">Mode 2</h4>
+          <p class="text-secondary font-bold text-sm mb-2">Rhythm Relief</p>
+          <p class="text-on-surface-variant text-sm">Pulsing waves that loosen muscle tension and ease moderate pain.</p>
+          <p class="text-xs text-secondary mt-3 font-semibold md:hidden">Tap to feel it</p>
+        </div>
+        <!-- Mode 3 — Deep: strong continuous -->
+        <div class="tour-card bg-surface-container-lowest p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer active:scale-95" onclick="vibrateMode(3)">
+          <div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-3xl text-red-500" style="font-variation-settings: 'FILL' 1;">vibration</span>
+          </div>
+          <h4 class="font-headline text-lg mb-1">Mode 3</h4>
+          <p class="text-secondary font-bold text-sm mb-2">Deep Release</p>
+          <p class="text-on-surface-variant text-sm">Powerful massage for severe cramps and deep muscle knots.</p>
+          <p class="text-xs text-secondary mt-3 font-semibold md:hidden">Tap to feel it</p>
+        </div>
+      </div>
+
+      <script>
+      // Vibration API — each mode has a different pattern
+      function vibrateMode(mode) {
+        if (!('vibrate' in navigator)) return;
+        switch(mode) {
+          case 1: // Gentle — soft single pulse
+            navigator.vibrate([100, 50, 100]);
+            break;
+          case 2: // Rhythm — pulsing wave pattern
+            navigator.vibrate([150, 100, 150, 100, 150, 100, 150]);
+            break;
+          case 3: // Deep — strong continuous buzz
+            navigator.vibrate([400, 80, 400, 80, 400]);
+            break;
+        }
+      }
+      // Show vibration banner only on mobile devices that support it
+      if ('vibrate' in navigator && window.innerWidth < 768) {
+        document.getElementById('vibration-banner').classList.remove('hidden');
+      }
+      </script>
+
+      <!-- Temperature Bar -->
+      <div class="max-w-2xl mx-auto">
+        <div class="flex justify-between items-end mb-3">
+          <div class="text-center">
+            <p class="text-2xl font-headline text-amber-500">50&deg;C</p>
+            <p class="text-xs text-on-surface-variant font-semibold">Daily Warmth</p>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-headline text-orange-500">55&deg;C</p>
+            <p class="text-xs text-on-surface-variant font-semibold">Menstrual Care</p>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-headline text-red-500">60&deg;C</p>
+            <p class="text-xs text-on-surface-variant font-semibold">Pain Relief</p>
+          </div>
+        </div>
+        <div class="h-3 rounded-full overflow-hidden bg-surface-container">
+          <div class="tour-temp-bar h-full rounded-full" style="background: linear-gradient(to right, #f59e0b, #f97316, #ef4444); width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Why HerRelief Wins — Comparison Cards -->
+      <div class="mt-16">
+        <h4 class="font-headline text-xl md:text-2xl text-center mb-8">Why women choose HerRelief</h4>
+        <div class="grid grid-cols-3 gap-4 md:gap-6">
+          <!-- HerRelief (highlighted) -->
+          <div class="bg-white rounded-xl shadow-md border-2 border-secondary p-4 md:p-6 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">Best Choice</div>
+            <div class="flex justify-center mb-3">
+              <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">heating</span>
+              </div>
+            </div>
+            <h5 class="font-headline text-xs md:text-sm text-center mb-3 font-bold">HerRelief Belt</h5>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-1.5 text-xs"><span class="material-symbols-outlined text-green-500 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> Reusable</li>
+              <li class="flex items-center gap-1.5 text-xs"><span class="material-symbols-outlined text-green-500 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> Drug-Free</li>
+              <li class="flex items-center gap-1.5 text-xs"><span class="material-symbols-outlined text-green-500 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> Portable</li>
+              <li class="flex items-center gap-1.5 text-xs"><span class="material-symbols-outlined text-green-500 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> Vibration Massage</li>
+              <li class="flex items-center gap-1.5 text-xs"><span class="material-symbols-outlined text-green-500 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> 3 Heat Levels</li>
+            </ul>
+            <div class="mt-3 pt-2 border-t border-surface-container text-center">
+              <p class="text-secondary font-bold">$39.99</p>
+              <p class="text-[10px] text-on-surface-variant">one-time purchase</p>
+            </div>
+          </div>
+          <!-- Disposable Pads -->
+          <div class="bg-surface-container-low rounded-xl p-4 md:p-6 opacity-75">
+            <div class="flex justify-center mb-3">
+              <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-surface-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-stone-400">local_fire_department</span>
+              </div>
+            </div>
+            <h5 class="font-headline text-xs md:text-sm text-center mb-3 font-bold text-stone-500">Disposable Pads</h5>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Single Use</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> No Massage</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Inconsistent Heat</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Not Portable</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> 1 Temperature</li>
+            </ul>
+            <div class="mt-3 pt-2 border-t border-surface-container text-center">
+              <p class="text-stone-500 font-bold">$15+</p>
+              <p class="text-[10px] text-stone-400">per month, forever</p>
+            </div>
+          </div>
+          <!-- Painkillers -->
+          <div class="bg-surface-container-low rounded-xl p-4 md:p-6 opacity-75">
+            <div class="flex justify-center mb-3">
+              <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-surface-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl md:text-3xl text-stone-400">medication</span>
+              </div>
+            </div>
+            <h5 class="font-headline text-xs md:text-sm text-center mb-3 font-bold text-stone-500">Painkillers</h5>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Side Effects</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Temporary</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Takes 30+ Min</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Not Targeted</li>
+              <li class="flex items-center gap-1.5 text-xs text-stone-500"><span class="material-symbols-outlined text-red-400 text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span> Dependency Risk</li>
+            </ul>
+            <div class="mt-3 pt-2 border-t border-surface-container text-center">
+              <p class="text-stone-500 font-bold">$10+</p>
+              <p class="text-[10px] text-stone-400">monthly + side effects</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT'S IN THE BOX — Packaging Reveal -->
+    <div>
+      <h3 class="font-headline text-2xl md:text-3xl text-center mb-4">What arrives at your door</h3>
+      <p class="text-on-surface-variant text-center mb-10">Beautifully packaged and ready to use (or gift).</p>
+
+      <div class="flex flex-col md:flex-row items-center gap-10 max-w-4xl mx-auto">
+        <!-- Packaging Image -->
+        <div class="flex-1 tour-card">
+          <img src="images/product-tour/3d-unboxing.jpg" alt="HerRelief 3D unboxing — rose and teal gift box open showing pink belt, USB-C cable, and instruction booklet inside" class="w-full max-w-sm mx-auto rounded-lg shadow-lg"/>
+        </div>
+        <!-- What's Inside List -->
+        <div class="flex-1 space-y-4">
+          <div class="flex items-center gap-4 tour-card">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">heating</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">1x HerRelief Heating & Massage Belt</p>
+              <p class="text-xs text-on-surface-variant">Pink — with LED display and 3 massage modes</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 tour-card">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">cable</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">1x USB-C Charging Cable</p>
+              <p class="text-xs text-on-surface-variant">Fast charge — fully powered in 90 minutes</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 tour-card">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">1x Quick Start Guide</p>
+              <p class="text-xs text-on-surface-variant">Simple instructions — relief in under 2 minutes</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 tour-card">
+            <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-green-600" style="font-variation-settings: 'FILL' 1;">redeem</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">Gift-Ready Packaging</p>
+              <p class="text-xs text-on-surface-variant">Beautiful box — no wrapping needed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ===== PRODUCT TOUR ANIMATIONS ===== */
+  /* Scroll-triggered fade-in */
+  .tour-card {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .tour-card.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  .tour-fade-in {
+    opacity: 0; transform: scale(0.97);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .tour-fade-in.visible {
+    opacity: 1; transform: scale(1);
+  }
+
+  /* Temperature bar animation */
+  .tour-temp-bar { transition: width 1.5s ease-out; }
+  .tour-temp-bar.animate { width: 100% !important; }
+</style>
+
+<script>
+(function() {
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 150);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.tour-card, .tour-fade-in').forEach(el => observer.observe(el));
+
+  // Temperature bar animation
+  const tempBar = document.querySelector('.tour-temp-bar');
+  if (tempBar) {
+    const tempObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        tempBar.classList.add('animate');
+        tempObs.unobserve(tempBar);
+      }
+    }, { threshold: 0.5 });
+    tempObs.observe(tempBar);
+  }
+})();
+</script>
+
+<!-- ============================================ -->
+<!-- WHY WOMEN ARE SWITCHING — COMPARISON TABLE -->
+<!-- ============================================ -->
+<section class="py-20 px-6 bg-surface-container-low">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-headline text-3xl md:text-4xl text-center mb-4">Why Women Are Switching</h2>
+    <p class="text-center text-on-surface-variant mb-10">Stop spending on temporary fixes. Invest in real relief.</p>
+    <div class="overflow-x-auto rounded-lg shadow-sm bg-surface-container-lowest">
+      <table class="w-full text-left border-collapse min-w-[500px]">
+        <thead>
+          <tr class="bg-primary text-on-primary">
+            <th class="p-5 font-headline text-base">Feature</th>
+            <th class="p-5 font-headline text-base text-center bg-secondary">HerRelief</th>
+            <th class="p-5 font-headline text-base text-center opacity-70">Disposable Pads</th>
+            <th class="p-5 font-headline text-base text-center opacity-70">Painkillers</th>
+          </tr>
+        </thead>
+        <tbody class="text-on-surface text-sm">
+          <tr class="border-b border-surface-container">
+            <td class="p-5 font-semibold">Reusable</td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+          </tr>
+          <tr class="border-b border-surface-container">
+            <td class="p-5 font-semibold">Vibration Massage</td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+          </tr>
+          <tr class="border-b border-surface-container">
+            <td class="p-5 font-semibold">Portable & Discreet</td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+          </tr>
+          <tr class="border-b border-surface-container">
+            <td class="p-5 font-semibold">Drug-Free</td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+            <td class="p-5 text-center text-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+            <td class="p-5 text-center text-stone-300"><span class="material-symbols-outlined">cancel</span></td>
+          </tr>
+          <tr>
+            <td class="p-5 font-semibold">Long-term Cost</td>
+            <td class="p-5 text-center text-secondary font-bold">$39.99 one-time</td>
+            <td class="p-5 text-center text-on-surface-variant italic">$15+/month forever</td>
+            <td class="p-5 text-center text-on-surface-variant italic">Side effects over time</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- FAQ SECTION -->
+<!-- ============================================ -->
+<section class="py-20 px-6 max-w-3xl mx-auto" id="faq-section">
+  <h2 class="font-headline text-3xl md:text-4xl text-center mb-4">Common Questions</h2>
+  <p class="text-on-surface-variant text-center mb-12">Everything you need to know before you order.</p>
+  <div class="space-y-4">
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        How long does the battery last?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">Up to 2 hours per charge. USB-C charges in 90 minutes. Most users need 30-60 mins per session.</div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        What sizes does it fit?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">Adjustable elastic strap fits waists 25" to 45".</div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        Can I wear it under my clothes?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">Yes. Ultra-slim (180g) and silent. Nobody will notice.</div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        Is it safe to use while sleeping?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">Yes. Built-in 15/30 min auto-shutoff timer prevents overheating.</div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        What's your return policy?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">90-day money-back guarantee. Full refund, no questions. We cover return shipping.</div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="list-none p-5 font-bold flex justify-between items-center cursor-pointer">
+        How fast is shipping?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="p-5 pt-0 text-on-surface-variant">Free US shipping from our warehouse. Most orders arrive in 3-6 business days.</div>
+    </details>
+  </div>
+</section>
+
+<!-- BODY TYPES — Size Inclusivity / Trust -->
+<section class="py-16 px-6 bg-surface-container-low">
+  <div class="max-w-4xl mx-auto text-center space-y-8">
+    <h2 class="font-headline text-3xl md:text-4xl">Designed to fit every body</h2>
+    <p class="text-on-surface-variant text-lg">The adjustable elastic strap fits waists from 25" to 45" — one size truly fits all.</p>
+    <img src="images/psychology/body-types.jpg" alt="HerRelief heating belt shown on 3 different body types — petite, medium, and curvy — demonstrating adjustable fit" class="w-full rounded-lg shadow-md"/>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- BEHIND-THE-SCENES QUALITY SECTION -->
+<!-- ============================================ -->
+<section class="py-16 px-6 bg-surface">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-headline text-3xl md:text-4xl">Built With Care, Tested With Rigor</h2>
+      <p class="text-on-surface-variant mt-3">Every HerRelief belt goes through a 5-point quality check before it ships to you.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div class="text-center p-4">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+        <p class="text-sm font-bold">Heat Calibration</p>
+        <p class="text-xs text-on-surface-variant">Every unit tested across all 5 heat levels</p>
+      </div>
+      <div class="text-center p-4">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">vibration</span>
+        <p class="text-sm font-bold">Vibration Check</p>
+        <p class="text-xs text-on-surface-variant">All 4 massage patterns verified</p>
+      </div>
+      <div class="text-center p-4">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">battery_full</span>
+        <p class="text-sm font-bold">Battery Test</p>
+        <p class="text-xs text-on-surface-variant">Full charge cycle + runtime confirmed</p>
+      </div>
+      <div class="text-center p-4">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">healing</span>
+        <p class="text-sm font-bold">Material Safety</p>
+        <p class="text-xs text-on-surface-variant">Skin-safe, hypoallergenic materials</p>
+      </div>
+      <div class="text-center p-4">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+        <p class="text-sm font-bold">Packaging QC</p>
+        <p class="text-xs text-on-surface-variant">Sealed, complete, ready to use</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- [#6] FREQUENTLY BOUGHT TOGETHER -->
+<!-- ============================================ -->
+<section class="bg-surface-container-low py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-headline text-4xl text-center mb-4">Frequently Bought Together</h2>
+    <p class="text-center text-on-surface-variant mb-12">Save more when you bundle these items together</p>
+
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-4 mb-10">
+
+      <!-- Product 1: The Belt (current product) -->
+      <div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden w-full lg:w-72 relative">
+        <div class="absolute top-3 left-3 z-10">
+          <input type="checkbox" checked disabled class="fbt-check" id="fbt-1"/>
+        </div>
+        <div class="bg-surface-container-low aspect-square flex items-center justify-center p-6">
+          <img src="images/branded/hero-clean.jpg" alt="HerRelief heating belt product shot" class="w-full h-full object-contain"/>
+        </div>
+        <div class="p-5 space-y-1">
+          <p class="text-xs uppercase tracking-wider text-secondary font-bold">This item</p>
+          <h4 class="font-headline text-base">HerRelief Belt</h4>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-secondary">$39.99</span>
+            <span class="text-stone-400 line-through text-sm">$79.99</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plus icon -->
+      <div class="text-3xl font-bold text-outline-variant hidden lg:block">+</div>
+      <div class="text-2xl font-bold text-outline-variant lg:hidden">+</div>
+
+      <!-- Product 2: Power Bank -->
+      <div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden w-full lg:w-72 relative">
+        <div class="absolute top-3 left-3 z-10">
+          <input type="checkbox" checked class="fbt-check" id="fbt-2" onchange="updateFbtTotal()"/>
+        </div>
+        <div class="bg-surface-container-low aspect-square flex items-center justify-center p-6">
+          <span class="material-symbols-outlined text-6xl text-outline-variant opacity-40">battery_charging_full</span>
+        </div>
+        <div class="p-5 space-y-1">
+          <p class="text-xs uppercase tracking-wider text-on-surface-variant">Recommended</p>
+          <h4 class="font-headline text-base">USB-C Power Bank</h4>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-secondary">$19.99</span>
+            <span class="text-stone-400 line-through text-sm">$34.99</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plus icon -->
+      <div class="text-3xl font-bold text-outline-variant hidden lg:block">+</div>
+      <div class="text-2xl font-bold text-outline-variant lg:hidden">+</div>
+
+      <!-- Product 3: Aromatherapy Patches -->
+      <div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden w-full lg:w-72 relative">
+        <div class="absolute top-3 left-3 z-10">
+          <input type="checkbox" checked class="fbt-check" id="fbt-3" onchange="updateFbtTotal()"/>
+        </div>
+        <div class="bg-surface-container-low aspect-square flex items-center justify-center p-6">
+          <span class="material-symbols-outlined text-6xl text-outline-variant opacity-40">spa</span>
+        </div>
+        <div class="p-5 space-y-1">
+          <p class="text-xs uppercase tracking-wider text-on-surface-variant">Recommended</p>
+          <h4 class="font-headline text-base">Lavender Heat Patches (6-pack)</h4>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-secondary">$12.99</span>
+            <span class="text-stone-400 line-through text-sm">$24.99</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bundle total + Add All button -->
+    <div class="max-w-md mx-auto bg-surface-container-lowest rounded-lg p-6 shadow-sm text-center space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-on-surface-variant font-medium">Bundle Total:</span>
+        <div class="text-right">
+          <span id="fbt-total" class="text-2xl font-headline text-secondary font-bold">$62.97</span>
+          <span id="fbt-original" class="text-stone-400 line-through text-sm ml-2">$119.97</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2 text-green-600 text-sm font-bold">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">savings</span>
+        <span id="fbt-savings">You save $57.00!</span>
+      </div>
+      <button onclick="handleFbtAddAll()" class="w-full px-8 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95 cursor-pointer border-0">
+        <span class="material-symbols-outlined text-lg align-middle mr-2" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+        Add All to Cart
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LOSS AVERSION SECTION -->
+<!-- ============================================ -->
+<section class="py-16 px-6 bg-surface">
+  <div class="max-w-3xl mx-auto text-center space-y-6">
+    <h2 class="font-headline text-3xl md:text-4xl text-on-surface">Don't go back to suffering through your next cycle</h2>
+    <p class="text-on-surface-variant text-lg leading-relaxed">Every month without HerRelief is another month of unnecessary pain, missed plans, and sleepless nights. 600+ women already made the switch — your next period could be different.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <div class="flex items-center gap-2 text-red-500 text-sm font-medium">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">close</span>
+        Another month of cramps
+      </div>
+      <div class="flex items-center gap-2 text-red-500 text-sm font-medium">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">close</span>
+        More money on painkillers
+      </div>
+      <div class="flex items-center gap-2 text-red-500 text-sm font-medium">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">close</span>
+        Canceling plans again
+      </div>
+    </div>
+    <a href="javascript:void(0)" onclick="openCartDrawer()" class="inline-block px-10 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-105 transition-all active:scale-95">
+      End the Cycle of Pain — Get HerRelief Now
+    </a>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CLOSING CTA SECTION -->
+<!-- ============================================ -->
+<section class="relative bg-primary-container py-24 px-6 overflow-hidden">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 flex justify-center">
+      <img alt="HerRelief heating belt — clean product shot on white background" class="w-64 md:w-80 drop-shadow-xl" src="images/branded/hero-clean.jpg"/>
+    </div>
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight">Ready to feel the difference?</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">Your next period doesn't have to hurt. Join 600+ women who've already made the switch to drug-free relief.</p>
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <a href="javascript:void(0)" onclick="openCartDrawer()" class="w-full sm:w-auto px-10 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-105 transition-all active:scale-95 inline-block text-center">
+          Get Yours Now &mdash; $39.99
+        </a>
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-stone-500 line-through">$79.99</span>
+          <span class="text-secondary font-bold text-sm">50% Off &mdash; Only 47 left</span>
+        </div>
+      </div>
+      <!-- Trust badges -->
+      <div class="flex flex-wrap justify-center md:justify-start items-center gap-6 pt-2">
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+          Free Shipping
+        </div>
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          90-Day Guarantee
+        </div>
+        <div class="flex items-center gap-1.5 text-stone-500 text-xs font-semibold uppercase tracking-wider">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">lock</span>
+          Secure Checkout
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer class="bg-stone-50 w-full pt-16 pb-8 border-t border-surface-container">
+  <div class="flex flex-col items-center gap-8 px-6 text-center max-w-7xl mx-auto">
+    <a href="index.html"><span class="text-2xl font-bold"><span class="text-[#fe7e4f]">Her</span><span class="text-[#1a1c1a]">Relief</span></span></a>
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap justify-center items-center gap-8 py-4">
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">verified_user</span>
+        <span class="text-xs font-bold uppercase tracking-widest">90-Day Money Back</span>
+      </div>
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">local_shipping</span>
+        <span class="text-xs font-bold uppercase tracking-widest">Free Express Shipping</span>
+      </div>
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">lock</span>
+        <span class="text-xs font-bold uppercase tracking-widest">Secure Checkout</span>
+      </div>
+    </div>
+    <!-- Links -->
+    <div class="flex flex-wrap justify-center gap-8">
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="privacy-policy.html">Privacy Policy</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="terms.html">Terms of Service</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="refund-policy.html">Refund Policy</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="shipping-policy.html">Shipping Policy</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="contact.html">Contact Us</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="about.html">About Us</a>
+    </div>
+    <!-- Support email -->
+    <p class="text-stone-400 text-sm">Questions? <a href="mailto:support@herrelief.com" class="underline hover:text-rose-700 transition-colors">support@herrelief.com</a></p>
+    <!-- Payment Icons -->
+    <div class="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+      <span class="material-symbols-outlined text-3xl">credit_card</span>
+      <span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+      <span class="material-symbols-outlined text-3xl">contactless</span>
+    </div>
+    <p class="text-stone-400 font-sans text-sm">&copy; 2026 HerRelief. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- STICKY MOBILE CTA BAR -->
+<!-- ============================================ -->
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-xl border-t border-stone-200 px-4 py-3 sticky-bar-enter">
+  <div class="flex items-center justify-between gap-3">
+    <div>
+      <p class="font-bold text-sm text-on-surface">HerRelief</p>
+      <p class="text-xs text-on-surface-variant"><span class="text-secondary font-bold">$39.99</span> <span class="line-through text-stone-400">$79.99</span></p>
+    </div>
+    <a href="javascript:void(0)" onclick="openCartDrawer()" class="px-6 py-2.5 bg-secondary text-white rounded-full font-bold text-sm shadow-md active:scale-95 transition-transform inline-block text-center">
+      Add to Cart
+    </a>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- JAVASCRIPT -->
+<!-- ============================================ -->
+<script>
+// ===== IMAGE GALLERY =====
+function switchImage(btn, src, alt) {
+  var mainImg = document.getElementById('main-product-image');
+  mainImg.src = src;
+  mainImg.alt = alt;
+  // Update active thumbnail
+  var thumbs = document.querySelectorAll('.thumb-btn');
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].classList.remove('active');
+  }
+  btn.classList.add('active');
+}
+
+// ===== TABS =====
+(function() {
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.desktop-tab-panels .tab-panel');
+
+  for (var i = 0; i < tabBtns.length; i++) {
+    tabBtns[i].addEventListener('click', function() {
+      var target = this.getAttribute('data-tab');
+
+      // Deactivate all
+      for (var j = 0; j < tabBtns.length; j++) {
+        tabBtns[j].classList.remove('active');
+        tabBtns[j].classList.add('text-on-surface-variant');
+        tabBtns[j].classList.remove('text-on-surface');
+      }
+      for (var k = 0; k < tabPanels.length; k++) {
+        tabPanels[k].classList.remove('active');
+      }
+
+      // Activate target
+      this.classList.add('active');
+      this.classList.remove('text-on-surface-variant');
+      this.classList.add('text-on-surface');
+      document.getElementById('tab-' + target).classList.add('active');
+    });
+  }
+})();
+
+// ===== COUNTDOWN TIMER =====
+(function() {
+  // March 28, 2026 23:59:59 EST (UTC-5)
+  var saleEnd = new Date('2026-03-29T04:59:59Z').getTime();
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var diff = saleEnd - now;
+
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent = days < 10 ? '0' + days : days;
+    document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
+    document.getElementById('cd-mins').textContent = mins < 10 ? '0' + mins : mins;
+    document.getElementById('cd-secs').textContent = secs < 10 ? '0' + secs : secs;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+
+// ===== [#9] DYNAMIC "ORDER WITHIN" TIMER =====
+(function() {
+  function updateOrderWithin() {
+    var now = new Date();
+    // Calculate 5:00 PM EST today (UTC-5 = UTC offset depends on DST)
+    // Use EST = UTC-5 always for simplicity
+    var estOffset = -5;
+    var utcHour = now.getUTCHours();
+    var estHour = utcHour + estOffset;
+    if (estHour < 0) estHour += 24;
+
+    var estMinutes = now.getUTCMinutes();
+
+    // Target: 17:00 EST (5 PM)
+    var targetHour = 17;
+    var hoursLeft = targetHour - estHour - 1;
+    var minsLeft = 60 - estMinutes;
+    if (minsLeft === 60) {
+      minsLeft = 0;
+      hoursLeft += 1;
+    }
+
+    var owEl = document.getElementById('order-within');
+    var owH = document.getElementById('ow-hours');
+    var owM = document.getElementById('ow-mins');
+
+    if (hoursLeft < 0 || (hoursLeft === 0 && minsLeft === 0)) {
+      // Past 5 PM EST — show next day
+      owEl.innerHTML = '<span class="material-symbols-outlined text-xs align-middle mr-0.5" style="font-variation-settings: \'FILL\' 1;">bolt</span> Order now for next-business-day processing';
+    } else {
+      owH.textContent = hoursLeft;
+      owM.textContent = minsLeft;
+    }
+  }
+
+  updateOrderWithin();
+  setInterval(updateOrderWithin, 60000); // Update every minute
+})();
+
+// ===== AUTO-SWITCH TO REVIEWS TAB ON ANCHOR CLICK =====
+(function() {
+  var reviewLinks = document.querySelectorAll('a[href="#reviews-section"]');
+  for (var i = 0; i < reviewLinks.length; i++) {
+    reviewLinks[i].addEventListener('click', function() {
+      // Activate the reviews tab
+      var reviewsTabBtn = document.querySelector('.tab-btn[data-tab="reviews"]');
+      if (reviewsTabBtn) reviewsTabBtn.click();
+    });
+  }
+})();
+
+// ===== [#3] BUNDLE SELECTOR =====
+var currentBundleQty = 1;
+var currentBundleTotal = 39.99;
+
+function selectBundle(el) {
+  // Remove selected from all
+  var options = document.querySelectorAll('.bundle-option');
+  for (var i = 0; i < options.length; i++) {
+    options[i].classList.remove('selected');
+    var dot = options[i].querySelector('.bundle-dot');
+    dot.style.background = 'transparent';
+    var circle = options[i].querySelector('.bundle-dot').parentElement;
+    circle.style.borderColor = '#d2c3c4';
+  }
+  // Select this one
+  el.classList.add('selected');
+  var selectedDot = el.querySelector('.bundle-dot');
+  selectedDot.style.background = '#a43c12';
+  selectedDot.parentElement.style.borderColor = '#a43c12';
+
+  // Update price display
+  var total = parseFloat(el.getAttribute('data-total'));
+  var original = parseFloat(el.getAttribute('data-original'));
+  var discount = el.getAttribute('data-discount');
+  var qty = parseInt(el.getAttribute('data-bundle'));
+
+  currentBundleQty = qty;
+  currentBundleTotal = total;
+
+  document.getElementById('display-price').textContent = '$' + total.toFixed(2);
+  document.getElementById('display-original-price').textContent = '$' + original.toFixed(2);
+  document.getElementById('display-savings').textContent = 'Save $' + (original - total).toFixed(2);
+}
+
+// ===== [#4] ADD TO CART ANIMATION =====
+function handleAddToCart() {
+  var btn = document.getElementById('add-to-cart-btn');
+  var icon = document.getElementById('atc-icon');
+  var text = document.getElementById('atc-text');
+
+  // Change to checkmark state
+  btn.style.background = '#16a34a';
+  btn.style.pointerEvents = 'none';
+  icon.textContent = 'check_circle';
+  icon.classList.add('check-pop');
+  text.textContent = 'Added!';
+
+  // After animation, show OTO modal (once) or open cart drawer
+  setTimeout(function() {
+    var shownOto = (typeof showOtoModal === 'function') ? showOtoModal() : false;
+    if (!shownOto) {
+      openCartDrawer();
+    }
+    // Reset button state
+    setTimeout(function() {
+      btn.style.background = '';
+      btn.style.pointerEvents = '';
+      icon.textContent = 'shopping_cart';
+      icon.classList.remove('check-pop');
+      text.textContent = 'Add to Cart \u2014 Relief in Minutes';
+    }, 400);
+  }, 800);
+}
+
+// ===== [#6] FREQUENTLY BOUGHT TOGETHER =====
+function updateFbtTotal() {
+  var basePrice = 39.99;
+  var baseOriginal = 79.99;
+  var total = basePrice;
+  var original = baseOriginal;
+
+  if (document.getElementById('fbt-2').checked) {
+    total += 19.99;
+    original += 34.99;
+  }
+  if (document.getElementById('fbt-3').checked) {
+    total += 12.99;
+    original += 24.99;
+  }
+
+  document.getElementById('fbt-total').textContent = '$' + total.toFixed(2);
+  document.getElementById('fbt-original').textContent = '$' + original.toFixed(2);
+  document.getElementById('fbt-savings').textContent = 'You save $' + (original - total).toFixed(2) + '!';
+}
+
+function handleFbtAddAll() {
+  var btn = event.currentTarget;
+  var originalHTML = btn.innerHTML;
+  btn.style.background = '#16a34a';
+  btn.style.pointerEvents = 'none';
+  btn.innerHTML = '<span class="material-symbols-outlined text-lg align-middle mr-2 check-pop" style="font-variation-settings: \'FILL\' 1;">check_circle</span> Added to Cart!';
+
+  setTimeout(function() {
+    openCartDrawer();
+    // Reset button
+    setTimeout(function() {
+      btn.style.background = '';
+      btn.style.pointerEvents = '';
+      btn.innerHTML = originalHTML;
+    }, 400);
+  }, 800);
+}
+
+// ===== CART DRAWER =====
+// Price map for bundles
+var bundlePrices = {
+  1: { total: 39.99, original: 79.99, discount: 50, perUnit: 39.99 },
+  2: { total: 63.98, original: 159.98, discount: 60, perUnit: 31.99 },
+  3: { total: 83.97, original: 239.97, discount: 65, perUnit: 27.99 }
+};
+
+function openCartDrawer() {
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  updateDrawerPrices();
+}
+
+function closeCartDrawer() {
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function updateDrawerPrices() {
+  var qty = currentBundleQty;
+  var bundle = bundlePrices[qty] || bundlePrices[1];
+  var total = bundle.total;
+  var original = bundle.original;
+  var savings = original - total;
+
+  // Item count
+  document.getElementById('drawer-item-count').textContent = '(' + qty + (qty === 1 ? ' item' : ' items') + ')';
+
+  // Bundle label
+  document.getElementById('drawer-bundle-label').textContent = 'Qty: ' + qty + 'x' + (qty > 1 ? ' (' + bundle.discount + '% off bundle)' : '');
+
+  // Item price
+  document.getElementById('drawer-item-price').textContent = '$' + total.toFixed(2);
+  document.getElementById('drawer-item-original').textContent = '$' + original.toFixed(2);
+
+  // Summary
+  document.getElementById('drawer-subtotal').textContent = '$' + total.toFixed(2);
+  document.getElementById('drawer-discount').textContent = '-$' + savings.toFixed(2);
+  document.getElementById('drawer-total').textContent = '$' + total.toFixed(2);
+
+  // Afterpay
+  var afterpayAmt = (total / 4).toFixed(2);
+  document.getElementById('drawer-afterpay').innerHTML = 'or 4 payments of <strong class="text-on-surface">$' + afterpayAmt + '</strong> with <span class="font-bold">Afterpay</span>';
+
+  // Checkout button
+  document.getElementById('drawer-checkout-text').textContent = 'Checkout \u2014 $' + total.toFixed(2);
+}
+
+// Close drawer on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeCartDrawer();
+});
+</script>
+
+<!-- ============================================ -->
+<!-- CART DRAWER OVERLAY + SIDEBAR -->
+<!-- ============================================ -->
+<div class="cart-drawer-overlay" id="cart-overlay" onclick="closeCartDrawer()"></div>
+<div class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart">
+
+  <!-- Drawer Header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b border-surface-container">
+    <h2 class="font-headline text-xl text-on-surface">Your Cart <span id="drawer-item-count" class="text-sm font-body text-on-surface-variant">(1 item)</span></h2>
+    <button onclick="closeCartDrawer()" class="w-9 h-9 rounded-full hover:bg-surface-container-low flex items-center justify-center transition-colors" aria-label="Close cart">
+      <span class="material-symbols-outlined text-on-surface-variant">close</span>
+    </button>
+  </div>
+
+  <!-- Drawer Body (scrollable) -->
+  <div class="cart-drawer-body">
+
+    <!-- Cart Item: HerRelief -->
+    <div class="flex gap-4 py-5 border-b border-surface-container">
+      <div class="w-20 h-20 rounded-lg bg-surface-container-low flex-shrink-0 flex items-center justify-center p-1">
+        <img src="images/branded/hero-clean.jpg" alt="HerRelief heating belt" class="w-full h-full object-contain"/>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-sm text-on-surface leading-snug">HerRelief Heating &amp; Vibration Massage Belt</p>
+        <p class="text-xs text-on-surface-variant mt-0.5">Color: Blush Pink</p>
+        <p id="drawer-bundle-label" class="text-xs text-on-surface-variant">Qty: 1x</p>
+        <div class="flex items-center gap-2 mt-1.5">
+          <span id="drawer-item-price" class="font-bold text-secondary text-sm">$39.99</span>
+          <span id="drawer-item-original" class="text-xs text-stone-400 line-through">$79.99</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FREE GIFT (auto-added, non-removable) -->
+    <div class="free-gift-shimmer rounded-lg p-4 mt-4 border border-primary-container/40">
+      <div class="flex gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center">
+          <span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <p class="font-bold text-sm text-on-surface">Cycle Wellness Toolkit</p>
+            <span class="text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 px-2 py-0.5 rounded-full border border-green-200">FREE</span>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-0.5">PDF Guide + 5-Day Email Challenge</p>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="font-bold text-sm text-green-600">$0.00</span>
+            <span class="text-xs text-stone-400 line-through">$19.99 value</span>
+          </div>
+          <p class="text-[11px] text-on-surface-variant mt-1 flex items-center gap-1">
+            <span class="material-symbols-outlined" style="font-size: 12px;">email</span>
+            Delivered to your email after purchase
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email capture for free gift -->
+    <div class="mt-5">
+      <label for="drawer-email" class="text-sm font-semibold text-on-surface block mb-1.5">Email <span class="font-normal text-on-surface-variant">(for your free gift + order updates)</span></label>
+      <input type="email" id="drawer-email" name="email" required placeholder="you@example.com"
+             class="w-full px-4 py-2.5 border border-outline-variant rounded-lg text-sm text-on-surface bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"/>
+      <p class="text-[11px] text-on-surface-variant mt-1">We'll send your Cycle Wellness Toolkit here</p>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="mt-6 space-y-2.5">
+      <h3 class="font-bold text-sm text-on-surface uppercase tracking-wider">Order Summary</h3>
+      <div class="flex justify-between text-sm">
+        <span class="text-on-surface-variant">Subtotal</span>
+        <span id="drawer-subtotal" class="text-on-surface font-medium">$39.99</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-on-surface-variant">Free Gift</span>
+        <span class="text-green-600 font-medium">-$19.99</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-on-surface-variant">Shipping</span>
+        <span class="text-green-600 font-medium">FREE</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-on-surface-variant">Sale Discount</span>
+        <span id="drawer-discount" class="text-green-600 font-medium">-$40.00</span>
+      </div>
+      <div class="drawer-divider"></div>
+      <div class="flex justify-between items-center">
+        <span class="font-bold text-on-surface text-base">Total</span>
+        <span id="drawer-total" class="font-headline font-bold text-secondary text-2xl">$39.99</span>
+      </div>
+      <p id="drawer-afterpay" class="text-xs text-on-surface-variant text-right">or 4 payments of <strong class="text-on-surface">$10.00</strong> with <span class="font-bold">Afterpay</span></p>
+    </div>
+
+    <!-- Checkout Button -->
+    <a href="https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e" id="drawer-checkout-btn"
+       class="block w-full mt-5 px-8 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95 text-center">
+      <span class="material-symbols-outlined text-lg align-middle mr-2" style="font-variation-settings: 'FILL' 1;">lock</span>
+      <span id="drawer-checkout-text">Checkout &mdash; $39.99</span>
+    </a>
+
+    <!-- Trust badges -->
+    <div class="flex items-center justify-center gap-5 mt-4 pt-4 border-t border-surface-container">
+      <div class="flex items-center gap-1 text-stone-500 text-[11px] font-semibold uppercase tracking-wider">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
+        Secure SSL
+      </div>
+      <div class="flex items-center gap-1 text-stone-500 text-[11px] font-semibold uppercase tracking-wider">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        90-Day Guarantee
+      </div>
+      <div class="flex items-center gap-1 text-stone-500 text-[11px] font-semibold uppercase tracking-wider">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+        Free Shipping
+      </div>
+    </div>
+
+    <!-- Encrypted checkout note -->
+    <p class="text-center text-[11px] text-stone-400 mt-3 pb-2">
+      <span class="material-symbols-outlined text-xs align-middle mr-0.5">shield</span>
+      Secure 256-bit SSL encrypted checkout
+    </p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- OTO UPSELL MODAL -->
+<!-- ============================================ -->
+<div id="oto-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeOtoModal(false)"></div>
+  <!-- Modal Card -->
+  <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-[90%] mx-auto p-8 text-center space-y-5 z-10">
+    <span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+    <h3 class="font-headline text-2xl text-on-surface">Wait — exclusive one-time offer!</h3>
+    <p class="text-on-surface-variant text-sm leading-relaxed">Add a <strong class="text-on-surface">USB-C Power Bank</strong> for just <strong class="text-secondary">$9.99</strong> <span class="line-through text-stone-400">$19.99</span> — this deal won't appear again.</p>
+    <div class="space-y-3 pt-2">
+      <button onclick="closeOtoModal(true)" class="w-full px-8 py-3.5 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95 cursor-pointer border-0">
+        Yes, Add It — $9.99
+      </button>
+      <button onclick="closeOtoModal(false)" class="w-full px-8 py-3 bg-transparent text-on-surface-variant rounded-full font-medium text-sm hover:bg-surface-container transition-colors cursor-pointer border border-outline-variant">
+        No thanks, just the belt
+      </button>
+    </div>
+    <p class="text-[11px] text-stone-400">50% off — only available right now</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ADDITIONAL CONVERSION SCRIPTS -->
+<!-- ============================================ -->
+<script>
+// ===== [Feature 1] LIVE VIEWER COUNT =====
+(function() {
+  function randomViewers() {
+    return Math.floor(Math.random() * (24 - 8 + 1)) + 8;
+  }
+  var el = document.getElementById('live-viewers');
+  if (el) {
+    el.textContent = randomViewers();
+    setInterval(function() {
+      el.textContent = randomViewers();
+    }, 30000);
+  }
+})();
+
+// ===== [Feature 2] OTO UPSELL MODAL =====
+var otoShown = false;
+
+function showOtoModal() {
+  if (otoShown) return false;
+  otoShown = true;
+  var modal = document.getElementById('oto-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  return true;
+}
+
+function closeOtoModal(accepted) {
+  var modal = document.getElementById('oto-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+  // Open cart drawer after modal closes
+  openCartDrawer();
+}
+
+// ===== [Feature 5] REVIEW FILTER BUTTONS =====
+(function() {
+  var filterBtns = document.querySelectorAll('.review-filter-btn');
+  var reviewCards = document.querySelectorAll('.review-card');
+
+  for (var i = 0; i < filterBtns.length; i++) {
+    filterBtns[i].addEventListener('click', function() {
+      var filter = this.getAttribute('data-filter');
+
+      // Update active state
+      for (var j = 0; j < filterBtns.length; j++) {
+        filterBtns[j].classList.remove('active', 'bg-secondary', 'text-white');
+        filterBtns[j].classList.add('bg-surface-container', 'text-on-surface-variant');
+      }
+      this.classList.add('active', 'bg-secondary', 'text-white');
+      this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+      // Filter cards
+      for (var k = 0; k < reviewCards.length; k++) {
+        var tags = reviewCards[k].getAttribute('data-tags') || '';
+        if (filter === 'all' || tags.indexOf(filter) !== -1) {
+          reviewCards[k].style.display = '';
+        } else {
+          reviewCards[k].style.display = 'none';
+        }
+      }
+    });
+  }
+})();
+</script>
+
+<!-- Tracking & Analytics -->
+<script src="tracking.js"></script>
+<script src="email-popup.js"></script>
+</body></html>

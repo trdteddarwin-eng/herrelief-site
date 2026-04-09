@@ -1,0 +1,852 @@
+<!-- ============================================ -->
+<!-- SEE IT IN ACTION — TIKTOK VIDEO SECTION -->
+<!-- ============================================ -->
+<style>
+  /* TikTok Section Styles */
+  .tiktok-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0;
+  }
+  .tiktok-carousel::-webkit-scrollbar { display: none; }
+
+  .tiktok-card {
+    flex: 0 0 auto;
+    width: 220px;
+    aspect-ratio: 9 / 16;
+    scroll-snap-align: start;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    background: #1a1c1a;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tiktok-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+
+  @media (min-width: 768px) {
+    .tiktok-card { width: 240px; }
+  }
+  @media (min-width: 1024px) {
+    .tiktok-card { width: 260px; }
+  }
+
+  .tiktok-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Skeleton loader shimmer */
+  .tiktok-skeleton {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+  }
+  .tiktok-skeleton.loaded { opacity: 0; pointer-events: none; }
+
+  .tiktok-skeleton-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, #efeeeb 8%, #f4f3f1 18%, #efeeeb 33%);
+    background-size: 200% 100%;
+    animation: tiktok-shimmer 1.5s linear infinite;
+  }
+  @keyframes tiktok-shimmer {
+    to { background-position: -200% 0; }
+  }
+
+  .tiktok-skeleton-play {
+    position: relative;
+    z-index: 6;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fadadd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(164, 60, 18, 0.15);
+  }
+  .tiktok-skeleton-play svg {
+    width: 24px;
+    height: 24px;
+    fill: #a43c12;
+    margin-left: 3px;
+  }
+
+  /* Dark gradient overlay for text readability */
+  .tiktok-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.75) 0%,
+      rgba(0,0,0,0.0) 40%,
+      rgba(0,0,0,0.0) 80%,
+      rgba(0,0,0,0.2) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Play/pause overlay button */
+  .tiktok-play-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .tiktok-play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .tiktok-card:hover .tiktok-play-btn,
+  .tiktok-card.paused .tiktok-play-btn {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .tiktok-play-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+  }
+  .tiktok-play-btn .icon-pause { display: none; }
+  .tiktok-card.paused .tiktok-play-btn .icon-play { display: block; }
+  .tiktok-card.paused .tiktok-play-btn .icon-pause { display: none; }
+  .tiktok-card:not(.paused) .tiktok-play-btn .icon-play { display: none; }
+  .tiktok-card:not(.paused) .tiktok-play-btn .icon-pause { display: block; }
+
+  /* Bottom-left author info */
+  .tiktok-author-info {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 56px;
+    z-index: 20;
+    color: white;
+  }
+  .tiktok-author-name {
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .tiktok-author-desc {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    opacity: 0.85;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 2px;
+  }
+
+  /* Right-side action buttons (TikTok-style) */
+  .tiktok-actions {
+    position: absolute;
+    bottom: 12px;
+    right: 8px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .tiktok-action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+  .tiktok-action-item:active { transform: scale(1.2); }
+  .tiktok-action-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tiktok-action-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+  .tiktok-action-count {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  /* Mute indicator */
+  .tiktok-mute-indicator {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 20;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .tiktok-mute-indicator:hover { background: rgba(0,0,0,0.6); }
+  .tiktok-mute-indicator svg {
+    width: 14px;
+    height: 14px;
+    fill: white;
+  }
+
+  /* TikTok watermark */
+  .tiktok-watermark {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .tiktok-watermark svg { width: 14px; height: 14px; fill: white; }
+  .tiktok-watermark span {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  /* View count badge (top area) */
+  .tiktok-views-badge {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    opacity: 0.8;
+  }
+
+  /* Navigation arrows (desktop) */
+  .tiktok-nav-arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    border: 1px solid rgba(210, 195, 196, 0.3);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tiktok-nav-arrow:hover {
+    background: #fadadd;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .tiktok-nav-arrow:active { transform: translateY(-50%) scale(0.95); }
+  .tiktok-nav-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #70585b;
+  }
+  .tiktok-nav-prev { left: -22px; }
+  .tiktok-nav-next { right: -22px; }
+
+  @media (min-width: 768px) {
+    .tiktok-nav-arrow { display: flex; }
+  }
+
+  /* Music note animation (header icon) */
+  .tiktok-music-note {
+    display: inline-flex;
+    animation: tiktok-note-bounce 2s ease-in-out infinite;
+  }
+  @keyframes tiktok-note-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(-5deg); }
+    75% { transform: translateY(-3px) rotate(5deg); }
+  }
+
+  /* TikTok embed container */
+  .tiktok-embed-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0;
+  }
+  .tiktok-embed-container::-webkit-scrollbar { display: none; }
+  .tiktok-embed-card {
+    flex: 0 0 auto;
+    width: 320px;
+    scroll-snap-align: start;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  /* Progress bar at bottom of video */
+  .tiktok-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 25;
+    background: rgba(255,255,255,0.2);
+  }
+  .tiktok-progress-bar {
+    height: 100%;
+    background: #fe7e4f;
+    width: 0%;
+    transition: width 0.25s linear;
+  }
+</style>
+
+<section id="tiktok-section" class="py-16 px-6 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-container text-on-primary-container rounded-full text-sm font-medium mb-4">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+        Real Customer Videos
+      </div>
+      <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-3">See It In Action</h2>
+      <p class="text-on-surface-variant text-base max-w-lg mx-auto">Real women, real relief &mdash; hear what they have to say</p>
+    </div>
+
+    <!-- Video Carousel -->
+    <div class="relative" id="tiktok-carousel-wrapper">
+
+      <!-- Left Arrow -->
+      <button class="tiktok-nav-arrow tiktok-nav-prev" id="tiktok-prev" aria-label="Previous videos">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+
+      <!-- Carousel -->
+      <div class="tiktok-carousel" id="tiktok-carousel">
+        <!-- Cards are generated by JS -->
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="tiktok-nav-arrow tiktok-nav-next" id="tiktok-next" aria-label="Next videos">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+
+    <!-- TikTok Embeds Container (hidden by default, used by loadTikTokEmbeds) -->
+    <div class="tiktok-embed-container hidden mt-8" id="tiktok-embed-carousel"></div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-10">
+      <p class="text-on-surface-variant text-sm mb-4">Join 600+ women who found relief without pills</p>
+      <a href="cart.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-8 py-3.5 rounded-full font-bold text-base shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+        Get Yours &mdash; $39.99
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  'use strict';
+
+  /* -------------------------------------------------- */
+  /*  SVG icon fragments                                 */
+  /* -------------------------------------------------- */
+  const ICONS = {
+    play: '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
+    pause: '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>',
+    heart: '<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>',
+    share: '<svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>',
+    volumeOff: '<svg viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>',
+    volumeOn: '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.89 2.89 2.89 0 0 1 2.88-2.89c.28 0 .54.04.79.1V9.01a6.26 6.26 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.23 8.23 0 0 0 3.76.92V6.22a4.83 4.83 0 0 1 0 .47z"/></svg>',
+    eye: '<svg viewBox="0 0 24 24" width="10" height="10"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="white"/></svg>'
+  };
+
+  const NUM_SLOTS = 6;
+  const carousel = document.getElementById('tiktok-carousel');
+  const prevBtn = document.getElementById('tiktok-prev');
+  const nextBtn = document.getElementById('tiktok-next');
+  let cards = [];
+  let currentlyPlaying = null;
+
+  /* -------------------------------------------------- */
+  /*  Build empty card shells                            */
+  /* -------------------------------------------------- */
+  function buildCardShell(index) {
+    const card = document.createElement('div');
+    card.className = 'tiktok-card paused';
+    card.dataset.index = index;
+
+    card.innerHTML = `
+      <!-- Skeleton loader -->
+      <div class="tiktok-skeleton" data-skeleton>
+        <div class="tiktok-skeleton-bg"></div>
+        <div class="tiktok-skeleton-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <!-- Video element -->
+      <video
+        playsinline
+        loop
+        muted
+        preload="none"
+        poster=""
+        data-video
+      ></video>
+
+      <!-- Dark overlay -->
+      <div class="tiktok-overlay-gradient"></div>
+
+      <!-- Watermark removed -->
+
+      <!-- Mute toggle -->
+      <div class="tiktok-mute-indicator" data-mute-btn title="Toggle sound">
+        ${ICONS.volumeOff}
+      </div>
+
+      <!-- Play/pause overlay -->
+      <div class="tiktok-play-overlay" data-play-overlay>
+        <div class="tiktok-play-btn">
+          <span class="icon-play">${ICONS.play}</span>
+          <span class="icon-pause">${ICONS.pause}</span>
+        </div>
+      </div>
+
+      <!-- Author info bottom-left -->
+      <div class="tiktok-author-info">
+        <div class="tiktok-author-name" data-author>@creator</div>
+        <div class="tiktok-author-desc" data-desc>Loading...</div>
+      </div>
+
+      <!-- TikTok-style action buttons (right side) -->
+      <div class="tiktok-actions">
+        <div class="tiktok-action-item" data-like-btn>
+          <div class="tiktok-action-icon">${ICONS.heart}</div>
+          <span class="tiktok-action-count" data-likes>0</span>
+        </div>
+        <div class="tiktok-action-item" data-share-btn>
+          <div class="tiktok-action-icon">${ICONS.share}</div>
+          <span class="tiktok-action-count">Share</span>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="tiktok-progress">
+        <div class="tiktok-progress-bar" data-progress></div>
+      </div>
+    `;
+
+    return card;
+  }
+
+  /* -------------------------------------------------- */
+  /*  Initialize cards                                   */
+  /* -------------------------------------------------- */
+  for (let i = 0; i < NUM_SLOTS; i++) {
+    const card = buildCardShell(i);
+    carousel.appendChild(card);
+    cards.push(card);
+  }
+
+  /* -------------------------------------------------- */
+  /*  Play / pause logic                                 */
+  /* -------------------------------------------------- */
+  function playVideo(card) {
+    const video = card.querySelector('[data-video]');
+    if (!video.src && !video.querySelector('source')) return;
+
+    // Pause any other playing video
+    if (currentlyPlaying && currentlyPlaying !== card) {
+      pauseVideo(currentlyPlaying);
+    }
+
+    video.play().then(() => {
+      card.classList.remove('paused');
+      currentlyPlaying = card;
+    }).catch(() => {
+      // Autoplay blocked — keep paused state
+    });
+  }
+
+  function pauseVideo(card) {
+    const video = card.querySelector('[data-video]');
+    video.pause();
+    card.classList.add('paused');
+    if (currentlyPlaying === card) currentlyPlaying = null;
+  }
+
+  function togglePlay(card) {
+    const video = card.querySelector('[data-video]');
+    if (video.paused) {
+      playVideo(card);
+    } else {
+      pauseVideo(card);
+    }
+  }
+
+  function toggleMute(card) {
+    const video = card.querySelector('[data-video]');
+    const muteBtn = card.querySelector('[data-mute-btn]');
+    video.muted = !video.muted;
+    muteBtn.innerHTML = video.muted ? ICONS.volumeOff : ICONS.volumeOn;
+  }
+
+  /* -------------------------------------------------- */
+  /*  Progress bar update                                */
+  /* -------------------------------------------------- */
+  function setupProgressUpdater(card) {
+    const video = card.querySelector('[data-video]');
+    const progressBar = card.querySelector('[data-progress]');
+
+    video.addEventListener('timeupdate', function() {
+      if (video.duration) {
+        const pct = (video.currentTime / video.duration) * 100;
+        progressBar.style.width = pct + '%';
+      }
+    });
+  }
+
+  /* -------------------------------------------------- */
+  /*  Event delegation                                   */
+  /* -------------------------------------------------- */
+  cards.forEach(function(card) {
+    const playOverlay = card.querySelector('[data-play-overlay]');
+    const muteBtn = card.querySelector('[data-mute-btn]');
+    const likeBtn = card.querySelector('[data-like-btn]');
+
+    playOverlay.addEventListener('click', function(e) {
+      e.stopPropagation();
+      togglePlay(card);
+    });
+
+    muteBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleMute(card);
+    });
+
+    likeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const icon = likeBtn.querySelector('.tiktok-action-icon svg');
+      if (icon) icon.style.fill = '#fe2c55';
+      likeBtn.style.transform = 'scale(1.15)';
+      setTimeout(function() { likeBtn.style.transform = ''; }, 200);
+    });
+
+    setupProgressUpdater(card);
+  });
+
+  /* -------------------------------------------------- */
+  /*  IntersectionObserver — autoplay when visible       */
+  /* -------------------------------------------------- */
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      const card = entry.target;
+      const video = card.querySelector('[data-video]');
+      if (!video.src && !video.querySelector('source')) return;
+
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+        playVideo(card);
+      } else if (!entry.isIntersecting) {
+        pauseVideo(card);
+      }
+    });
+  }, {
+    threshold: [0, 0.6],
+    rootMargin: '0px'
+  });
+
+  cards.forEach(function(card) { observer.observe(card); });
+
+  /* -------------------------------------------------- */
+  /*  Navigation arrows                                  */
+  /* -------------------------------------------------- */
+  const scrollAmount = 280;
+
+  prevBtn.addEventListener('click', function() {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', function() {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  /* -------------------------------------------------- */
+  /*  loadTikTokVideos(videos) — public API              */
+  /* -------------------------------------------------- */
+  window.loadTikTokVideos = function(videos) {
+    if (!Array.isArray(videos)) return;
+
+    videos.forEach(function(data, i) {
+      if (i >= cards.length) return;
+      var card = cards[i];
+      var video = card.querySelector('[data-video]');
+      var skeleton = card.querySelector('[data-skeleton]');
+      var author = card.querySelector('[data-author]');
+      var desc = card.querySelector('[data-desc]');
+      var likes = card.querySelector('[data-likes]');
+
+      // Set author info immediately
+      if (data.author) author.textContent = data.author;
+      if (data.description) desc.textContent = data.description;
+      if (data.likes) likes.textContent = data.likes;
+
+      // Set thumbnail as poster
+      if (data.thumbnail) {
+        video.poster = data.thumbnail;
+      }
+
+      // Set video source
+      if (data.src) {
+        video.src = data.src;
+        video.preload = 'metadata';
+
+        video.addEventListener('loadeddata', function handler() {
+          skeleton.classList.add('loaded');
+          video.removeEventListener('loadeddata', handler);
+        }, { once: true });
+
+        // Fallback: hide skeleton after 3s even if loadeddata doesn't fire
+        setTimeout(function() {
+          skeleton.classList.add('loaded');
+        }, 3000);
+      }
+    });
+
+    // Hide unused card slots
+    for (var j = videos.length; j < cards.length; j++) {
+      cards[j].style.display = 'none';
+    }
+  };
+
+  /* -------------------------------------------------- */
+  /*  loadTikTokEmbeds(urls) — native embeds fallback   */
+  /* -------------------------------------------------- */
+  window.loadTikTokEmbeds = function(urls) {
+    if (!Array.isArray(urls) || urls.length === 0) return;
+
+    var embedContainer = document.getElementById('tiktok-embed-carousel');
+    embedContainer.classList.remove('hidden');
+    embedContainer.innerHTML = '';
+
+    // Hide the video carousel
+    document.getElementById('tiktok-carousel-wrapper').style.display = 'none';
+
+    urls.forEach(function(url) {
+      // Extract video ID from TikTok URL
+      var match = url.match(/video\/(\d+)/);
+      if (!match) return;
+      var videoId = match[1];
+
+      var wrapper = document.createElement('div');
+      wrapper.className = 'tiktok-embed-card';
+
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.tiktok.com/embed/v2/' + videoId;
+      iframe.style.cssText = 'width:100%;height:100%;min-height:580px;border:none;border-radius:1rem;';
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('allow', 'encrypted-media;');
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups');
+
+      wrapper.appendChild(iframe);
+      embedContainer.appendChild(wrapper);
+    });
+
+    // Load TikTok embed script
+    if (!document.querySelector('script[src*="tiktok.com/embed.js"]')) {
+      var script = document.createElement('script');
+      script.src = 'https://www.tiktok.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  };
+
+  /* -------------------------------------------------- */
+  /*  Hardcoded example data (placeholder)               */
+  /* -------------------------------------------------- */
+  loadTikTokVideos([
+    {
+      src: "tiktok_videos/ugc_1.mp4",
+      author: "@3astafricangirl",
+      description: "#pms #period #periods #periodcramps #tiktokshop",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_2.mp4",
+      author: "@homeuxyml5j",
+      description: "Portable heating pad for when it's that time of the month but you're a mom",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_3.mp4",
+      author: "@kendralatrice4",
+      description: "Portable heating pad! Lifesaver & Pain reliever! #cramps #periodrelief",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_4.mp4",
+      author: "@blasianliv",
+      description: "the girls get it \ud83e\udea9\ud83d\ude18 #girl #cramping #portableheatingpad",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_5.mp4",
+      author: "@carlisclearance",
+      description: "this one is for my girlies \u2764\ufe0f #periodcramps #periodpad #crampsreliever",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_6.mp4",
+      author: "@mae_snyder",
+      description: "She vibrates too \ud83e\udd2a if yall suffer from horrible cramps this is amazing #periodcramps",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_8.mp4",
+      author: "@alisonrenee33",
+      description: "Ladies, YOU need this if you deal with cramps! #cramps #heatingpad #massager",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_9.mp4",
+      author: "@aj_strong7",
+      description: "i wear this all the time when i'm cramping",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_10.mp4",
+      author: "@pretty.lizzii",
+      description: "I dont go anywhere without this heating pad when my cycle on \ud83d\ude02 #heatingpad #relatable",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_11.mp4",
+      author: "@_b.key",
+      description: "Ladies grab this for you or your daughters while there's a deal on them!! Great product",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/ugc_12.mp4",
+      author: "@jairesemaj",
+      description: "Portable Heating Pad \ud83e\udd0d it gets hot!!!!! #portableheatingpad #heatingpad",
+      views: "New",
+      likes: ""
+    },
+    {
+      src: "tiktok_videos/7582793973551435021.mp4",
+      author: "@nalanibeilhart",
+      description: "This x heating pad combo \ud83d\ude0d #period #fyp",
+      views: "9M",
+      likes: "1.2M"
+    },
+    {
+      src: "tiktok_videos/7326713113523375403.mp4",
+      author: "@purrvanaco",
+      description: "When the period cramps hit hard, there's only one option!",
+      views: "7.1M",
+      likes: "54.9K"
+    },
+    {
+      src: "tiktok_videos/7493966650849578286.mp4",
+      author: "@mrs.martinez.vazquez",
+      description: "Bad back pain #musthaves #massager #relief #period",
+      views: "2.4M",
+      likes: "100.6K"
+    },
+    {
+      src: "tiktok_videos/7607898652765441301.mp4",
+      author: "@pkmart.xyz",
+      description: "When your him gave you this \ud83e\ude77 #heatingpad #cramprelief",
+      views: "1.5M",
+      likes: "21.4K"
+    },
+    {
+      src: "tiktok_videos/7342718396032634155.mp4",
+      author: "@her.haven._",
+      description: "#period #periodrelief #periodtips #shecare",
+      views: "1M",
+      likes: "26.1K"
+    },
+    {
+      src: "tiktok_videos/7335636779158080776.mp4",
+      author: "@kosi_au",
+      description: "Huge hit with people suffering during their periods \u2764\ufe0f #periodpain #endo",
+      views: "790.5K",
+      likes: "65.6K"
+    }
+  ]);
+
+})();
+</script>

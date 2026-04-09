@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us — HerRelief</title>
+<meta name="description" content="HerRelief was created to give women a drug-free, reusable solution for period cramp relief. Learn our story and mission."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-tint": "#70585b",
+          "primary-container": "#fadadd",
+          "on-primary-fixed": "#281719",
+          "on-secondary-container": "#6b1f00",
+          "on-tertiary-fixed": "#22191a",
+          "tertiary-fixed": "#efdfdf",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "background": "#faf9f6",
+          "on-primary": "#ffffff",
+          "surface-container-low": "#f4f3f1",
+          "on-secondary-fixed": "#380c00",
+          "on-primary-container": "#765e61",
+          "primary": "#70585b",
+          "tertiary-fixed-dim": "#d3c3c3",
+          "surface-bright": "#faf9f6",
+          "outline-variant": "#d2c3c4",
+          "primary-fixed": "#fbdbde",
+          "secondary": "#a43c12",
+          "secondary-container": "#fe7e4f",
+          "inverse-on-surface": "#f2f1ee",
+          "on-error-container": "#93000a",
+          "tertiary-container": "#efdede",
+          "primary-fixed-dim": "#debfc2",
+          "on-primary-fixed-variant": "#574144",
+          "inverse-primary": "#debfc2",
+          "secondary-fixed": "#ffdbcf",
+          "surface-variant": "#e3e2e0",
+          "surface": "#faf9f6",
+          "inverse-surface": "#2f312f",
+          "error-container": "#ffdad6",
+          "outline": "#807475",
+          "surface-dim": "#dbdad7",
+          "on-secondary-fixed-variant": "#822800",
+          "error": "#ba1a1a",
+          "on-surface-variant": "#4f4445",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#6d6161",
+          "surface-container-highest": "#e3e2e0",
+          "on-tertiary-fixed-variant": "#4f4444",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#ffb59c",
+          "surface-container": "#efeeeb",
+          "on-background": "#1a1c1a",
+          "surface-container-high": "#e9e8e5",
+          "tertiary": "#675c5c",
+          "on-surface": "#1a1c1a"
+        },
+        fontFamily: {
+          "headline": ["Noto Serif"],
+          "body": ["Plus Jakarta Sans"],
+          "label": ["Plus Jakarta Sans"]
+        },
+        borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .gradient-divider {
+    background: linear-gradient(90deg, transparent, #fe7e4f55, transparent);
+    height: 1px;
+  }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-container">
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="bg-primary text-on-primary text-center py-2.5 px-4 text-sm font-medium tracking-wide">
+  <span class="inline-flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+    Spring Sale — 50% Off &middot; Free Shipping on all orders
+    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+  </span>
+</div>
+
+<!-- TOP NAV BAR -->
+<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm shadow-rose-900/5">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="flex items-center gap-1">
+     <svg width="180" height="36" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+       <defs>
+         <linearGradient id="nav-logo-grad-idx" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" stop-color="#a43c12"/>
+           <stop offset="100%" stop-color="#fe7e4f"/>
+         </linearGradient>
+       </defs>
+       <g transform="translate(5, 3)">
+         <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#nav-logo-grad-idx)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#nav-logo-grad-idx)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#nav-logo-grad-idx)" stroke-width="2" stroke-linecap="round"/>
+         <circle cx="4" cy="16" r="3" fill="#a43c12" opacity="0.3"/>
+         <circle cx="56" cy="16" r="3" fill="#fe7e4f" opacity="0.3"/>
+       </g>
+       <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+         <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+       </text>
+     </svg>
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="index.html#benefits">Benefits</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="index.html#how-it-works">How It Works</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="index.html#reviews">Reviews</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="index.html#faq">FAQ</a>
+      <a href="product.html" class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-semibold hover:opacity-80 transition-all duration-300 active:scale-95 inline-block">Shop Now</a>
+    </div>
+    <button class="md:hidden text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
+    <a class="block text-stone-600 hover:text-rose-900" href="index.html#benefits">Benefits</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="index.html#how-it-works">How It Works</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="index.html#reviews">Reviews</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="index.html#faq">FAQ</a>
+    <a href="product.html" class="block bg-secondary text-on-secondary px-6 py-2 rounded-full font-semibold text-center hover:opacity-80 transition-all duration-300">Shop Now</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="overflow-hidden">
+
+  <!-- HERO / BRAND STORY -->
+  <section class="relative py-20 md:py-28 px-6 text-center overflow-hidden">
+    <!-- Soft background blob -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary-container/30 blur-3xl"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto space-y-6">
+      <p class="text-secondary font-semibold text-sm uppercase tracking-widest">Our Story</p>
+      <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-on-surface leading-tight">
+        Created by women,<br/>
+        <span class="text-secondary-container" style="color:#fe7e4f;">for every woman</span>
+      </h1>
+      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+        Every month, hundreds of millions of women power through debilitating cramps — reaching for painkillers, hot water bottles, or simply enduring the pain. We believed there had to be a better way.
+      </p>
+    </div>
+  </section>
+
+  <div class="gradient-divider max-w-4xl mx-auto"></div>
+
+  <!-- ORIGIN STORY -->
+  <section class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Story text -->
+      <div class="space-y-6">
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface">Why HerRelief exists</h2>
+        <p class="text-on-surface-variant leading-relaxed">
+          HerRelief started with a simple frustration: why does managing period pain still mean choosing between drowsy painkillers, messy patches, or burning your lap with a fixed heating pad?
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          We spent months researching, testing, and listening to women about what they actually needed — something wearable, wireless, and discreet enough to wear through a work meeting or a yoga class. Something that gives real, targeted heat exactly where the cramps hit, without a single pill.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          The result is the HerRelief heating massage belt — a drug-free, reusable belt with 5 heat settings and vibration massage, designed to wrap around your lower abdomen and get to work in minutes.
+        </p>
+      </div>
+
+      <!-- Stats card -->
+      <div class="bg-primary-container/40 rounded-lg p-8 space-y-6">
+        <div class="text-center space-y-1">
+          <p class="font-headline text-5xl font-bold text-secondary">80%</p>
+          <p class="text-on-surface-variant text-sm leading-snug">of women experience period pain each month<sup class="text-xs">*</sup></p>
+        </div>
+        <div class="gradient-divider"></div>
+        <div class="text-center space-y-1">
+          <p class="font-headline text-5xl font-bold text-secondary">600+</p>
+          <p class="text-on-surface-variant text-sm leading-snug">women now managing cramps drug-free with HerRelief</p>
+        </div>
+        <div class="gradient-divider"></div>
+        <div class="text-center space-y-1">
+          <p class="font-headline text-5xl font-bold text-secondary">90</p>
+          <p class="text-on-surface-variant text-sm leading-snug">day money-back guarantee — because we stand behind every belt</p>
+        </div>
+        <p class="text-xs text-outline text-center">*WHO estimate on primary dysmenorrhea prevalence</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="gradient-divider max-w-4xl mx-auto"></div>
+
+  <!-- MISSION -->
+  <section class="py-20 px-6 bg-surface-container-low">
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <p class="text-secondary font-semibold text-sm uppercase tracking-widest">Our Mission</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface">Empower women to take control of their comfort</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">
+        No one should have to rely on painkillers just to get through their day. Our mission is to give every woman a safe, effective, and reusable alternative — so that period pain never has to slow her down.
+      </p>
+      <p class="text-on-surface-variant leading-relaxed">
+        We believe comfort is not a luxury. It's something every woman deserves access to, cycle after cycle, without side effects, without waste, and without compromise.
+      </p>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">What we stand for</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface">Our Values</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Value 1 -->
+      <div class="bg-white rounded-lg border border-outline-variant/30 p-8 text-center space-y-4 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mx-auto">
+          <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+        </div>
+        <h3 class="font-headline text-xl font-bold text-on-surface">Drug-Free Relief</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          We fundamentally believe your body should not need medication to get through a natural cycle. Heat therapy and vibration massage are time-tested, side-effect-free, and effective — that's what we build around.
+        </p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="bg-white rounded-lg border border-outline-variant/30 p-8 text-center space-y-4 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mx-auto">
+          <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        </div>
+        <h3 class="font-headline text-xl font-bold text-on-surface">Quality &amp; Safety</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Every HerRelief belt is built with premium materials, auto shut-off safety features, and carefully calibrated heat levels. We don't cut corners — because the product sits against your body.
+        </p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="bg-white rounded-lg border border-outline-variant/30 p-8 text-center space-y-4 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mx-auto">
+          <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+        </div>
+        <h3 class="font-headline text-xl font-bold text-on-surface">Customer First</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Our 90-day money-back guarantee isn't fine print — it's a genuine promise. If HerRelief doesn't help you, we'll give you a full refund. Your relief matters more to us than the sale.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="gradient-divider max-w-4xl mx-auto"></div>
+
+  <!-- COMMITMENT SECTION -->
+  <section class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Commitments list -->
+      <div class="space-y-5">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-widest">Our Commitment</p>
+        <h2 class="font-headline text-3xl font-bold text-on-surface">A better period experience, every time</h2>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <div>
+              <p class="font-semibold text-on-surface text-sm">Reusable &amp; eco-friendly</p>
+              <p class="text-on-surface-variant text-sm">No more disposable heat patches. One belt, thousands of uses.</p>
+            </div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <div>
+              <p class="font-semibold text-on-surface text-sm">Wearable &amp; wireless</p>
+              <p class="text-on-surface-variant text-sm">Wear it under your clothes. Live your day, not around your cramps.</p>
+            </div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <div>
+              <p class="font-semibold text-on-surface text-sm">Fast-acting relief</p>
+              <p class="text-on-surface-variant text-sm">Targeted heat reaches your lower abdomen in minutes.</p>
+            </div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <div>
+              <p class="font-semibold text-on-surface text-sm">Transparent &amp; honest</p>
+              <p class="text-on-surface-variant text-sm">No inflated claims. We tell you exactly what the belt does — and back it with a real guarantee.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pull quote -->
+      <div class="bg-primary-container/50 rounded-lg p-10 space-y-5">
+        <span class="material-symbols-outlined text-4xl text-secondary/50" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+        <p class="font-headline text-xl font-bold text-on-surface leading-snug italic">
+          "We built HerRelief because no one should have to choose between functioning and being in pain."
+        </p>
+        <p class="text-on-surface-variant text-sm">— The HerRelief Team</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-20 px-6 bg-primary-container/40">
+    <div class="max-w-2xl mx-auto text-center space-y-6">
+      <p class="text-secondary font-semibold text-sm uppercase tracking-widest">Ready to feel the difference?</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface">Try HerRelief — risk free for 90 days</h2>
+      <p class="text-on-surface-variant leading-relaxed">
+        Join 600+ women who've reclaimed their days. At $39.99 (50% off), it's less than a single month of painkillers — and it lasts for years.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+        <a
+          href="product.html"
+          class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-semibold text-lg hover:opacity-90 active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2"
+        >
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+          Shop Now — $39.99
+        </a>
+        <a
+          href="contact.html"
+          class="border border-secondary text-secondary px-10 py-4 rounded-full font-semibold text-lg hover:bg-secondary/5 active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2"
+        >
+          Get in Touch
+        </a>
+      </div>
+      <p class="text-on-surface-variant text-sm">Free shipping &middot; 90-day money-back guarantee &middot; No questions asked</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-stone-50 w-full pt-16 pb-8 border-t border-surface-container">
+  <div class="flex flex-col items-center gap-8 px-6 text-center max-w-7xl mx-auto">
+    <span class="text-2xl font-bold"><span class="text-[#fe7e4f]">Her</span><span class="text-[#1a1c1a]">Relief</span></span>
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap justify-center items-center gap-8 py-4">
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">verified_user</span>
+        <span class="text-xs font-bold uppercase tracking-widest">90-Day Money Back</span>
+      </div>
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">local_shipping</span>
+        <span class="text-xs font-bold uppercase tracking-widest">Free Express Shipping</span>
+      </div>
+      <div class="flex items-center gap-2 text-stone-500">
+        <span class="material-symbols-outlined">lock</span>
+        <span class="text-xs font-bold uppercase tracking-widest">Secure Checkout</span>
+      </div>
+    </div>
+    <!-- Links -->
+    <div class="flex flex-wrap justify-center gap-6 text-sm">
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="privacy-policy.html">Privacy Policy</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="terms.html">Terms of Service</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="refund-policy.html">Refund Policy</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="shipping-policy.html">Shipping</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="contact.html">Contact</a>
+      <a class="text-stone-500 hover:text-rose-700 transition-colors" href="about.html">About</a>
+    </div>
+    <!-- Payment Icons -->
+    <div class="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+      <span class="material-symbols-outlined text-3xl">credit_card</span>
+      <span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+      <span class="material-symbols-outlined text-3xl">contactless</span>
+    </div>
+    <p class="text-stone-400 font-sans text-sm">&copy; 2026 HerRelief. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

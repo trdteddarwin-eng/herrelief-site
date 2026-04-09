@@ -1,0 +1,28 @@
+# Videos (too large for GitHub)
+tiktok_videos/*.mp4
+*.mp4
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Build artifacts
+.vercel/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp
+auto_pipeline/
+instagram_post.log
+instagram_error.log
+.vercel
+*.py
+deploy/
+SESSION_CONTEXT.md
+instagram_queue.json
+product-1.png
+tiktok_videos/

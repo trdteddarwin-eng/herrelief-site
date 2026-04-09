@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout — HerRelief</title>
+<meta name="description" content="Secure checkout for HerRelief — Electric Heating Massage Belt. 50% off + free shipping."/>
+<meta property="og:title" content="HerRelief — Electric Heating Massage Belt for Period Cramp Relief"/>
+<meta property="og:description" content="Drug-free period cramp relief with 5 heat modes and vibration massage. 50% off + free shipping."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://herrelief.com"/>
+<meta property="og:image" content="https://herrelief.com/images/branded/hero-clean.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#70585b",
+          "primary-container": "#fadadd",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#765e61",
+          "secondary": "#a43c12",
+          "secondary-container": "#fe7e4f",
+          "on-secondary": "#ffffff",
+          "background": "#faf9f6",
+          "surface": "#faf9f6",
+          "surface-container-low": "#f4f3f1",
+          "surface-container": "#efeeeb",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1a",
+          "on-surface-variant": "#4f4445",
+          "outline": "#807475",
+          "outline-variant": "#d2c3c4",
+          "success": "#16a34a",
+          "success-light": "#dcfce7",
+        },
+        fontFamily: {
+          "headline": ["Noto Serif"],
+          "body": ["Plus Jakarta Sans"],
+        },
+        borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .filled { font-variation-settings: 'FILL' 1; }
+  /* Timer pulse */
+  @keyframes timer-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+  .timer-pulse { animation: timer-pulse 2s ease-in-out infinite; }
+  /* Checkmark pop */
+  @keyframes pop { 0%{transform:scale(0)} 50%{transform:scale(1.2)} 100%{transform:scale(1)} }
+  .pop { animation: pop 0.3s ease-out; }
+  /* Bundle highlight */
+  .bundle-selected { box-shadow: 0 0 0 2px #a43c12; }
+  /* Progress bar fill */
+  @keyframes progress-fill { from{width:0} to{width:100%} }
+  .progress-fill { animation: progress-fill 0.8s ease-out forwards; }
+  /* Sticky slide */
+  .slide-up { transform:translateY(100%); animation:slideUp 0.3s ease-out forwards; }
+  @keyframes slideUp { to{transform:translateY(0)} }
+  /* Live activity fade */
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+  .fade-in-up { animation: fadeInUp 0.4s ease-out; }
+</style>
+</head>
+<body class="bg-background font-body text-on-surface">
+
+<!-- Nav -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/30">
+  <div class="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+    <a href="index.html" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined text-lg">arrow_back</span>
+      <span class="text-sm font-medium">Back to product</span>
+    </a>
+    <a href="index.html" class="flex items-center gap-1">
+     <svg width="180" height="36" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+       <defs>
+         <linearGradient id="nav-logo-grad-cart" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" stop-color="#a43c12"/>
+           <stop offset="100%" stop-color="#fe7e4f"/>
+         </linearGradient>
+       </defs>
+       <g transform="translate(5, 3)">
+         <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#nav-logo-grad-cart)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#nav-logo-grad-cart)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#nav-logo-grad-cart)" stroke-width="2" stroke-linecap="round"/>
+         <circle cx="4" cy="16" r="3" fill="#a43c12" opacity="0.3"/>
+         <circle cx="56" cy="16" r="3" fill="#fe7e4f" opacity="0.3"/>
+       </g>
+       <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+         <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+       </text>
+     </svg>
+    </a>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-5">
+        <a href="about.html" class="text-xs text-on-surface-variant hover:text-primary transition-colors font-medium">About</a>
+        <a href="contact.html" class="text-xs text-on-surface-variant hover:text-primary transition-colors font-medium">Contact</a>
+      </div>
+      <div class="flex items-center gap-1 text-on-surface-variant">
+        <span class="material-symbols-outlined">lock</span>
+        <span class="text-xs font-semibold uppercase tracking-wider">Secure</span>
+      </div>
+      <button class="md:hidden text-on-surface-variant" onclick="document.getElementById('cart-mobile-menu').classList.toggle('hidden')">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="cart-mobile-menu" class="hidden md:hidden px-6 pb-3 space-y-2 border-t border-outline-variant/20">
+    <a class="block text-sm text-on-surface-variant hover:text-primary py-1" href="about.html">About</a>
+    <a class="block text-sm text-on-surface-variant hover:text-primary py-1" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- Sale Timer Banner -->
+<div class="bg-on-surface text-white text-center py-3 px-4">
+  <div class="flex items-center justify-center gap-3 text-sm font-medium">
+    <span class="material-symbols-outlined text-secondary-container filled text-base">local_fire_department</span>
+    <span>Spring Sale ends in</span>
+    <div id="countdown" class="flex items-center gap-1 font-mono font-bold text-secondary-container timer-pulse">
+      <span id="cd-days" class="bg-white/10 px-2 py-0.5 rounded">00</span>
+      <span>:</span>
+      <span id="cd-hours" class="bg-white/10 px-2 py-0.5 rounded">00</span>
+      <span>:</span>
+      <span id="cd-mins" class="bg-white/10 px-2 py-0.5 rounded">00</span>
+      <span>:</span>
+      <span id="cd-secs" class="bg-white/10 px-2 py-0.5 rounded">00</span>
+    </div>
+    <span>&mdash; 50% Off</span>
+  </div>
+</div>
+
+<main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+
+  <!-- Live Activity Toast -->
+  <div id="live-toast" class="fixed top-24 left-4 z-50 hidden">
+    <div class="bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-3 border border-outline-variant/20 fade-in-up max-w-xs">
+      <span class="material-symbols-outlined text-success filled text-lg">shopping_bag</span>
+      <p class="text-xs text-on-surface-variant"><strong class="text-on-surface" id="toast-name">Someone in Texas</strong> <span id="toast-action">just purchased</span></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+
+    <!-- LEFT: Cart + Bundles (3 cols) -->
+    <div class="lg:col-span-3 space-y-8">
+
+      <!-- Progress Bar -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-xs font-medium text-on-surface-variant">
+          <span>Cart</span>
+          <span>Shipping</span>
+          <span>Payment</span>
+        </div>
+        <div class="w-full bg-surface-container-low rounded-full h-2">
+          <div class="bg-secondary h-2 rounded-full progress-fill" style="width:33%"></div>
+        </div>
+      </div>
+
+      <!-- Cart Item -->
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
+        <h2 class="font-headline text-xl mb-6">Your Cart</h2>
+        <div class="flex gap-5">
+          <div class="w-28 h-28 rounded-lg overflow-hidden bg-primary-container/30 flex-shrink-0">
+            <img src="images/branded/hero-clean.jpg" alt="HerRelief heating belt — product front view" class="w-full h-full object-contain p-2"/>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-base">HerRelief Heating & Vibration Massage Belt</h3>
+            <p class="text-sm text-on-surface-variant mt-1">Color: Blush Pink</p>
+            <div class="flex items-center gap-3 mt-3">
+              <div class="flex items-center border border-outline-variant/30 rounded-lg overflow-hidden">
+                <button onclick="updateQty(-1)" class="px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-low transition-colors">
+                  <span class="material-symbols-outlined text-sm">remove</span>
+                </button>
+                <span id="qty" class="px-3 py-1.5 text-sm font-bold min-w-[2rem] text-center">1</span>
+                <button onclick="updateQty(1)" class="px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-low transition-colors">
+                  <span class="material-symbols-outlined text-sm">add</span>
+                </button>
+              </div>
+              <button onclick="updateQty(-99)" class="text-xs text-on-surface-variant underline hover:text-secondary">Remove</button>
+            </div>
+          </div>
+          <div class="text-right flex-shrink-0">
+            <p class="font-bold text-lg" id="item-price">$39.99</p>
+            <p class="text-sm text-on-surface-variant line-through" id="item-original">$79.99</p>
+            <span class="inline-block mt-1 bg-secondary/10 text-secondary text-xs font-bold px-2 py-0.5 rounded-full">-50%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle Deals -->
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-secondary filled">sell</span>
+          <h2 class="font-headline text-xl">Bundle & Save More</h2>
+        </div>
+        <p class="text-sm text-on-surface-variant mb-5">Most customers buy 2+ (one for home, one for work/travel)</p>
+
+        <div class="space-y-3" id="bundles">
+          <!-- Bundle 1: Single -->
+          <div onclick="selectBundle(0)" id="bundle-0" class="relative flex items-center gap-4 p-4 rounded-lg border-2 border-outline-variant/30 cursor-pointer hover:border-secondary/40 transition-all bundle-selected">
+            <div class="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center flex-shrink-0">
+              <div class="w-2.5 h-2.5 rounded-full bg-secondary" id="dot-0"></div>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-sm">1x HerRelief</p>
+              <p class="text-xs text-on-surface-variant">Standard — 50% Off</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold">$39.99</p>
+              <p class="text-xs text-on-surface-variant line-through">$79.99</p>
+            </div>
+          </div>
+
+          <!-- Bundle 2: Duo (Most Popular) -->
+          <div onclick="selectBundle(1)" id="bundle-1" class="relative flex items-center gap-4 p-4 rounded-lg border-2 border-outline-variant/30 cursor-pointer hover:border-secondary/40 transition-all">
+            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full">Most Popular</div>
+            <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0">
+              <div class="w-2.5 h-2.5 rounded-full bg-secondary hidden" id="dot-1"></div>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-sm">2x HerRelief</p>
+              <p class="text-xs text-on-surface-variant">Buy 2, get <span class="text-secondary font-bold">60% Off</span></p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold">$63.98</p>
+              <p class="text-xs text-on-surface-variant line-through">$159.98</p>
+              <span class="text-[10px] bg-success-light text-success font-bold px-1.5 py-0.5 rounded">Save $96</span>
+            </div>
+          </div>
+
+          <!-- Bundle 3: Family Pack -->
+          <div onclick="selectBundle(2)" id="bundle-2" class="relative flex items-center gap-4 p-4 rounded-lg border-2 border-outline-variant/30 cursor-pointer hover:border-secondary/40 transition-all">
+            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-success text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full">Best Value</div>
+            <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0">
+              <div class="w-2.5 h-2.5 rounded-full bg-secondary hidden" id="dot-2"></div>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-sm">3x HerRelief</p>
+              <p class="text-xs text-on-surface-variant">Buy 3, get <span class="text-secondary font-bold">65% Off</span> + Free Gift</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold">$83.97</p>
+              <p class="text-xs text-on-surface-variant line-through">$239.97</p>
+              <span class="text-[10px] bg-success-light text-success font-bold px-1.5 py-0.5 rounded">Save $156</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping Info Form -->
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
+        <h2 class="font-headline text-xl mb-6">Shipping Information</h2>
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Email Address</label>
+            <input type="email" placeholder="you@email.com" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1.5">First Name</label>
+              <input type="text" placeholder="Jane" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5">Last Name</label>
+              <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Street Address</label>
+            <input type="text" placeholder="123 Main St" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Apartment, Suite (optional)</label>
+            <input type="text" placeholder="Apt 4B" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1.5">City</label>
+              <input type="text" placeholder="New York" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5">State</label>
+              <select class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm text-on-surface-variant">
+                <option value="">State</option>
+                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+                <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+                <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+                <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+                <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+                <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5">ZIP</label>
+              <input type="text" placeholder="10001" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Phone (for delivery updates)</label>
+            <input type="tel" placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+          </div>
+        </form>
+      </div>
+
+      <!-- Payment -->
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
+        <h2 class="font-headline text-xl mb-6">Payment</h2>
+
+        <!-- Express Checkout -->
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.32 2.32-1.55 4.2-3.74 4.25z"/></svg>
+            Pay
+          </button>
+          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
+            <svg width="20" height="14" viewBox="0 0 40 28"><rect width="40" height="28" rx="4" fill="#4285F4"/><text x="20" y="18" font-size="10" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">G Pay</text></svg>
+          </button>
+          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#003087"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.55c2.174 0 3.678.56 4.474 1.666.375.52.613 1.073.707 1.643.098.595.038 1.308-.185 2.14l-.01.043v.39l.304.171c.258.139.463.293.62.466.263.288.432.642.503 1.05.073.42.047.918-.078 1.483-.144.651-.378 1.218-.695 1.684a3.753 3.753 0 0 1-1.095 1.099c-.437.288-.952.503-1.534.64-.564.133-1.2.2-1.897.2h-.45a1.36 1.36 0 0 0-1.345 1.148l-.034.18-.563 3.575-.026.13a.129.129 0 0 1-.128.11H7.076z"/></svg>
+            PayPal
+          </button>
+        </div>
+
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex-1 h-px bg-outline-variant/30"></div>
+          <span class="text-xs text-on-surface-variant uppercase tracking-wider">Or pay with card</span>
+          <div class="flex-1 h-px bg-outline-variant/30"></div>
+        </div>
+
+        <form class="space-y-4" onsubmit="return false;">
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Card Number</label>
+            <div class="relative">
+              <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm pr-24"/>
+              <div class="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1.5 opacity-40">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect width="28" height="18" rx="3" fill="#1A1F71"/><circle cx="11" cy="9" r="5" fill="#EB001B"/><circle cx="17" cy="9" r="5" fill="#F79E1B" opacity="0.8"/></svg>
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect width="28" height="18" rx="3" fill="#1A1F71"/><text x="14" y="13" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">VISA</text></svg>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1.5">Expiry Date</label>
+              <input type="text" placeholder="MM / YY" maxlength="7" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5">CVC</label>
+              <input type="text" placeholder="123" maxlength="4" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Name on Card</label>
+            <input type="text" placeholder="Jane Doe" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT: Order Summary (2 cols) -->
+    <div class="lg:col-span-2">
+      <div class="lg:sticky lg:top-32 space-y-6">
+
+        <!-- Order Summary Card -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
+          <h2 class="font-headline text-xl mb-6">Order Summary</h2>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <span class="text-on-surface-variant" id="summary-label">HerRelief x 1</span>
+              <span id="summary-original" class="line-through text-on-surface-variant">$79.99</span>
+            </div>
+            <div class="flex justify-between text-success font-medium">
+              <span>Spring Sale Discount</span>
+              <span id="summary-discount">-$40.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-on-surface-variant">Shipping</span>
+              <span class="text-success font-medium">FREE</span>
+            </div>
+            <div class="border-t border-dashed border-outline-variant/30 pt-3 mt-3"></div>
+            <div class="flex justify-between text-lg font-bold">
+              <span>Total</span>
+              <span id="summary-total">$39.99</span>
+            </div>
+          </div>
+
+          <!-- Savings callout -->
+          <div class="mt-4 bg-success-light rounded-lg px-4 py-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-success filled text-lg">savings</span>
+            <p class="text-sm text-success font-semibold" id="savings-msg">You're saving $40.00 on this order!</p>
+          </div>
+
+          <!-- CTA Button -->
+          <button onclick="handleCheckout()" id="checkout-btn" class="w-full mt-6 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all active:scale-95">
+            Complete Order &mdash; <span id="btn-total">$39.99</span>
+          </button>
+
+          <!-- Stripe note -->
+          <p class="mt-4 flex items-center justify-center gap-1.5 text-xs text-on-surface-variant font-medium">
+            <span class="material-symbols-outlined text-sm filled text-success">lock</span>
+            Secure checkout powered by Stripe
+          </p>
+
+          <!-- Trust signals -->
+          <div class="mt-3 space-y-2.5">
+            <div class="flex items-center gap-2 text-on-surface-variant text-xs">
+              <span class="material-symbols-outlined text-sm filled text-success">lock</span>
+              Secure 256-bit SSL encrypted checkout
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant text-xs">
+              <span class="material-symbols-outlined text-sm filled text-success">verified_user</span>
+              90-day money-back guarantee
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant text-xs">
+              <span class="material-symbols-outlined text-sm filled text-success">local_shipping</span>
+              Free US shipping &mdash; arrives in 3-6 days
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant text-xs">
+              <span class="material-symbols-outlined text-sm filled text-success">credit_card</span>
+              Visa, Mastercard, Amex, PayPal, Apple Pay
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Proof Ticker -->
+        <div class="bg-primary-container/40 rounded-lg px-5 py-4">
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-2">
+              <div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-primary text-[10px] font-bold border-2 border-white">SJ</div>
+              <div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-primary text-[10px] font-bold border-2 border-white">ER</div>
+              <div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-primary text-[10px] font-bold border-2 border-white">MA</div>
+            </div>
+            <div>
+              <p class="text-xs font-medium">600+ women love their HerRelief</p>
+              <div class="flex items-center gap-1">
+                <div class="flex text-orange-400">
+                  <span class="material-symbols-outlined text-xs filled">star</span>
+                  <span class="material-symbols-outlined text-xs filled">star</span>
+                  <span class="material-symbols-outlined text-xs filled">star</span>
+                  <span class="material-symbols-outlined text-xs filled">star</span>
+                  <span class="material-symbols-outlined text-xs filled">star</span>
+                </div>
+                <span class="text-[10px] text-on-surface-variant">4.9/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-outline-variant/15 text-center">
+          <span class="material-symbols-outlined text-4xl text-success filled">shield_with_heart</span>
+          <h3 class="font-headline text-base mt-2">Risk-Free Purchase</h3>
+          <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Try it for 90 days. If you don't love it, return it for a full refund. No questions asked. We even cover return shipping.</p>
+        </div>
+
+        <!-- Scarcity -->
+        <div class="flex items-center gap-2 justify-center text-on-surface-variant text-xs">
+          <span class="material-symbols-outlined text-sm text-secondary filled">inventory</span>
+          <span><strong class="text-on-surface">Only 47 left</strong> in stock &mdash; <span id="viewers">12</span> people viewing this right now</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-outline-variant/20 mt-16 py-8 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col items-center gap-5 text-center">
+    <span class="text-2xl font-bold"><span class="text-[#fe7e4f]">Her</span><span class="text-[#1a1c1a]">Relief</span></span>
+    <div class="flex flex-wrap justify-center gap-6 text-xs text-on-surface-variant">
+      <a href="privacy-policy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+      <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
+      <a href="refund-policy.html" class="hover:text-primary transition-colors">Refund Policy</a>
+      <a href="shipping-policy.html" class="hover:text-primary transition-colors">Shipping Policy</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+    </div>
+    <p class="text-xs text-on-surface-variant">Questions? <a href="mailto:support@herrelief.com" class="underline hover:text-primary transition-colors">support@herrelief.com</a></p>
+    <p class="text-xs text-on-surface-variant">&copy; 2026 HerRelief. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-xl border-t border-outline-variant/20 px-4 py-3 slide-up">
+  <button onclick="handleCheckout()" class="w-full py-3 bg-secondary text-white rounded-full font-bold text-sm shadow-md active:scale-95 transition-transform">
+    Complete Order &mdash; <span id="mobile-total">$39.99</span>
+  </button>
+</div>
+
+<script>
+// ===== BUNDLE PRICING =====
+const bundles = [
+  { qty: 1, price: 39.99, original: 79.99, discount: 40.00, label: "HerRelief x 1", pct: 50 },
+  { qty: 2, price: 63.98, original: 159.98, discount: 96.00, label: "HerRelief x 2", pct: 60 },
+  { qty: 3, price: 83.97, original: 239.97, discount: 155.97, label: "HerRelief x 3", pct: 65 },
+];
+let currentBundle = 0;
+let currentQty = 1;
+
+function selectBundle(idx) {
+  currentBundle = idx;
+  const b = bundles[idx];
+  currentQty = b.qty;
+
+  // Update dots
+  for (let i = 0; i < 3; i++) {
+    const dot = document.getElementById(`dot-${i}`);
+    const card = document.getElementById(`bundle-${i}`);
+    const ring = dot.parentElement;
+    if (i === idx) {
+      dot.classList.remove('hidden');
+      card.classList.add('bundle-selected');
+      ring.classList.add('border-secondary');
+      ring.classList.remove('border-outline-variant');
+    } else {
+      dot.classList.add('hidden');
+      card.classList.remove('bundle-selected');
+      ring.classList.remove('border-secondary');
+      ring.classList.add('border-outline-variant');
+    }
+  }
+
+  updatePricing(b);
+
+  // Track bundle selection
+  if (window.HRTracking) {
+    HRTracking.selectBundle(b.label, b.price);
+  }
+}
+
+function updateQty(delta) {
+  if (delta === -99) { currentQty = 0; }
+  else { currentQty = Math.max(1, Math.min(10, currentQty + delta)); }
+
+  document.getElementById('qty').textContent = currentQty;
+
+  if (currentQty >= 3) selectBundle(2);
+  else if (currentQty >= 2) selectBundle(1);
+  else selectBundle(0);
+}
+
+function updatePricing(b) {
+  document.getElementById('qty').textContent = b.qty;
+  document.getElementById('item-price').textContent = `$${b.price.toFixed(2)}`;
+  document.getElementById('item-original').textContent = `$${b.original.toFixed(2)}`;
+  document.getElementById('summary-label').textContent = b.label;
+  document.getElementById('summary-original').textContent = `$${b.original.toFixed(2)}`;
+  document.getElementById('summary-discount').textContent = `-$${b.discount.toFixed(2)}`;
+  document.getElementById('summary-total').textContent = `$${b.price.toFixed(2)}`;
+  document.getElementById('btn-total').textContent = `$${b.price.toFixed(2)}`;
+  document.getElementById('mobile-total').textContent = `$${b.price.toFixed(2)}`;
+  document.getElementById('savings-msg').textContent = `You're saving $${b.discount.toFixed(2)} on this order!`;
+}
+
+// ===== COUNTDOWN TIMER =====
+function startCountdown() {
+  // Set end date to March 28, 2026 23:59:59
+  const end = new Date('2026-03-28T23:59:59').getTime();
+
+  function tick() {
+    const now = Date.now();
+    const diff = Math.max(0, end - now);
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+// ===== LIVE ACTIVITY TOAST =====
+const toastNames = [
+  "Someone in Texas", "A customer in California", "Someone in New York",
+  "A buyer in Florida", "Someone in Ohio", "A customer in Georgia",
+  "Someone in Illinois", "A buyer in Michigan", "Someone in Arizona",
+  "A customer in Pennsylvania", "Someone in North Carolina"
+];
+const toastActions = ["just purchased", "added to cart", "just ordered"];
+
+function showToast() {
+  const toast = document.getElementById('live-toast');
+  const name = toastNames[Math.floor(Math.random() * toastNames.length)];
+  const action = toastActions[Math.floor(Math.random() * toastActions.length)];
+  document.getElementById('toast-name').textContent = name;
+  document.getElementById('toast-action').textContent = action;
+  toast.classList.remove('hidden');
+  setTimeout(() => toast.classList.add('hidden'), 4000);
+}
+
+// ===== VIEWER COUNT =====
+function updateViewers() {
+  const el = document.getElementById('viewers');
+  const base = 12;
+  const delta = Math.floor(Math.random() * 7) - 3;
+  const current = Math.max(8, Math.min(24, base + delta));
+  el.textContent = current;
+}
+
+// ===== CHECKOUT HANDLER =====
+function handleCheckout() {
+  const btn = document.getElementById('checkout-btn');
+  btn.innerHTML = '<span class="flex items-center justify-center gap-2"><svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Redirecting to secure checkout...</span>';
+  btn.disabled = true;
+
+  // Track checkout event
+  if (window.HRTracking) {
+    const b = bundles[currentBundle];
+    HRTracking.initiateCheckout(b.price);
+  }
+
+  // Redirect to Stripe Checkout
+  setTimeout(() => {
+    window.location.href = 'https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e';
+  }, 800);
+}
+
+// ===== INIT =====
+startCountdown();
+selectBundle(0);
+
+// Start toast notifications after 8 seconds, then every 25-45 seconds
+setTimeout(() => {
+  showToast();
+  setInterval(showToast, 25000 + Math.random() * 20000);
+}, 8000);
+
+// Update viewers every 15 seconds
+setInterval(updateViewers, 15000);
+</script>
+
+<!-- Tracking & Analytics (GA4, Clarity, TikTok Pixel, Meta Pixel) -->
+<script src="tracking.js"></script>
+<script src="email-popup.js"></script>
+</body></html>

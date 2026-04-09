@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HeatRelief Pro - Motion Graphic Style Picker</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        rose: { light: '#FFF5F5' },
+        accent: '#a43c12',
+        warm: '#fe7e4f',
+        pink: { soft: '#fadadd' },
+        dark: '#1a1c1a',
+        muted: '#70585b',
+      },
+      fontFamily: {
+        body: ['Plus Jakarta Sans', 'sans-serif'],
+        serif: ['Noto Serif', 'serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FFF5F5; color: #1a1c1a; overflow-x: hidden; }
+
+.style-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 245, 245, 0.85);
+  border-bottom: 1px solid rgba(164, 60, 18, 0.1);
+}
+nav a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #a43c12;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+nav a:hover::after, nav a.active::after {
+  width: 100%;
+}
+nav a:hover { color: #a43c12; }
+
+/* ─── STYLE LABEL ─── */
+.style-label {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #70585b;
+  z-index: 10;
+}
+
+/* ─── PICK BUTTON ─── */
+.pick-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: #a43c12;
+  color: #FFF5F5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.pick-btn:hover {
+  background: #fe7e4f;
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 10px 40px rgba(254, 126, 79, 0.3);
+}
+
+/* ═══════════════════════════════════════
+   STYLE 1: MINIMAL CLEAN
+   ═══════════════════════════════════════ */
+#style1 { background: #FFF5F5; }
+
+.s1-headline {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1c1a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.s1-headline .letter {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+}
+.s1-divider {
+  width: 0;
+  height: 1px;
+  background: #a43c12;
+  margin: 0 auto 24px;
+}
+.s1-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: #70585b;
+  text-align: center;
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(20px);
+  line-height: 1.7;
+}
+.s1-secondary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: #a43c12;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.s1-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fe7e4f;
+  margin: 30px auto 0;
+  opacity: 0;
+  animation: s1pulse 2s ease-in-out infinite;
+  animation-play-state: paused;
+}
+@keyframes s1pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.8); opacity: 0.2; }
+}
+
+/* ═══════════════════════════════════════
+   STYLE 2: KINETIC TYPOGRAPHY
+   ═══════════════════════════════════════ */
+#style2 { background: #FFF5F5; }
+
+.s2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+.s2-word {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 0.95;
+  color: #1a1c1a;
+  opacity: 0;
+  transform: translateY(60px) scale(0.8);
+  text-align: center;
+}
+.s2-word.accent-word {
+  color: #a43c12;
+  font-size: clamp(3.5rem, 12vw, 8.5rem);
+}
+.s2-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #70585b;
+  margin-top: 30px;
+  opacity: 0;
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   STYLE 3: MORPHING BLOBS
+   ═══════════════════════════════════════ */
+#style3 { background: #FFF5F5; }
+
+.s3-blob-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.s3-blob {
+  position: absolute;
+  border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  opacity: 0.5;
+  filter: blur(0px);
+}
+.s3-blob-1 {
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
+  top: 10%;
+  left: -5%;
+  background: linear-gradient(135deg, #fadadd 0%, #fe7e4f 50%, #fadadd 100%);
+  background-size: 200% 200%;
+  animation: s3morph1 8s ease-in-out infinite, s3gradient 6s ease-in-out infinite;
+}
+.s3-blob-2 {
+  width: min(400px, 70vw);
+  height: min(400px, 70vw);
+  bottom: 5%;
+  right: -10%;
+  background: linear-gradient(225deg, #fe7e4f 0%, #fadadd 50%, rgba(164,60,18,0.3) 100%);
+  background-size: 200% 200%;
+  animation: s3morph2 10s ease-in-out infinite, s3gradient 8s ease-in-out infinite reverse;
+}
+.s3-blob-3 {
+  width: min(250px, 50vw);
+  height: min(250px, 50vw);
+  top: 30%;
+  right: 20%;
+  background: linear-gradient(45deg, rgba(254,126,79,0.4) 0%, #fadadd 100%);
+  background-size: 200% 200%;
+  animation: s3morph3 12s ease-in-out infinite, s3gradient 10s ease-in-out infinite;
+  opacity: 0.35;
+}
+
+@keyframes s3morph1 {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
+  25% { border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; transform: translate(20px, -20px) rotate(5deg); }
+  50% { border-radius: 30% 60% 40% 70% / 50% 70% 30% 60%; transform: translate(-10px, 15px) rotate(-3deg); }
+  75% { border-radius: 60% 40% 60% 40% / 40% 50% 60% 50%; transform: translate(15px, 10px) rotate(2deg); }
+}
+@keyframes s3morph2 {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 40% 70% 30% 60%; transform: translate(0, 0) rotate(0deg); }
+  33% { border-radius: 40% 60% 50% 50% / 60% 30% 70% 40%; transform: translate(-25px, 15px) rotate(-4deg); }
+  66% { border-radius: 50% 50% 40% 60% / 30% 60% 40% 70%; transform: translate(20px, -10px) rotate(3deg); }
+}
+@keyframes s3morph3 {
+  0%, 100% { border-radius: 50% 50% 60% 40% / 40% 60% 40% 60%; transform: translate(0, 0) scale(1); }
+  50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; transform: translate(-15px, 20px) scale(1.1); }
+}
+@keyframes s3gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.s3-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 20px;
+}
+.s3-headline {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1c1a;
+  opacity: 0;
+  margin-bottom: 16px;
+}
+.s3-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #70585b;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0;
+}
+.s3-secondary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: #a43c12;
+  font-weight: 600;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════
+   STYLE 4: FLOATING PARTICLES
+   ═══════════════════════════════════════ */
+#style4 { background: #FFF5F5; }
+
+.s4-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+#s4-canvas {
+  width: 100%;
+  height: 100%;
+}
+.s4-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 20px;
+}
+.s4-glow {
+  position: absolute;
+  width: min(500px, 90vw);
+  height: min(300px, 50vh);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(254,126,79,0.15) 0%, rgba(250,218,221,0.1) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+.s4-headline {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1c1a;
+  margin-bottom: 16px;
+  opacity: 0;
+}
+.s4-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #70585b;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0;
+}
+.s4-secondary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: #a43c12;
+  font-weight: 600;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════
+   STYLE 5: GEOMETRIC BUILD
+   ═══════════════════════════════════════ */
+#style5 { background: #FFF5F5; }
+
+.s5-geo-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.s5-shape {
+  position: absolute;
+  opacity: 0;
+}
+.s5-circle {
+  border-radius: 50%;
+  border: 2px solid;
+}
+.s5-hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.s5-line {
+  height: 2px;
+  transform-origin: left center;
+}
+
+.s5-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 20px;
+}
+.s5-frame {
+  border: 2px solid rgba(164, 60, 18, 0.3);
+  border-radius: 12px;
+  padding: 50px 40px;
+  position: relative;
+  opacity: 0;
+  max-width: 600px;
+}
+.s5-frame::before, .s5-frame::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #a43c12;
+  border-radius: 50%;
+}
+.s5-frame::before { top: -7px; left: -7px; }
+.s5-frame::after { bottom: -7px; right: -7px; }
+
+.s5-headline {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1a1c1a;
+  margin-bottom: 16px;
+  opacity: 0;
+}
+.s5-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: #70585b;
+  line-height: 1.7;
+  opacity: 0;
+}
+.s5-secondary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: #a43c12;
+  font-weight: 600;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════
+   SELECTION OVERLAY
+   ═══════════════════════════════════════ */
+.selection-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(26, 28, 26, 0.6);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+.selection-overlay.visible { display: flex; }
+.selection-card {
+  background: #FFF5F5;
+  border-radius: 20px;
+  padding: 50px 60px;
+  text-align: center;
+  max-width: 440px;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+}
+.selection-card h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.8rem;
+  color: #1a1c1a;
+  margin-bottom: 12px;
+}
+.selection-card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #70585b;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.selection-card button {
+  padding: 12px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  margin: 0 6px;
+}
+.btn-confirm {
+  background: #a43c12;
+  color: #FFF5F5;
+}
+.btn-confirm:hover { background: #fe7e4f; }
+.btn-cancel {
+  background: transparent;
+  color: #70585b;
+  border: 1.5px solid #70585b !important;
+}
+.btn-cancel:hover { border-color: #a43c12 !important; color: #a43c12; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+    <div class="font-body text-xs font-semibold tracking-widest text-accent uppercase">HeatRelief Pro</div>
+    <div class="flex gap-1">
+      <a href="#style1" class="nav-link font-body text-xs font-medium px-3 py-1.5 rounded-full text-muted hover:text-accent transition" data-section="style1">Style 1</a>
+      <a href="#style2" class="nav-link font-body text-xs font-medium px-3 py-1.5 rounded-full text-muted hover:text-accent transition" data-section="style2">Style 2</a>
+      <a href="#style3" class="nav-link font-body text-xs font-medium px-3 py-1.5 rounded-full text-muted hover:text-accent transition" data-section="style3">Style 3</a>
+      <a href="#style4" class="nav-link font-body text-xs font-medium px-3 py-1.5 rounded-full text-muted hover:text-accent transition" data-section="style4">Style 4</a>
+      <a href="#style5" class="nav-link font-body text-xs font-medium px-3 py-1.5 rounded-full text-muted hover:text-accent transition" data-section="style5">Style 5</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ STYLE 1: MINIMAL CLEAN ═══════════════════ -->
+<section id="style1" class="style-section">
+  <div class="style-label">Style 1 &mdash; Minimal Clean</div>
+
+  <div class="s1-content" style="padding:0 24px; max-width:700px; display:flex; flex-direction:column; align-items:center;">
+    <h2 class="s1-headline" id="s1-headline"></h2>
+    <div class="s1-divider" id="s1-divider"></div>
+    <p class="s1-body" id="s1-body">Prostaglandins trigger your uterus to contract.</p>
+    <p class="s1-secondary" id="s1-secondary">More prostaglandins = stronger contractions</p>
+    <div class="s1-pulse" id="s1-pulse"></div>
+  </div>
+
+  <button class="pick-btn" onclick="pickStyle(1, 'Minimal Clean')">Pick This Style</button>
+</section>
+
+<!-- ═══════════════════ STYLE 2: KINETIC TYPOGRAPHY ═══════════════════ -->
+<section id="style2" class="style-section">
+  <div class="style-label">Style 2 &mdash; Kinetic Typography</div>
+
+  <div class="s2-container" id="s2-container">
+    <div class="s2-word" id="s2-w1">What</div>
+    <div class="s2-word" id="s2-w2">Causes</div>
+    <div class="s2-word accent-word" id="s2-w3">Period</div>
+    <div class="s2-word accent-word" id="s2-w4">Cramps?</div>
+    <p class="s2-subtitle" id="s2-sub">Prostaglandins trigger your uterus to contract &mdash; more prostaglandins, stronger contractions.</p>
+  </div>
+
+  <button class="pick-btn" onclick="pickStyle(2, 'Kinetic Typography')">Pick This Style</button>
+</section>
+
+<!-- ═══════════════════ STYLE 3: MORPHING BLOBS ═══════════════════ -->
+<section id="style3" class="style-section">
+  <div class="style-label">Style 3 &mdash; Morphing Blobs</div>
+
+  <div class="s3-blob-container">
+    <div class="s3-blob s3-blob-1"></div>
+    <div class="s3-blob s3-blob-2"></div>
+    <div class="s3-blob s3-blob-3"></div>
+  </div>
+
+  <div class="s3-content">
+    <h2 class="s3-headline" id="s3-headline">What Causes Period Cramps?</h2>
+    <p class="s3-body" id="s3-body">Prostaglandins trigger your uterus to contract.</p>
+    <p class="s3-secondary" id="s3-secondary">More prostaglandins = stronger contractions</p>
+  </div>
+
+  <button class="pick-btn" onclick="pickStyle(3, 'Morphing Blobs')">Pick This Style</button>
+</section>
+
+<!-- ═══════════════════ STYLE 4: FLOATING PARTICLES ═══════════════════ -->
+<section id="style4" class="style-section">
+  <div class="style-label">Style 4 &mdash; Floating Particles</div>
+
+  <div class="s4-canvas-wrap">
+    <canvas id="s4-canvas"></canvas>
+  </div>
+  <div class="s4-glow"></div>
+
+  <div class="s4-content">
+    <h2 class="s4-headline" id="s4-headline">What Causes Period Cramps?</h2>
+    <p class="s4-body" id="s4-body">Prostaglandins trigger your uterus to contract.</p>
+    <p class="s4-secondary" id="s4-secondary">More prostaglandins = stronger contractions</p>
+  </div>
+
+  <button class="pick-btn" onclick="pickStyle(4, 'Floating Particles')">Pick This Style</button>
+</section>
+
+<!-- ═══════════════════ STYLE 5: GEOMETRIC BUILD ═══════════════════ -->
+<section id="style5" class="style-section">
+  <div class="style-label">Style 5 &mdash; Geometric Build</div>
+
+  <div class="s5-geo-container" id="s5-geo-container"></div>
+
+  <div class="s5-content">
+    <div class="s5-frame" id="s5-frame">
+      <h2 class="s5-headline" id="s5-headline">What Causes Period Cramps?</h2>
+      <p class="s5-body" id="s5-body">Prostaglandins trigger your uterus to contract.</p>
+      <p class="s5-secondary" id="s5-secondary">More prostaglandins = stronger contractions</p>
+    </div>
+  </div>
+
+  <button class="pick-btn" onclick="pickStyle(5, 'Geometric Build')">Pick This Style</button>
+</section>
+
+<!-- ═══════════════════ SELECTION OVERLAY ═══════════════════ -->
+<div class="selection-overlay" id="selectionOverlay">
+  <div class="selection-card">
+    <h2 id="selectionTitle">Great Choice!</h2>
+    <p id="selectionDesc">You picked <strong id="selectionName"></strong>. This will be the motion graphic style for all HeatRelief Pro educational videos.</p>
+    <div>
+      <button class="btn-cancel" onclick="closeSelection()">Go Back</button>
+      <button class="btn-confirm" onclick="confirmSelection()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// NAV ACTIVE STATE
+// ═══════════════════════════════════════════════════════
+const sections = document.querySelectorAll('.style-section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+
+      // Trigger animation for the section entering view
+      triggerAnimation(entry.target.id);
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach(s => observer.observe(s));
+
+// Track animation states
+const animationTimelines = {};
+const animationActive = { style1: false, style2: false, style3: false, style4: false, style5: false };
+
+function triggerAnimation(id) {
+  // Kill all running GSAP timelines
+  Object.keys(animationTimelines).forEach(key => {
+    if (animationTimelines[key]) {
+      animationTimelines[key].kill();
+      animationTimelines[key] = null;
+    }
+  });
+  // Reset all sections
+  Object.keys(animationActive).forEach(key => animationActive[key] = false);
+
+  animationActive[id] = true;
+
+  switch(id) {
+    case 'style1': runStyle1(); break;
+    case 'style2': runStyle2(); break;
+    case 'style3': runStyle3(); break;
+    case 'style4': runStyle4(); break;
+    case 'style5': runStyle5(); break;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// STYLE 1: MINIMAL CLEAN
+// ═══════════════════════════════════════════════════════
+function runStyle1() {
+  // Reset
+  const headline = document.getElementById('s1-headline');
+  const divider = document.getElementById('s1-divider');
+  const body = document.getElementById('s1-body');
+  const secondary = document.getElementById('s1-secondary');
+  const pulse = document.getElementById('s1-pulse');
+
+  // Build letter-by-letter headline
+  const text = "What Causes Period Cramps?";
+  headline.innerHTML = '';
+  text.split('').forEach(char => {
+    const span = document.createElement('span');
+    span.className = 'letter';
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    headline.appendChild(span);
+  });
+
+  gsap.set([body, secondary], { opacity: 0, y: 20 });
+  gsap.set(divider, { width: 0 });
+  gsap.set(pulse, { opacity: 0 });
+  pulse.style.animationPlayState = 'paused';
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 1.5,
+    onRepeat: () => {
+      // Reset for loop
+      headline.querySelectorAll('.letter').forEach(l => {
+        gsap.set(l, { opacity: 0, filter: 'blur(8px)' });
+      });
+      gsap.set([body, secondary], { opacity: 0, y: 20 });
+      gsap.set(divider, { width: 0 });
+      gsap.set(pulse, { opacity: 0 });
+      pulse.style.animationPlayState = 'paused';
+    }
+  });
+  animationTimelines.style1 = tl;
+
+  // Letter-by-letter reveal with blur
+  const letters = headline.querySelectorAll('.letter');
+  tl.to(letters, {
+    opacity: 1,
+    filter: 'blur(0px)',
+    duration: 0.06,
+    stagger: 0.04,
+    ease: 'power2.out'
+  });
+
+  // Divider draw
+  tl.to(divider, {
+    width: 120,
+    duration: 0.8,
+    ease: 'power3.inOut'
+  }, '-=0.3');
+
+  // Body fade up
+  tl.to(body, {
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    ease: 'power2.out'
+  }, '-=0.3');
+
+  // Secondary fade up
+  tl.to(secondary, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out'
+  }, '-=0.2');
+
+  // Pulse appear
+  tl.to(pulse, {
+    opacity: 0.6,
+    duration: 0.4,
+    onComplete: () => { pulse.style.animationPlayState = 'running'; }
+  }, '-=0.1');
+
+  // Hold
+  tl.to({}, { duration: 3 });
+
+  // Fade out everything
+  tl.to([headline, divider, body, secondary, pulse], {
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power2.in',
+    onComplete: () => { pulse.style.animationPlayState = 'paused'; }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// STYLE 2: KINETIC TYPOGRAPHY
+// ═══════════════════════════════════════════════════════
+function runStyle2() {
+  const container = document.getElementById('s2-container');
+  const words = ['s2-w1', 's2-w2', 's2-w3', 's2-w4'].map(id => document.getElementById(id));
+  const sub = document.getElementById('s2-sub');
+
+  // Reset
+  words.forEach(w => gsap.set(w, { opacity: 0, y: 60, scale: 0.8 }));
+  gsap.set(sub, { opacity: 0 });
+  gsap.set(container, { x: 0 });
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 1,
+    onRepeat: () => {
+      words.forEach(w => gsap.set(w, { opacity: 0, y: 60, scale: 0.8 }));
+      gsap.set(sub, { opacity: 0 });
+      gsap.set(container, { x: 0 });
+    }
+  });
+  animationTimelines.style2 = tl;
+
+  // "What" slams in
+  tl.to(words[0], {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.4,
+    ease: 'back.out(2.5)',
+  });
+
+  // Camera shake
+  tl.to(container, { x: 4, duration: 0.05 });
+  tl.to(container, { x: -3, duration: 0.05 });
+  tl.to(container, { x: 0, duration: 0.08 });
+
+  // "Causes"
+  tl.to(words[1], {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.4,
+    ease: 'back.out(2.5)',
+  }, '+=0.15');
+
+  tl.to(container, { x: -3, duration: 0.05 });
+  tl.to(container, { x: 2, duration: 0.05 });
+  tl.to(container, { x: 0, duration: 0.08 });
+
+  // "Period" (accent, bigger)
+  tl.to(words[2], {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.5,
+    ease: 'back.out(3)',
+  }, '+=0.2');
+
+  // Bigger shake for accent words
+  tl.to(container, { x: 6, duration: 0.04 });
+  tl.to(container, { x: -5, duration: 0.04 });
+  tl.to(container, { x: 3, duration: 0.04 });
+  tl.to(container, { x: 0, duration: 0.06 });
+
+  // "Cramps?" (accent)
+  tl.to(words[3], {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.5,
+    ease: 'back.out(3)',
+  }, '+=0.15');
+
+  tl.to(container, { x: 8, duration: 0.04 });
+  tl.to(container, { x: -6, duration: 0.04 });
+  tl.to(container, { x: 4, duration: 0.04 });
+  tl.to(container, { x: -2, duration: 0.03 });
+  tl.to(container, { x: 0, duration: 0.06 });
+
+  // Subtitle
+  tl.to(sub, {
+    opacity: 1,
+    duration: 0.6,
+    ease: 'power2.out'
+  }, '+=0.3');
+
+  // Hold
+  tl.to({}, { duration: 2.5 });
+
+  // Fade out
+  tl.to([...words, sub], {
+    opacity: 0,
+    y: -30,
+    duration: 0.5,
+    ease: 'power2.in',
+    stagger: 0.05
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// STYLE 3: MORPHING BLOBS (CSS-driven, GSAP for text)
+// ═══════════════════════════════════════════════════════
+function runStyle3() {
+  const headline = document.getElementById('s3-headline');
+  const body = document.getElementById('s3-body');
+  const secondary = document.getElementById('s3-secondary');
+
+  gsap.set([headline, body, secondary], { opacity: 0, y: 25 });
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 2,
+    onRepeat: () => {
+      gsap.set([headline, body, secondary], { opacity: 0, y: 25 });
+    }
+  });
+  animationTimelines.style3 = tl;
+
+  tl.to(headline, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out'
+  }, 0.5);
+
+  tl.to(body, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  }, 1.2);
+
+  tl.to(secondary, {
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    ease: 'power3.out'
+  }, 1.8);
+
+  // Hold
+  tl.to({}, { duration: 3.5 });
+
+  // Fade
+  tl.to([headline, body, secondary], {
+    opacity: 0,
+    y: -15,
+    duration: 0.8,
+    ease: 'power2.in',
+    stagger: 0.1
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// STYLE 4: FLOATING PARTICLES
+// ═══════════════════════════════════════════════════════
+let particlesRunning = false;
+let particleAnimId = null;
+
+const particles = [];
+const PARTICLE_COUNT = 28;
+
+function initParticles() {
+  const canvas = document.getElementById('s4-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  particles.length = 0;
+  const colors = ['#fe7e4f', '#fadadd', '#a43c12', 'rgba(254,126,79,0.5)', 'rgba(250,218,221,0.8)'];
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.offsetWidth,
+      y: Math.random() * canvas.offsetHeight,
+      r: Math.random() * 5 + 2,
+      speedY: -(Math.random() * 0.6 + 0.2),
+      speedX: (Math.random() - 0.5) * 0.4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      opacity: Math.random() * 0.6 + 0.2,
+      baseSpeed: -(Math.random() * 0.6 + 0.2),
+    });
+  }
+
+  return { canvas, ctx };
+}
+
+let s4SpeedMultiplier = 1;
+
+function drawParticles(ctx, canvas) {
+  ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+  particles.forEach(p => {
+    p.y += p.speedY * s4SpeedMultiplier;
+    p.x += p.speedX;
+
+    // Wrap around
+    if (p.y < -10) {
+      p.y = canvas.offsetHeight + 10;
+      p.x = Math.random() * canvas.offsetWidth;
+    }
+    if (p.x < -10) p.x = canvas.offsetWidth + 10;
+    if (p.x > canvas.offsetWidth + 10) p.x = -10;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.opacity;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  });
+}
+
+function runStyle4() {
+  const headline = document.getElementById('s4-headline');
+  const body = document.getElementById('s4-body');
+  const secondary = document.getElementById('s4-secondary');
+
+  gsap.set([headline, body, secondary], { opacity: 0, y: 20 });
+
+  // Init particles
+  if (particleAnimId) cancelAnimationFrame(particleAnimId);
+  const { canvas, ctx } = initParticles();
+  particlesRunning = true;
+  s4SpeedMultiplier = 1;
+
+  function loop() {
+    if (!particlesRunning) return;
+    drawParticles(ctx, canvas);
+    particleAnimId = requestAnimationFrame(loop);
+  }
+  loop();
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 2,
+    onRepeat: () => {
+      gsap.set([headline, body, secondary], { opacity: 0, y: 20 });
+      s4SpeedMultiplier = 1;
+    }
+  });
+  animationTimelines.style4 = tl;
+
+  tl.to(headline, {
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    onStart: () => {
+      // Particles speed up on text change
+      gsap.to({ val: s4SpeedMultiplier }, {
+        val: 2.5,
+        duration: 0.3,
+        onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; },
+        onComplete: () => {
+          gsap.to({ val: s4SpeedMultiplier }, {
+            val: 1,
+            duration: 1,
+            onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; }
+          });
+        }
+      });
+    }
+  }, 0.6);
+
+  tl.to(body, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: 'power3.out',
+    onStart: () => {
+      gsap.to({ val: s4SpeedMultiplier }, {
+        val: 2.2,
+        duration: 0.3,
+        onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; },
+        onComplete: () => {
+          gsap.to({ val: s4SpeedMultiplier }, {
+            val: 1,
+            duration: 1,
+            onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; }
+          });
+        }
+      });
+    }
+  }, 1.8);
+
+  tl.to(secondary, {
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    ease: 'power3.out',
+    onStart: () => {
+      gsap.to({ val: s4SpeedMultiplier }, {
+        val: 3,
+        duration: 0.2,
+        onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; },
+        onComplete: () => {
+          gsap.to({ val: s4SpeedMultiplier }, {
+            val: 1,
+            duration: 1.5,
+            onUpdate: function() { s4SpeedMultiplier = this.targets()[0].val; }
+          });
+        }
+      });
+    }
+  }, 2.8);
+
+  // Hold
+  tl.to({}, { duration: 3 });
+
+  // Fade out
+  tl.to([headline, body, secondary], {
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power2.in',
+    stagger: 0.1
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// STYLE 5: GEOMETRIC BUILD
+// ═══════════════════════════════════════════════════════
+function createGeometricShapes() {
+  const container = document.getElementById('s5-geo-container');
+  container.innerHTML = '';
+
+  const shapes = [];
+  const colors = ['#fe7e4f', '#fadadd', '#a43c12', 'rgba(254,126,79,0.3)', 'rgba(250,218,221,0.6)', 'rgba(164,60,18,0.2)'];
+
+  // Circles
+  for (let i = 0; i < 8; i++) {
+    const el = document.createElement('div');
+    el.className = 's5-shape s5-circle';
+    const size = Math.random() * 80 + 30;
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.left = Math.random() * 100 + '%';
+    el.style.top = Math.random() * 100 + '%';
+    el.style.borderColor = colors[Math.floor(Math.random() * colors.length)];
+    container.appendChild(el);
+    shapes.push(el);
+  }
+
+  // Hexagons
+  for (let i = 0; i < 6; i++) {
+    const el = document.createElement('div');
+    el.className = 's5-shape s5-hexagon';
+    const size = Math.random() * 60 + 25;
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.left = Math.random() * 100 + '%';
+    el.style.top = Math.random() * 100 + '%';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    container.appendChild(el);
+    shapes.push(el);
+  }
+
+  // Lines
+  for (let i = 0; i < 6; i++) {
+    const el = document.createElement('div');
+    el.className = 's5-shape s5-line';
+    el.style.width = (Math.random() * 150 + 60) + 'px';
+    el.style.left = Math.random() * 100 + '%';
+    el.style.top = Math.random() * 100 + '%';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.transform = `rotate(${Math.random() * 360}deg)`;
+    container.appendChild(el);
+    shapes.push(el);
+  }
+
+  return shapes;
+}
+
+function runStyle5() {
+  function playOnce() {
+    const shapes = createGeometricShapes();
+    const frame = document.getElementById('s5-frame');
+    const headline = document.getElementById('s5-headline');
+    const body = document.getElementById('s5-body');
+    const secondary = document.getElementById('s5-secondary');
+
+    gsap.set(shapes, { opacity: 0, scale: 0, rotation: -30 });
+    gsap.set(frame, { opacity: 0, scale: 0.9 });
+    gsap.set([headline, body, secondary], { opacity: 0, y: 15 });
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        if (animationActive.style5) {
+          setTimeout(playOnce, 1500);
+        }
+      }
+    });
+    animationTimelines.style5 = tl;
+
+    buildTimeline(tl, shapes);
+  }
+  playOnce();
+}
+
+function buildTimeline(tl, shapes) {
+  const frame = document.getElementById('s5-frame');
+  const headline = document.getElementById('s5-headline');
+  const body = document.getElementById('s5-body');
+  const secondary = document.getElementById('s5-secondary');
+
+  // Shapes stagger in
+  tl.to(shapes, {
+    opacity: (i) => Math.random() * 0.4 + 0.15,
+    scale: 1,
+    rotation: 0,
+    duration: 0.6,
+    stagger: {
+      each: 0.06,
+      from: 'random'
+    },
+    ease: 'back.out(1.5)',
+  }, 0.2);
+
+  // Slow rotate all shapes
+  tl.to(shapes, {
+    rotation: '+=15',
+    duration: 7,
+    ease: 'none',
+  }, 0);
+
+  // Frame appears
+  tl.to(frame, {
+    opacity: 1,
+    scale: 1,
+    duration: 0.8,
+    ease: 'power3.out'
+  }, 1);
+
+  // Text inside frame
+  tl.to(headline, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out'
+  }, 1.5);
+
+  tl.to(body, {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 2);
+
+  tl.to(secondary, {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 2.4);
+
+  // Hold
+  tl.to({}, { duration: 2.5 });
+
+  // Fade everything
+  tl.to([frame, headline, body, secondary], {
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power2.in'
+  });
+  tl.to(shapes, {
+    opacity: 0,
+    scale: 0,
+    duration: 0.4,
+    stagger: { each: 0.03, from: 'random' },
+    ease: 'power2.in'
+  }, '-=0.4');
+}
+
+// ═══════════════════════════════════════════════════════
+// SELECTION
+// ═══════════════════════════════════════════════════════
+let selectedStyle = null;
+
+function pickStyle(num, name) {
+  selectedStyle = { num, name };
+  document.getElementById('selectionName').textContent = `Style ${num}: ${name}`;
+  document.getElementById('selectionOverlay').classList.add('visible');
+}
+
+function closeSelection() {
+  document.getElementById('selectionOverlay').classList.remove('visible');
+  selectedStyle = null;
+}
+
+function confirmSelection() {
+  alert(`Style ${selectedStyle.num} (${selectedStyle.name}) selected! This choice will be applied to all HeatRelief Pro educational videos.`);
+  closeSelection();
+}
+
+// ═══════════════════════════════════════════════════════
+// INITIAL TRIGGER
+// ═══════════════════════════════════════════════════════
+window.addEventListener('load', () => {
+  // Small delay to let layout settle
+  setTimeout(() => runStyle1(), 300);
+});
+
+// Clean up particle loop when leaving Style 4
+const style4Observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      particlesRunning = false;
+      if (particleAnimId) cancelAnimationFrame(particleAnimId);
+    }
+  });
+}, { threshold: 0.1 });
+style4Observer.observe(document.getElementById('style4'));
+</script>
+
+</body>
+</html>

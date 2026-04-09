@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>HerRelief Profile Picture</title>
+<style>
+  body { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #111; }
+  .pfp { width: 400px; height: 400px; border-radius: 50%; overflow: hidden; }
+</style>
+</head>
+<body>
+<!-- Instagram Profile Picture: 400x400 circle with logo centered on brand pink background -->
+<div class="pfp">
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fadadd"/>
+      <stop offset="100%" stop-color="#FFF5F5"/>
+    </linearGradient>
+    <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a43c12"/>
+      <stop offset="100%" stop-color="#fe7e4f"/>
+    </linearGradient>
+    <clipPath id="circle-clip">
+      <circle cx="200" cy="200" r="200"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circle-clip)">
+    <rect width="400" height="400" fill="url(#bg-grad)"/>
+
+    <!-- Abstract uterus/tulip icon — centered and scaled up -->
+    <g transform="translate(118, 80) scale(2)">
+      <!-- Left wing -->
+      <path d="M42 80 L42 48 C42 40, 38 34, 30 26 C20 16, 6 14, 3 22 C0 30, 10 38, 18 36 C24 35, 30 30, 34 24" fill="none" stroke="url(#icon-grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Right wing -->
+      <path d="M42 48 C42 40, 46 34, 54 26 C64 16, 78 14, 81 22 C84 30, 74 38, 66 36 C60 35, 54 30, 50 24" fill="none" stroke="url(#icon-grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Center body -->
+      <path d="M36 52 C36 58, 39 64, 42 66 C45 64, 48 58, 48 52" fill="none" stroke="url(#icon-grad)" stroke-width="3" stroke-linecap="round"/>
+      <!-- Ovary dots -->
+      <circle cx="3" cy="20" r="5" fill="#a43c12" opacity="0.35"/>
+      <circle cx="81" cy="20" r="5" fill="#fe7e4f" opacity="0.35"/>
+    </g>
+
+    <!-- Brand name below icon -->
+    <text x="200" y="310" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="38" letter-spacing="-0.5">
+      <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+    </text>
+  </g>
+</svg>
+</div>
+
+<script>
+// Auto-download as PNG
+const svg = document.querySelector('svg');
+const canvas = document.createElement('canvas');
+canvas.width = 400;
+canvas.height = 400;
+const ctx = canvas.getContext('2d');
+const img = new Image();
+const svgData = new XMLSerializer().serializeToString(svg);
+const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+const url = URL.createObjectURL(svgBlob);
+img.onload = function() {
+  ctx.beginPath();
+  ctx.arc(200, 200, 200, 0, Math.PI * 2);
+  ctx.clip();
+  ctx.drawImage(img, 0, 0);
+  const link = document.createElement('a');
+  link.download = 'herrelief-profile-pic.png';
+  link.href = canvas.toDataURL('image/png');
+  // Don't auto-download, just show it
+  document.title = 'Right-click the image to save, or check heatrelief-pro/images/';
+  URL.revokeObjectURL(url);
+};
+img.src = url;
+</script>
+</body></html>

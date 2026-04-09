@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerRelief — Logo Concepts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              brown: '#a43c12',
+              coral: '#fe7e4f',
+              pink: '#fadadd',
+              rose: '#70585b',
+              dark: '#1a1c1a',
+              bg: '#111111',
+              light: '#FFF5F5',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Noto Serif', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #111111; color: #fff; }
+    .logo-section { scroll-snap-align: start; min-height: 100vh; }
+    .pick-btn {
+      background: linear-gradient(135deg, #fe7e4f 0%, #a43c12 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pick-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(254, 126, 79, 0.35);
+    }
+    .pick-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+    }
+    .logo-card {
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .logo-card:hover {
+      border-color: rgba(254, 126, 79, 0.2);
+      box-shadow: 0 0 60px rgba(254, 126, 79, 0.06);
+    }
+    .nav-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .nav-dot:hover, .nav-dot.active {
+      background: #fe7e4f;
+      transform: scale(1.3);
+    }
+    .style-tag {
+      background: linear-gradient(135deg, rgba(254,126,79,0.15), rgba(164,60,18,0.15));
+      border: 1px solid rgba(254,126,79,0.2);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeInUp 0.8s ease forwards; }
+    .tagline-text { font-family: 'Noto Serif', serif; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Side Navigation -->
+  <nav class="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 items-center">
+    <a href="#hero" class="nav-dot active" title="Top"></a>
+    <a href="#logo1" class="nav-dot" title="Minimal Wordmark"></a>
+    <a href="#logo2" class="nav-dot" title="Heart + Warmth"></a>
+    <a href="#logo3" class="nav-dot" title="Embrace Circle"></a>
+    <a href="#logo4" class="nav-dot" title="Flame Drop"></a>
+    <a href="#logo5" class="nav-dot" title="Serif Elegance"></a>
+    <a href="#logo6" class="nav-dot" title="Abstract Uterus"></a>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" class="logo-section flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-coral rounded-full blur-[150px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-pink rounded-full blur-[120px]"></div>
+    </div>
+    <div class="text-center relative z-10 animate-in px-6">
+      <div class="inline-block mb-8">
+        <span class="style-tag px-4 py-2 rounded-full text-sm text-brand-coral font-medium tracking-wider uppercase">Brand Identity</span>
+      </div>
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+        <span class="text-brand-coral">Her</span><span class="text-white">Relief</span>
+      </h1>
+      <p class="tagline-text text-brand-pink/80 text-xl md:text-2xl mb-4">Relief made for her</p>
+      <p class="text-white/40 text-base max-w-md mx-auto mb-12">6 logo concepts for your women's wellness brand. Each designed to connect with women 18-35 seeking comfort and care.</p>
+      <div class="flex flex-col items-center gap-3 text-white/30 text-sm">
+        <span>Scroll to explore</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 1: MINIMAL WORDMARK ==================== -->
+  <section id="logo1" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <!-- Section Header -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">01 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Wordmark</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Minimal Wordmark</h2>
+        <p class="text-white/50 max-w-xl text-lg">Clean, Glossier-inspired minimalism. The name speaks for itself with a confident, modern tone.</p>
+      </div>
+
+      <!-- Logo Grid: Dark & Light -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-10">
+            <svg width="320" height="50" viewBox="0 0 320 50" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="40" letter-spacing="-1">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <line x1="0" y1="48" x2="260" y2="48" stroke="#fe7e4f" stroke-width="1.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="240" height="70" viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+              <text x="120" y="38" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="40" letter-spacing="-1">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <line x1="60" y1="48" x2="180" y2="48" stroke="#fe7e4f" stroke-width="1.5" opacity="0.6"/>
+              <text x="120" y="66" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-10">
+            <svg width="320" height="50" viewBox="0 0 320 50" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="40" letter-spacing="-1">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <line x1="0" y1="48" x2="260" y2="48" stroke="#a43c12" stroke-width="1.5" opacity="0.4"/>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="240" height="70" viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+              <text x="120" y="38" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="40" letter-spacing="-1">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <line x1="60" y1="48" x2="180" y2="48" stroke="#a43c12" stroke-width="1.5" opacity="0.4"/>
+              <text x="120" y="66" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(1, 'Minimal Wordmark')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 2: HEART + WARMTH ==================== -->
+  <section id="logo2" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">02 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Icon + Wordmark</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Heart + Warmth</h2>
+        <p class="text-white/50 max-w-xl text-lg">A caring heart with rising heat waves. Warm, approachable, and instantly communicates comfort and relief.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="340" height="60" viewBox="0 0 340 60" xmlns="http://www.w3.org/2000/svg">
+              <!-- Heart outline with heat waves -->
+              <g transform="translate(5, 3)">
+                <path d="M25 45 C25 45, 2 28, 2 16 C2 8, 8 2, 15 2 C20 2, 24 5, 25 10 C26 5, 30 2, 35 2 C42 2, 48 8, 48 16 C48 28, 25 45, 25 45Z" fill="none" stroke="#fe7e4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Heat waves inside heart -->
+                <path d="M17 26 C17 23, 19 23, 19 20" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                <path d="M25 24 C25 21, 27 21, 27 18" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                <path d="M33 26 C33 23, 35 23, 35 20" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              </g>
+              <text x="68" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="130" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(70, 0)">
+                <path d="M30 52 C30 52, 2 32, 2 18 C2 9, 9 2, 17 2 C23 2, 28 6, 30 12 C32 6, 37 2, 43 2 C51 2, 58 9, 58 18 C58 32, 30 52, 30 52Z" fill="none" stroke="#fe7e4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 30 C20 26, 23 26, 23 22" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                <path d="M30 27 C30 23, 33 23, 33 19" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                <path d="M40 30 C40 26, 43 26, 43 22" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              </g>
+              <text x="100" y="85" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <text x="100" y="105" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="340" height="60" viewBox="0 0 340 60" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(5, 3)">
+                <path d="M25 45 C25 45, 2 28, 2 16 C2 8, 8 2, 15 2 C20 2, 24 5, 25 10 C26 5, 30 2, 35 2 C42 2, 48 8, 48 16 C48 28, 25 45, 25 45Z" fill="none" stroke="#fe7e4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 26 C17 23, 19 23, 19 20" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                <path d="M25 24 C25 21, 27 21, 27 18" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                <path d="M33 26 C33 23, 35 23, 35 20" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              </g>
+              <text x="68" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="130" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(70, 0)">
+                <path d="M30 52 C30 52, 2 32, 2 18 C2 9, 9 2, 17 2 C23 2, 28 6, 30 12 C32 6, 37 2, 43 2 C51 2, 58 9, 58 18 C58 32, 30 52, 30 52Z" fill="none" stroke="#fe7e4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 30 C20 26, 23 26, 23 22" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                <path d="M30 27 C30 23, 33 23, 33 19" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                <path d="M40 30 C40 26, 43 26, 43 22" fill="none" stroke="#fe7e4f" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              </g>
+              <text x="100" y="85" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <text x="100" y="105" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(2, 'Heart + Warmth')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 3: EMBRACE CIRCLE ==================== -->
+  <section id="logo3" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">03 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Symbol + Wordmark</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Embrace Circle</h2>
+        <p class="text-white/50 max-w-xl text-lg">Two flowing arms forming a protective embrace. Feels nurturing, supportive, and safe — like a warm hug.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="60" viewBox="0 0 360 60" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="embrace-grad-d" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 3)">
+                <!-- Left arm curve -->
+                <path d="M26 4 C10 4, 2 16, 2 28 C2 40, 12 50, 26 50" fill="none" stroke="url(#embrace-grad-d)" stroke-width="3" stroke-linecap="round"/>
+                <!-- Right arm curve -->
+                <path d="M26 4 C42 4, 50 16, 50 28 C50 40, 40 50, 26 50" fill="none" stroke="url(#embrace-grad-d)" stroke-width="3" stroke-linecap="round"/>
+                <!-- Small gap at top and bottom for the "embrace" feeling -->
+                <!-- Warm dot in center -->
+                <circle cx="26" cy="27" r="4" fill="#fe7e4f" opacity="0.3"/>
+                <circle cx="26" cy="27" r="2" fill="#fe7e4f" opacity="0.6"/>
+              </g>
+              <text x="68" y="40" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="140" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="embrace-grad-d2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(67, 0)">
+                <path d="M33 4 C12 4, 2 20, 2 35 C2 50, 15 62, 33 62" fill="none" stroke="url(#embrace-grad-d2)" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M33 4 C54 4, 64 20, 64 35 C64 50, 51 62, 33 62" fill="none" stroke="url(#embrace-grad-d2)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="33" cy="33" r="5" fill="#fe7e4f" opacity="0.3"/>
+                <circle cx="33" cy="33" r="2.5" fill="#fe7e4f" opacity="0.6"/>
+              </g>
+              <text x="100" y="92" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <text x="100" y="115" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="60" viewBox="0 0 360 60" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="embrace-grad-l" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#a43c12"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 3)">
+                <path d="M26 4 C10 4, 2 16, 2 28 C2 40, 12 50, 26 50" fill="none" stroke="url(#embrace-grad-l)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M26 4 C42 4, 50 16, 50 28 C50 40, 40 50, 26 50" fill="none" stroke="url(#embrace-grad-l)" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="26" cy="27" r="4" fill="#fe7e4f" opacity="0.2"/>
+                <circle cx="26" cy="27" r="2" fill="#a43c12" opacity="0.5"/>
+              </g>
+              <text x="68" y="40" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="140" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="embrace-grad-l2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#a43c12"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(67, 0)">
+                <path d="M33 4 C12 4, 2 20, 2 35 C2 50, 15 62, 33 62" fill="none" stroke="url(#embrace-grad-l2)" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M33 4 C54 4, 64 20, 64 35 C64 50, 51 62, 33 62" fill="none" stroke="url(#embrace-grad-l2)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="33" cy="33" r="5" fill="#fe7e4f" opacity="0.2"/>
+                <circle cx="33" cy="33" r="2.5" fill="#a43c12" opacity="0.5"/>
+              </g>
+              <text x="100" y="92" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <text x="100" y="115" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(3, 'Embrace Circle')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 4: FLAME DROP ==================== -->
+  <section id="logo4" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">04 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Symbol + Wordmark</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Flame Drop</h2>
+        <p class="text-white/50 max-w-xl text-lg">A teardrop that transforms into a flame at its peak. Duality of warmth and soothing relief in one elegant symbol.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="65" viewBox="0 0 360 65" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="flame-grad-d" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="60%" stop-color="#fadadd"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 2)">
+                <!-- Drop/flame shape -->
+                <path d="M24 2 C24 2, 18 12, 15 18 C10 26, 6 32, 6 40 C6 50, 14 58, 24 58 C34 58, 42 50, 42 40 C42 32, 38 26, 33 18 C30 12, 24 2, 24 2Z" fill="url(#flame-grad-d)" opacity="0.9"/>
+                <!-- Inner flame flicker -->
+                <path d="M24 14 C24 14, 20 22, 18 28 C16 33, 15 37, 18 40 C20 43, 24 44, 26 42 C28 40, 28 36, 26 32 C24 28, 24 14, 24 14Z" fill="#ffffff" opacity="0.15"/>
+              </g>
+              <text x="60" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="flame-grad-d2" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="60%" stop-color="#fadadd"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(67, 0)">
+                <path d="M33 2 C33 2, 24 16, 20 25 C13 37, 6 45, 6 55 C6 68, 18 78, 33 78 C48 78, 60 68, 60 55 C60 45, 53 37, 46 25 C42 16, 33 2, 33 2Z" fill="url(#flame-grad-d2)" opacity="0.9"/>
+                <path d="M33 18 C33 18, 27 30, 24 38 C21 45, 20 50, 24 54 C27 57, 33 58, 36 55 C39 52, 39 46, 36 40 C33 34, 33 18, 33 18Z" fill="#ffffff" opacity="0.15"/>
+              </g>
+              <text x="100" y="105" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <text x="100" y="128" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="65" viewBox="0 0 360 65" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="flame-grad-l" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#a43c12"/>
+                  <stop offset="50%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 2)">
+                <path d="M24 2 C24 2, 18 12, 15 18 C10 26, 6 32, 6 40 C6 50, 14 58, 24 58 C34 58, 42 50, 42 40 C42 32, 38 26, 33 18 C30 12, 24 2, 24 2Z" fill="url(#flame-grad-l)" opacity="0.85"/>
+                <path d="M24 14 C24 14, 20 22, 18 28 C16 33, 15 37, 18 40 C20 43, 24 44, 26 42 C28 40, 28 36, 26 32 C24 28, 24 14, 24 14Z" fill="#ffffff" opacity="0.3"/>
+              </g>
+              <text x="60" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="flame-grad-l2" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#a43c12"/>
+                  <stop offset="50%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(67, 0)">
+                <path d="M33 2 C33 2, 24 16, 20 25 C13 37, 6 45, 6 55 C6 68, 18 78, 33 78 C48 78, 60 68, 60 55 C60 45, 53 37, 46 25 C42 16, 33 2, 33 2Z" fill="url(#flame-grad-l2)" opacity="0.85"/>
+                <path d="M33 18 C33 18, 27 30, 24 38 C21 45, 20 50, 24 54 C27 57, 33 58, 36 55 C39 52, 39 46, 36 40 C33 34, 33 18, 33 18Z" fill="#ffffff" opacity="0.3"/>
+              </g>
+              <text x="100" y="105" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <text x="100" y="128" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(4, 'Flame Drop')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 5: SERIF ELEGANCE ==================== -->
+  <section id="logo5" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">05 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Typographic</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Serif Elegance</h2>
+        <p class="text-white/50 max-w-xl text-lg">Premium editorial typographic treatment. Inspired by Vogue and Harper's Bazaar. Sophistication that commands trust.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="60" viewBox="0 0 360 60" xmlns="http://www.w3.org/2000/svg">
+              <text x="10" y="42" font-family="'Noto Serif', serif" font-style="italic" font-weight="600" font-size="42" letter-spacing="1" fill="#70585b">
+                <tspan fill="#fadadd">Her</tspan><tspan fill="#70585b">Relief</tspan>
+              </text>
+              <!-- Decorative swash under the R -->
+              <path d="M108 48 C115 52, 125 54, 145 50 C155 48, 160 45, 165 48" fill="none" stroke="#fe7e4f" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              <!-- Small diamond flourish -->
+              <path d="M152 54 L155 51 L158 54 L155 57Z" fill="#fe7e4f" opacity="0.4"/>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="260" height="90" viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg">
+              <text x="130" y="42" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-weight="600" font-size="42" letter-spacing="1">
+                <tspan fill="#fadadd">Her</tspan><tspan fill="#70585b">Relief</tspan>
+              </text>
+              <path d="M80 50 C90 54, 110 56, 130 53 C150 50, 165 48, 180 52" fill="none" stroke="#fe7e4f" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              <text x="130" y="72" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.5" letter-spacing="3">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="360" height="60" viewBox="0 0 360 60" xmlns="http://www.w3.org/2000/svg">
+              <text x="10" y="42" font-family="'Noto Serif', serif" font-style="italic" font-weight="600" font-size="42" letter-spacing="1">
+                <tspan fill="#a43c12">Her</tspan><tspan fill="#70585b">Relief</tspan>
+              </text>
+              <path d="M108 48 C115 52, 125 54, 145 50 C155 48, 160 45, 165 48" fill="none" stroke="#a43c12" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+              <path d="M152 54 L155 51 L158 54 L155 57Z" fill="#a43c12" opacity="0.3"/>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="260" height="90" viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg">
+              <text x="130" y="42" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-weight="600" font-size="42" letter-spacing="1">
+                <tspan fill="#a43c12">Her</tspan><tspan fill="#70585b">Relief</tspan>
+              </text>
+              <path d="M80 50 C90 54, 110 56, 130 53 C150 50, 165 48, 180 52" fill="none" stroke="#a43c12" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+              <text x="130" y="72" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.5" letter-spacing="3">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(5, 'Serif Elegance')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LOGO 6: ABSTRACT UTERUS ==================== -->
+  <section id="logo6" class="logo-section py-20 px-6 md:px-12 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-white/30 text-sm font-mono">06 / 06</span>
+          <span class="style-tag px-3 py-1 rounded-full text-xs text-brand-coral font-medium tracking-wider uppercase">Iconic Symbol</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Abstract Uterus</h2>
+        <p class="text-white/50 max-w-xl text-lg">A highly stylized, tulip-butterfly form that subtly nods to the uterus. Bold, ownable, and immediately distinctive.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <!-- Dark Background -->
+        <div class="logo-card rounded-2xl bg-[#111111] p-12 flex flex-col items-center justify-center min-h-[400px]">
+          <p class="text-white/20 text-xs uppercase tracking-widest mb-8">Dark Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="380" height="70" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="uterus-grad-d" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 3)">
+                <!-- Abstract uterus/tulip/butterfly shape -->
+                <!-- Left wing/fallopian curve -->
+                <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#uterus-grad-d)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Right wing/fallopian curve -->
+                <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#uterus-grad-d)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Center body -->
+                <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#uterus-grad-d)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Small circle at ovary positions -->
+                <circle cx="4" cy="16" r="3" fill="#fe7e4f" opacity="0.4"/>
+                <circle cx="56" cy="16" r="3" fill="#fadadd" opacity="0.4"/>
+              </g>
+              <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="220" height="160" viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="uterus-grad-d2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fe7e4f"/>
+                  <stop offset="100%" stop-color="#fadadd"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(68, 0)">
+                <!-- Larger stacked version -->
+                <path d="M42 80 L42 48 C42 40, 38 34, 30 26 C20 16, 6 14, 3 22 C0 30, 10 38, 18 36 C24 35, 30 30, 34 24" fill="none" stroke="url(#uterus-grad-d2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M42 48 C42 40, 46 34, 54 26 C64 16, 78 14, 81 22 C84 30, 74 38, 66 36 C60 35, 54 30, 50 24" fill="none" stroke="url(#uterus-grad-d2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 52 C36 58, 39 64, 42 66 C45 64, 48 58, 48 52" fill="none" stroke="url(#uterus-grad-d2)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="3" cy="20" r="4" fill="#fe7e4f" opacity="0.4"/>
+                <circle cx="81" cy="20" r="4" fill="#fadadd" opacity="0.4"/>
+              </g>
+              <text x="110" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+              </text>
+              <text x="110" y="133" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#fadadd" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Light Background -->
+        <div class="logo-card rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px]" style="background: #FFF5F5;">
+          <p class="text-brand-rose/40 text-xs uppercase tracking-widest mb-8">Light Background</p>
+          <!-- Horizontal -->
+          <div class="mb-12">
+            <svg width="380" height="70" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="uterus-grad-l" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a43c12"/>
+                  <stop offset="100%" stop-color="#fe7e4f"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 3)">
+                <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#uterus-grad-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#uterus-grad-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#uterus-grad-l)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="4" cy="16" r="3" fill="#a43c12" opacity="0.3"/>
+                <circle cx="56" cy="16" r="3" fill="#fe7e4f" opacity="0.3"/>
+              </g>
+              <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+            </svg>
+          </div>
+          <!-- Stacked -->
+          <div class="flex flex-col items-center">
+            <svg width="220" height="160" viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="uterus-grad-l2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a43c12"/>
+                  <stop offset="100%" stop-color="#fe7e4f"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(68, 0)">
+                <path d="M42 80 L42 48 C42 40, 38 34, 30 26 C20 16, 6 14, 3 22 C0 30, 10 38, 18 36 C24 35, 30 30, 34 24" fill="none" stroke="url(#uterus-grad-l2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M42 48 C42 40, 46 34, 54 26 C64 16, 78 14, 81 22 C84 30, 74 38, 66 36 C60 35, 54 30, 50 24" fill="none" stroke="url(#uterus-grad-l2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 52 C36 58, 39 64, 42 66 C45 64, 48 58, 48 52" fill="none" stroke="url(#uterus-grad-l2)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="3" cy="20" r="4" fill="#a43c12" opacity="0.3"/>
+                <circle cx="81" cy="20" r="4" fill="#fe7e4f" opacity="0.3"/>
+              </g>
+              <text x="110" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="30" letter-spacing="-0.5">
+                <tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan>
+              </text>
+              <text x="110" y="133" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-size="11" fill="#70585b" opacity="0.6">Relief made for her</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pick-btn px-10 py-4 rounded-full text-white font-semibold text-base tracking-wide" onclick="pickLogo(6, 'Abstract Uterus')">Pick This Logo</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== COMPARISON FOOTER ==================== -->
+  <section class="py-20 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4 text-center">Quick Comparison</h2>
+      <p class="text-white/40 text-center mb-12 max-w-lg mx-auto">All six logos at a glance. Which one feels like HerRelief?</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Mini Card 1 -->
+        <a href="#logo1" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="100" y="30" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="28" letter-spacing="-0.5">
+              <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+            </text>
+            <line x1="50" y1="38" x2="150" y2="38" stroke="#fe7e4f" stroke-width="1" opacity="0.5"/>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">01 Minimal Wordmark</span>
+        </a>
+
+        <!-- Mini Card 2 -->
+        <a href="#logo2" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(30, 2)">
+              <path d="M16 32 C16 32, 1 20, 1 12 C1 6, 5 1, 10 1 C13 1, 15 3, 16 7 C17 3, 19 1, 22 1 C27 1, 31 6, 31 12 C31 20, 16 32, 16 32Z" fill="none" stroke="#fe7e4f" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 18 C11 16, 12.5 16, 12.5 14" fill="none" stroke="#fe7e4f" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+              <path d="M16 17 C16 15, 17.5 15, 17.5 13" fill="none" stroke="#fe7e4f" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+              <path d="M21 18 C21 16, 22.5 16, 22.5 14" fill="none" stroke="#fe7e4f" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+            </g>
+            <text x="120" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.3">
+              <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+            </text>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">02 Heart + Warmth</span>
+        </a>
+
+        <!-- Mini Card 3 -->
+        <a href="#logo3" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mini-embrace" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fe7e4f"/><stop offset="100%" stop-color="#fadadd"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(32, 2)">
+              <path d="M16 2 C6 2, 1 10, 1 17 C1 24, 7 30, 16 30" fill="none" stroke="url(#mini-embrace)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 2 C26 2, 31 10, 31 17 C31 24, 25 30, 16 30" fill="none" stroke="url(#mini-embrace)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="2" fill="#fe7e4f" opacity="0.5"/>
+            </g>
+            <text x="120" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.3">
+              <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+            </text>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">03 Embrace Circle</span>
+        </a>
+
+        <!-- Mini Card 4 -->
+        <a href="#logo4" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mini-flame" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#fe7e4f"/><stop offset="100%" stop-color="#fadadd"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(35, 1)">
+              <path d="M14 1 C14 1, 10 8, 8 12 C5 17, 3 21, 3 25 C3 31, 8 36, 14 36 C20 36, 25 31, 25 25 C25 21, 23 17, 20 12 C18 8, 14 1, 14 1Z" fill="url(#mini-flame)" opacity="0.8"/>
+            </g>
+            <text x="120" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.3">
+              <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+            </text>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">04 Flame Drop</span>
+        </a>
+
+        <!-- Mini Card 5 -->
+        <a href="#logo5" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="100" y="30" text-anchor="middle" font-family="'Noto Serif', serif" font-style="italic" font-weight="600" font-size="26" letter-spacing="0.5">
+              <tspan fill="#fadadd">Her</tspan><tspan fill="#70585b">Relief</tspan>
+            </text>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">05 Serif Elegance</span>
+        </a>
+
+        <!-- Mini Card 6 -->
+        <a href="#logo6" class="logo-card rounded-xl bg-white/[0.03] p-8 flex flex-col items-center gap-4 hover:bg-white/[0.06] transition-colors cursor-pointer">
+          <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mini-uterus" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fe7e4f"/><stop offset="100%" stop-color="#fadadd"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(28, 1)">
+              <path d="M18 36 L18 22 C18 18, 16 15, 13 12 C9 8, 3 7, 2 11 C1 15, 5 18, 8 17 C11 16, 13 14, 15 12" fill="none" stroke="url(#mini-uterus)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 22 C18 18, 20 15, 23 12 C27 8, 33 7, 34 11 C35 15, 31 18, 28 17 C25 16, 23 14, 21 12" fill="none" stroke="url(#mini-uterus)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="2" cy="10" r="2" fill="#fe7e4f" opacity="0.4"/>
+              <circle cx="34" cy="10" r="2" fill="#fadadd" opacity="0.4"/>
+            </g>
+            <text x="120" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" letter-spacing="-0.3">
+              <tspan fill="#fe7e4f">Her</tspan><tspan fill="#ffffff">Relief</tspan>
+            </text>
+          </svg>
+          <span class="text-white/40 text-xs uppercase tracking-wider">06 Abstract Uterus</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-white/5 text-center">
+    <p class="text-white/20 text-sm">HerRelief Brand Identity Concepts &mdash; herrelief.org</p>
+    <p class="text-white/10 text-xs mt-2">All logos are pure SVG. Copy any SVG directly from the source code.</p>
+  </footer>
+
+
+  <!-- Selection Modal -->
+  <div id="pickModal" class="fixed inset-0 bg-black/80 backdrop-blur-lg z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-[#1a1a1a] rounded-2xl p-10 max-w-md w-full mx-6 border border-white/10 text-center transform scale-95 transition-transform duration-300">
+      <div class="w-16 h-16 rounded-full bg-brand-coral/10 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-brand-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-2">Great Choice!</h3>
+      <p class="text-white/60 mb-2">You selected:</p>
+      <p id="pickedName" class="text-brand-coral font-bold text-xl mb-6"></p>
+      <p class="text-white/40 text-sm mb-8">This logo concept will be developed into final brand assets including full color, mono, and reversed versions.</p>
+      <div class="flex gap-3">
+        <button onclick="closeModal()" class="flex-1 px-6 py-3 rounded-full border border-white/10 text-white/60 font-medium hover:bg-white/5 transition-colors">Back</button>
+        <button onclick="confirmPick()" class="flex-1 pick-btn px-6 py-3 rounded-full text-white font-semibold">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Navigation dots
+    const sections = ['hero', 'logo1', 'logo2', 'logo3', 'logo4', 'logo5', 'logo6'];
+    const dots = document.querySelectorAll('.nav-dot');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = sections.indexOf(entry.target.id);
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Pick logo
+    let selectedLogo = null;
+    function pickLogo(num, name) {
+      selectedLogo = { num, name };
+      document.getElementById('pickedName').textContent = `#${num} — ${name}`;
+      const modal = document.getElementById('pickModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.querySelector('div').classList.remove('scale-95');
+    }
+    function closeModal() {
+      const modal = document.getElementById('pickModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.querySelector('div').classList.add('scale-95');
+    }
+    function confirmPick() {
+      closeModal();
+      // Scroll to top with confirmation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        alert(`Logo #${selectedLogo.num} "${selectedLogo.name}" selected! The SVG code for this logo is available in the page source.`);
+      }, 600);
+    }
+
+    // Animate sections on scroll
+    const animObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.logo-section > div').forEach(el => animObserver.observe(el));
+  </script>
+
+</body>
+</html>
