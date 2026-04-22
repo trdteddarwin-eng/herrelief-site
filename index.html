@@ -7,10 +7,39 @@
 <meta property="og:title" content="HerRelief — Electric Heating Massage Belt for Period Cramp Relief"/>
 <meta property="og:description" content="Drug-free period cramp relief with 5 heat modes and vibration massage. 50% off + free shipping."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://herrelief.com"/>
-<meta property="og:image" content="https://herrelief.com/images/branded/hero-duo.jpg"/>
+<meta property="og:url" content="https://herrelief.com/"/>
+<meta property="og:image" content="https://herrelief.com/images/branded/product-front.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HerRelief — Electric Heating Massage Belt for Period Cramp Relief"/>
+<meta name="twitter:description" content="Drug-free period cramp relief with 5 heat modes and vibration massage. 50% off + free shipping."/>
+<meta name="twitter:image" content="https://herrelief.com/images/branded/product-front.jpg"/>
+<link rel="canonical" href="https://herrelief.com/"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "HerRelief",
+      "url": "https://herrelief.com",
+      "logo": "https://herrelief.com/favicon.svg",
+      "description": "Drug-free period cramp relief with electric heating and vibration massage technology."
+    },
+    {
+      "@type": "WebSite",
+      "name": "HerRelief",
+      "url": "https://herrelief.com"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://herrelief.com/" }
+      ]
+    }
+  ]
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -105,7 +134,7 @@
 <!-- ============================================ -->
 <!-- ANNOUNCEMENT BAR (Urgency — Scarcity Signal) -->
 <!-- ============================================ -->
-<div class="bg-primary text-on-primary text-center py-2.5 px-4 text-sm font-medium tracking-wide">
+<div id="site-topbar" class="bg-primary text-on-primary text-center py-2.5 px-4 text-sm font-medium tracking-wide">
   <span class="urgency-pulse inline-flex items-center gap-2">
     <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
     Spring Sale — 50% Off + Free Shipping on all orders
@@ -116,7 +145,7 @@
 <!-- ============================================ -->
 <!-- TOP NAV BAR -->
 <!-- ============================================ -->
-<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm shadow-rose-900/5">
+<nav id="site-nav" class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm shadow-rose-900/5">
   <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
     <a href="index.html" class="flex items-center gap-1">
      <svg width="180" height="36" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
@@ -141,6 +170,8 @@
     <div class="hidden md:flex gap-8 items-center">
       <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#benefits">Benefits</a>
       <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#how-it-works">How It Works</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="science.html">Science</a>
+      <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#tracker">Tracker</a>
       <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#reviews">Reviews</a>
       <a class="text-stone-600 hover:text-rose-900 transition-colors" href="#faq">FAQ</a>
       <a class="text-stone-600 hover:text-rose-900 transition-colors" href="about.html">About</a>
@@ -155,6 +186,8 @@
   <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
     <a class="block text-stone-600 hover:text-rose-900" href="#benefits">Benefits</a>
     <a class="block text-stone-600 hover:text-rose-900" href="#how-it-works">How It Works</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="science.html">Science</a>
+    <a class="block text-stone-600 hover:text-rose-900" href="#tracker">Tracker</a>
     <a class="block text-stone-600 hover:text-rose-900" href="#reviews">Reviews</a>
     <a class="block text-stone-600 hover:text-rose-900" href="#faq">FAQ</a>
     <a class="block text-stone-600 hover:text-rose-900" href="about.html">About</a>
@@ -163,6 +196,149 @@
 </nav>
 
 <main class="overflow-hidden">
+
+<!-- ============================================ -->
+<!-- SCROLL VIDEO HERO                            -->
+<!-- ============================================ -->
+<div id="vh-wrap" style="position:relative;height:300vh;background:#1a1c1a;margin-top:-1px;">
+  <div style="position:fixed;top:0;left:0;height:100vh;width:100%;overflow:hidden;z-index:30;" id="vh-fixed">
+    <video id="vh-video" muted playsinline preload="auto" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;" src="hero-video.mp4"></video>
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4);z-index:2;"></div>
+
+    <div class="vh-slide vh-on" data-r="0,25" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;transition:opacity 0.5s;">
+      <div style="max-width:700px;">
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">HERRELIEF</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Pain should never stop you from enjoying life.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Every month, millions of women lose days to cramp pain. Not anymore.</p>
+      </div>
+    </div>
+
+    <div class="vh-slide" data-r="25,50" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+      <div style="max-width:700px;">
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">AT WORK</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Take it to work.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Discreet enough for the office. Powerful enough for your worst days.</p>
+      </div>
+    </div>
+
+    <div class="vh-slide" data-r="50,80" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+      <div style="max-width:700px;">
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">FREEDOM</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Move freely.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Yoga, gym, walks in the park. The belt moves with you.</p>
+      </div>
+    </div>
+
+    <div class="vh-slide" data-r="80,100" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+      <div style="max-width:700px;">
+        <a href="product.html" style="display:inline-block;padding:1rem 2.5rem;background:#fe7e4f;color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none;border-radius:999px;box-shadow:0 4px 24px rgba(254,126,79,0.4);">$39.99 — Shop Now</a>
+        <span style="display:block;margin-top:1rem;font-size:0.9rem;color:rgba(255,255,255,0.6);">Keep scrolling to learn more</span>
+        <div style="margin-top:1rem;color:rgba(255,255,255,0.4);animation:vhbob 2s ease-in-out infinite;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(255,255,255,0.5);animation:vhbob 2s ease-in-out infinite;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</div>
+<style>@keyframes vhbob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}</style>
+<script>
+(function(){
+  var v=document.getElementById('vh-video');
+  var w=document.getElementById('vh-wrap');
+  var slides=document.querySelectorAll('.vh-slide');
+
+  v.load();
+
+  function go(){
+    var dur=v.duration;
+    if(!dur||isNaN(dur))return;
+    var ticking=false, targetP=0, curP=-1;
+
+    function render(){
+      ticking=false;
+      // ease towards target so we never spam seeks on tiny deltas
+      var delta=Math.abs(targetP-curP);
+      if(delta<0.002) return;
+      curP=targetP;
+      try{ v.currentTime=curP*dur; }catch(e){}
+      slides.forEach(function(sl){
+        var r=sl.dataset.r.split(',');
+        var a=parseFloat(r[0])/100, b=parseFloat(r[1])/100;
+        sl.style.opacity=(curP>=a&&curP<b)?'1':'0';
+      });
+    }
+
+    function tick(){
+      var rect=w.getBoundingClientRect();
+      var total=w.offsetHeight-window.innerHeight;
+      if(total<=0)return;
+      var s=Math.max(0,-rect.top);
+      targetP=Math.min(1,s/total);
+      if(!ticking){ ticking=true; requestAnimationFrame(render); }
+    }
+
+    window.addEventListener('scroll',tick,{passive:true});
+    tick();
+  }
+
+  // Show/hide fixed container + header based on scroll position
+  var fixed=document.getElementById('vh-fixed');
+  var topbar=document.getElementById('site-topbar');
+  var nav=document.getElementById('site-nav');
+  var stickyCart=document.getElementById('sticky-cart-bar');
+  // Hide header + sticky cart on load
+  topbar.style.display='none';
+  nav.style.display='none';
+  fixed.style.transition='opacity 0.8s ease';
+  topbar.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  nav.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  function checkVisibility(){
+    var rect=w.getBoundingClientRect();
+    var nearEnd=rect.bottom<window.innerHeight*1.5;
+    if(rect.top<=0 && rect.bottom>0){
+      // Fade out video smoothly as we approach the end
+      if(nearEnd){
+        var fadeP=Math.max(0,(rect.bottom-window.innerHeight)/(window.innerHeight*0.5));
+        fixed.style.opacity=fadeP;
+      } else {
+        fixed.style.opacity='1';
+      }
+      fixed.style.display='block';
+      topbar.style.opacity='0';
+      topbar.style.transform='translateY(-100%)';
+      nav.style.opacity='0';
+      nav.style.transform='translateY(-100%)';
+    } else if(rect.bottom<=0){
+      fixed.style.display='none';
+      fixed.style.opacity='0';
+      topbar.style.display='';
+      topbar.style.opacity='1';
+      topbar.style.transform='translateY(0)';
+      nav.style.display='';
+      nav.style.opacity='1';
+      nav.style.transform='translateY(0)';
+      if(stickyCart)stickyCart.style.display='';
+    } else {
+      if(stickyCart)stickyCart.style.display='none';
+      fixed.style.display='block';
+      fixed.style.opacity='1';
+      topbar.style.opacity='0';
+      topbar.style.transform='translateY(-100%)';
+      nav.style.opacity='0';
+      nav.style.transform='translateY(-100%)';
+    }
+  }
+  window.addEventListener('scroll',checkVisibility,{passive:true});
+  checkVisibility();
+
+  if(v.readyState>=1){go();}
+  else{v.addEventListener('loadedmetadata',go);}
+})();
+</script>
 
 <!-- Unaware Stage Hook -->
 <div class="bg-surface-container-low py-3 px-6 text-center border-b border-surface-container">
@@ -231,7 +407,7 @@
   <!-- Product Image (Occurrence 1/5 — Mere Exposure Effect) -->
   <div class="flex-1 relative">
     <div class="absolute inset-0 relief-pulse scale-125 animate-pulse"></div>
-    <img alt="HerRelief heating belt — Pink and White color variants side by side" class="relative z-10 w-full h-auto object-contain rounded-lg" src="images/branded/hero-duo.jpg"/>
+    <img alt="HerRelief heating belt worn, LED display visible — real product photo" class="relative z-10 w-full h-auto object-contain rounded-lg" src="images/branded/product-front.jpg"/>
     <!-- Social proof floating card -->
     <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-lg shadow-lg z-20 flex items-center gap-4">
       <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-white">
@@ -316,11 +492,11 @@
         <div class="flex-1">
           <h3 class="font-headline text-3xl mb-6">Wear it anywhere, anytime.</h3>
           <p class="text-on-surface-variant mb-6 leading-relaxed">Picture yourself getting through your workday pain-free, or curling up on the couch with soothing warmth wrapped around you. The ultra-slim profile hides under any outfit — at work, school, or home.</p>
-          <p class="text-on-surface-variant text-sm italic">"It's so quiet and discreet, I forget I'm wearing it." — Sarah J.</p>
+          <p class="text-on-surface-variant text-sm italic">"I don't go anywhere without this heating pad when my cycle on  — it's become my monthly essential." — Liz P.</p>
         </div>
         <div class="flex-1 flex justify-center">
           <!-- Product image occurrence 2: lifestyle angle -->
-          <img alt="Woman relaxing on couch wearing HerRelief heating belt for period cramp relief" class="rounded-xl shadow-md max-w-xs" src="images/branded/lifestyle-couch.jpg"/>
+          <img alt="Woman relaxing on couch wearing HerRelief heating belt for period cramp relief" class="rounded-xl shadow-md max-w-xs" src="images/branded/lifestyle-couch.jpg" loading="lazy" decoding="async"/>
         </div>
       </div>
     </div>
@@ -360,7 +536,7 @@
   <!-- Product image occurrence 3: close-up of control panel -->
   <div class="mt-16 flex justify-center">
     <div class="relative max-w-md">
-      <img alt="HerRelief far infrared heat technology cross-section showing deep tissue penetration" class="rounded-xl shadow-md w-full" src="images/branded/detail-heat.jpg"/>
+      <img alt="HerRelief far infrared heat technology cross-section showing deep tissue penetration" class="rounded-xl shadow-md w-full" src="images/branded/detail-heat.jpg" loading="lazy" decoding="async"/>
       <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg text-sm font-medium text-primary">
         <span class="material-symbols-outlined text-xs align-middle mr-1" style="font-variation-settings: 'FILL' 1;">touch_app</span>
         Intuitive one-touch controls
@@ -369,12 +545,72 @@
   </div>
 </section>
 
-<!-- BEFORE/AFTER — Loss Aversion -->
+<!-- BEFORE/AFTER — Canvas silhouette animation (no AI photos) -->
 <section class="py-20 px-6 bg-surface-container-low">
   <div class="max-w-4xl mx-auto text-center space-y-8">
     <h2 class="font-headline text-4xl md:text-5xl">See the difference</h2>
     <p class="text-on-surface-variant text-lg">From dreading your cycle to living your life — this is what relief looks like.</p>
-    <img src="images/psychology/before-after.jpg" alt="Before and after using HerRelief — from pain and frustration to comfort and smiles" class="w-full rounded-lg shadow-md"/>
+    <div class="bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden">
+      <canvas id="before-after-silhouette" aria-label="Animated silhouette showing a woman curled up in pain (before) and standing tall with the HerRelief belt glowing (after)" role="img" style="width:100%;aspect-ratio:2/1;display:block;"></canvas>
+    </div>
+  </div>
+</section>
+<script src="js/before-after.js" defer></script>
+
+<!-- ============================================ -->
+<!-- COMPANION TRACKER APP — free bonus + value add-->
+<!-- ============================================ -->
+<section class="py-24 px-6 bg-surface" id="tracker">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- Phone mockup -->
+    <div class="order-2 md:order-1 flex justify-center">
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-primary-container to-secondary/20 rounded-[3.5rem] blur-2xl opacity-60"></div>
+        <div class="relative bg-[#1a1c1a] p-3 rounded-[3rem] shadow-2xl">
+          <img src="images/tracker-preview.png" alt="HerRelief period tracker companion app — cycle predictions, symptom logging, belt presets" class="w-64 md:w-72 rounded-[2.25rem] block" loading="lazy" decoding="async"/>
+        </div>
+        <!-- Floating "Free" badge -->
+        <div class="absolute -top-4 -right-4 bg-secondary text-on-secondary rounded-full px-5 py-3 shadow-xl rotate-6">
+          <div class="text-xs font-semibold uppercase tracking-wider opacity-80">Free with belt</div>
+          <div class="font-headline text-xl leading-tight">$0 forever</div>
+        </div>
+      </div>
+    </div>
+    <!-- Copy -->
+    <div class="order-1 md:order-2 space-y-6 text-center md:text-left">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-xs font-semibold uppercase tracking-wider">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">phone_iphone</span>
+        Included with every order
+      </div>
+      <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight">A period tracker that actually <em class="font-headline italic text-secondary">gets it</em>.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">Every HerRelief belt comes with free lifetime access to our companion tracker app. Built by the same team. Same science. Same promise — your cycle, on your terms.</p>
+      <ul class="space-y-3 text-left inline-block md:block">
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-6 h-6 bg-primary-container rounded-full flex items-center justify-center mt-0.5">
+            <span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+          </span>
+          <span class="text-on-surface"><strong>Predict your next cycle</strong> — smart forecasting that learns your pattern.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-6 h-6 bg-primary-container rounded-full flex items-center justify-center mt-0.5">
+            <span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+          </span>
+          <span class="text-on-surface"><strong>Log symptoms in one tap</strong> — mood, flow, cramp intensity, energy.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-6 h-6 bg-primary-container rounded-full flex items-center justify-center mt-0.5">
+            <span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          </span>
+          <span class="text-on-surface"><strong>Pain-day belt presets</strong> — saved heat + vibration levels ready for rough days.</span>
+        </li>
+      </ul>
+      <div class="pt-2">
+        <a href="https://herrelief-tracker.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-secondary text-secondary rounded-full font-bold hover:bg-secondary hover:text-on-secondary transition-all active:scale-95">
+          See the tracker
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -389,15 +625,15 @@
       <div class="max-w-xl">
         <h2 class="font-headline text-4xl md:text-5xl mb-6">Trusted by 600+ women</h2>
         <div class="flex items-center gap-4">
-          <span class="text-4xl font-headline text-secondary">4.9/5</span>
+          <span class="text-4xl font-headline text-secondary">4.6/5</span>
           <div class="flex text-secondary-container">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star</span>
           </div>
-          <span class="text-on-surface-variant text-sm">(678 verified reviews)</span>
+          <span class="text-on-surface-variant text-sm">(198 verified reviews)</span>
         </div>
       </div>
     </div>
@@ -405,7 +641,7 @@
     <!-- Review Grid — 5 reviews for optimal social proof -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Review 1 -->
+      <!-- Review 1 — Grace I. (TikTok Shop verified) -->
       <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
         <div class="flex text-orange-400 mb-4">
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -414,74 +650,74 @@
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
         </div>
-        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Way better than disposable heating pads. It stays warm, doesn't fall off, and the vibration is a game changer for my lower back pain too."</p>
+        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Fast delivery wow and the product works!! Relief cramps pains — I was skeptical but this thing actually heats up fast and the vibration is so soothing"</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">SJ</div>
+          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">GI</div>
           <div>
-            <p class="font-bold text-sm">Sarah J., 26</p>
+            <p class="font-bold text-sm">Grace I., 24</p>
+            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Apr 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 — Tara K. (TikTok Shop verified) -->
+      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
+        <div class="flex text-orange-400 mb-4">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Love the vibrations feature, gets plenty warm and very stretchy band to easily buckle around waist. I wear mine to work and nobody notices"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">TK</div>
+          <div>
+            <p class="font-bold text-sm">Tara K., 28</p>
+            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Apr 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 — Kendra L. -->
+      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
+        <div class="flex text-orange-400 mb-4">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Lifesaver &amp; Pain reliever!! I used to take so many painkillers every month. This replaced all of that. The heat kicks in within like 2 minutes"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">KL</div>
+          <div>
+            <p class="font-bold text-sm">Kendra L., 22</p>
+            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Mar 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 — Brittany K. -->
+      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
+        <div class="flex text-orange-400 mb-4">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Ladies grab this for you or your daughters while there's a deal on them!! Great product, my daughter takes it to school and it gets her through the day"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">BK</div>
+          <div>
+            <p class="font-bold text-sm">Brittany K., 26</p>
             <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Feb 2026</p>
           </div>
         </div>
       </div>
 
-      <!-- Review 2 -->
-      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
-        <div class="flex text-orange-400 mb-4">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-        </div>
-        <p class="font-headline text-lg mb-6 leading-relaxed italic">"I got mine in 2 days and it works exactly as advertised. I used to rely on painkillers every month — now I just wrap this on and I'm good to go."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">ER</div>
-          <div>
-            <p class="font-bold text-sm">Emily R., 23</p>
-            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Feb 2026</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Review 3 -->
-      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
-        <div class="flex text-orange-400 mb-4">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-        </div>
-        <p class="font-headline text-lg mb-6 leading-relaxed italic">"So much better than one-time-use heating pads. Saves me money every month and the warmth is consistent the whole time. Reduced my cramps in about 10 minutes."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">JN</div>
-          <div>
-            <p class="font-bold text-sm">Jessica N., 29</p>
-            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Jan 2026</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Review 4 -->
-      <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20">
-        <div class="flex text-orange-400 mb-4">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-        </div>
-        <p class="font-headline text-lg mb-6 leading-relaxed italic">"I wear it at my desk during work and nobody even notices. The highest setting is seriously warm — I usually keep it at level 3. Absolute lifesaver during my cycle."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">MA</div>
-          <div>
-            <p class="font-bold text-sm">Maria A., 24</p>
-            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Oct 2025</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Review 5 -->
+      <!-- Review 5 — Alison R. -->
       <div class="p-8 bg-surface-container-lowest rounded-lg shadow-sm border border-primary-container/20 md:col-span-2 lg:col-span-2">
         <div class="flex text-orange-400 mb-4">
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -490,26 +726,17 @@
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
         </div>
-        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Bought this for my daughter who has really bad cramps and she says it's the only thing that actually helps her get through school days. We're buying a second one as backup. Shipping was super fast — arrived in 2 days."</p>
+        <p class="font-headline text-lg mb-6 leading-relaxed italic">"Ladies, YOU need this if you deal with cramps! I was spending $15/month on disposable heat pads. This paid for itself in 3 months and it's way more effective than anything I was buying before."</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">DW</div>
+          <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-sm">AR</div>
           <div>
-            <p class="font-bold text-sm">Diane W., 45</p>
-            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Dec 2025</p>
+            <p class="font-bold text-sm">Alison R., 31</p>
+            <p class="text-xs text-on-surface-variant">Verified Buyer &middot; Mar 2026</p>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- LIFESTYLE GRID — Social Proof -->
-<section class="py-20 px-6 bg-surface">
-  <div class="max-w-5xl mx-auto text-center space-y-8">
-    <h2 class="font-headline text-4xl md:text-5xl">Relief that fits your life</h2>
-    <p class="text-on-surface-variant text-lg">At your desk, on the couch, in the car — HerRelief goes wherever you go.</p>
-    <img src="images/psychology/lifestyle-grid.jpg" alt="HerRelief heating belt used in 6 everyday situations — working, reading, sleeping, yoga, driving, walking with friends" class="w-full rounded-lg shadow-md"/>
   </div>
 </section>
 
@@ -703,7 +930,7 @@
 <section class="py-20 px-6 bg-surface-container-low">
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
     <div class="flex-1">
-      <img src="images/psychology/gift-ready.jpg" alt="HerRelief heating belt in rose-gold gift box with ribbon — perfect Mother's Day gift" class="w-full rounded-lg shadow-md"/>
+      <img src="images/psychology/gift-ready.jpg" alt="HerRelief heating belt in rose-gold gift box with ribbon — perfect Mother's Day gift" class="w-full rounded-lg shadow-md" loading="lazy" decoding="async"/>
     </div>
     <div class="flex-1 space-y-6 text-center md:text-left">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
@@ -728,7 +955,7 @@
     </div>
     <h2 class="font-headline text-3xl md:text-4xl text-on-surface">Join the HerRelief Circle</h2>
     <p class="text-on-surface-variant text-lg">Get early access to flash sales, new product drops, and exclusive wellness tips delivered to your inbox. Members save an extra 10% on their first order.</p>
-    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re in! Check your inbox'; this.querySelector('button').disabled=true; this.querySelector('input').disabled=true;">
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); captureEmail(this.querySelector('input').value, 'herrelief-circle'); this.querySelector('button').textContent='You\'re in! Check your inbox'; this.querySelector('button').disabled=true; this.querySelector('input').disabled=true;">
       <input type="email" placeholder="Enter your email" required class="flex-1 px-5 py-3 rounded-full border border-outline-variant bg-white text-on-surface placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-secondary"/>
       <button type="submit" class="px-8 py-3 bg-secondary text-on-secondary rounded-full font-bold hover:opacity-90 transition-all active:scale-95 whitespace-nowrap">
         Join Free
@@ -772,13 +999,13 @@
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
     <!-- Product image occurrence 4 -->
     <div class="flex-1 flex justify-center">
-      <img alt="HerRelief heating belt — clean product shot on white background" class="w-64 md:w-80 drop-shadow-xl" src="images/branded/hero-clean.jpg"/>
+      <img alt="HerRelief heating belt with USB-C charging cable — real product photo" class="w-64 md:w-80 drop-shadow-xl" src="images/branded/product-with-cable.jpg" loading="lazy" decoding="async"/>
     </div>
     <div class="flex-1 text-center md:text-left space-y-6">
       <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight">Ready to feel the difference?</h2>
       <p class="text-on-surface-variant text-lg leading-relaxed">Your next period doesn't have to hurt. Join 600+ women who've already made the switch to drug-free relief.</p>
       <div class="flex flex-col sm:flex-row items-center gap-6">
-        <a href="https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e" class="w-full sm:w-auto px-10 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-105 transition-all active:scale-95 inline-block text-center">
+        <a href="product.html" class="w-full sm:w-auto px-10 py-4 bg-secondary text-on-secondary rounded-full font-bold text-lg shadow-lg hover:shadow-secondary/30 hover:scale-105 transition-all active:scale-95 inline-block text-center">
           Buy Now — $39.99
         </a>
         <div class="flex flex-col items-center sm:items-start">
@@ -788,7 +1015,7 @@
       </div>
       <!-- Guarantee Badge -->
       <div class="flex justify-center md:justify-start mb-4">
-        <img src="images/psychology/guarantee-badge.jpg" alt="90-Day Risk-Free Trial guarantee badge" class="w-28 h-28 object-contain"/>
+        <img src="images/psychology/guarantee-badge.jpg" alt="90-Day Risk-Free Trial guarantee badge" class="w-28 h-28 object-contain" loading="lazy" decoding="async"/>
       </div>
       <!-- Trust badges repeated (Mere Exposure + CTA trust) -->
       <div class="flex flex-wrap justify-center md:justify-start items-center gap-6 pt-2">
@@ -858,13 +1085,13 @@
 <!-- STICKY MOBILE CTA BAR                        -->
 <!-- (Flow state — catches 60%+ mobile traffic)   -->
 <!-- ============================================ -->
-<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-xl border-t border-stone-200 px-4 py-3 sticky-bar-enter">
+<div id="sticky-cart-bar" class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-xl border-t border-stone-200 px-4 py-3 sticky-bar-enter" style="display:none;">
   <div class="flex items-center justify-between gap-3">
     <div>
       <p class="font-bold text-sm text-on-surface">HerRelief</p>
       <p class="text-xs text-on-surface-variant"><span class="text-secondary font-bold">$39.99</span> <span class="line-through text-stone-400">$79.99</span></p>
     </div>
-    <a href="https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e" class="px-6 py-2.5 bg-secondary text-white rounded-full font-bold text-sm shadow-md active:scale-95 transition-transform inline-block text-center">
+    <a href="product.html" class="px-6 py-2.5 bg-secondary text-white rounded-full font-bold text-sm shadow-md active:scale-95 transition-transform inline-block text-center">
       Buy Now
     </a>
   </div>
@@ -872,5 +1099,34 @@
 
 <!-- Tracking & Analytics (GA4, Clarity, TikTok Pixel, Meta Pixel) -->
 <script src="tracking.js"></script>
-<script src="email-popup.js"></script>
+<!-- email-popup.js disabled — exit-intent popup on product page only -->
+
+<script>
+// Email capture — sends to Google Sheets (or logs for now)
+// Replace SHEET_URL with your Google Apps Script web app URL when ready
+var SHEET_URL = 'https://script.google.com/macros/s/AKfycbw-VbP-3xH5m28d3gLPan_V45pmSTALM4CfUW8uKbxZv30SkGguO6abJyDC62CbiIPi/exec';
+
+function captureEmail(email, source) {
+  console.log('Email captured:', email, 'from:', source);
+
+  if (SHEET_URL) {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        source: source,
+        timestamp: new Date().toISOString(),
+        page: window.location.pathname
+      })
+    }).catch(function(){});
+  }
+
+  // Also store locally as backup
+  var emails = JSON.parse(localStorage.getItem('herrelief_emails') || '[]');
+  emails.push({ email: email, source: source, time: new Date().toISOString() });
+  localStorage.setItem('herrelief_emails', JSON.stringify(emails));
+}
+</script>
 </body></html>
