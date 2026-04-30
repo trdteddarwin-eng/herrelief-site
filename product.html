@@ -343,6 +343,167 @@
     background: #e3e2e0;
     margin: 0.75rem 0;
   }
+
+  /* ===== FREE-GIFT DETAIL MODAL (overlays cart drawer) ===== */
+  .gift-row-clickable {
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .gift-row-clickable:hover {
+    border-color: rgba(164, 60, 18, 0.45);
+    transform: translateY(-1px);
+  }
+  .gift-row-clickable:focus-visible {
+    outline: 2px solid #a43c12;
+    outline-offset: 2px;
+  }
+  .gift-row-chevron {
+    color: #a43c12;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .gift-row-clickable:hover .gift-row-chevron {
+    transform: translateX(3px);
+  }
+  .gift-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .gift-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .gift-modal-card {
+    position: relative;
+    background: #fdfaf5; /* cream / ivory */
+    color: #4a4544; /* warm gray body */
+    border-radius: 1.25rem;
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    padding: 2rem 1.75rem;
+    transform: scale(0.94);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .gift-modal-overlay.open .gift-modal-card {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .gift-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #6b6362;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .gift-modal-close:hover {
+    background: rgba(164, 60, 18, 0.08);
+    color: #a43c12;
+  }
+  .gift-modal-heading {
+    font-family: "Noto Serif", serif;
+    color: #a43c12;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .gift-modal-subhead {
+    font-family: "Noto Serif", serif;
+    font-style: italic;
+    color: #8a4a2b;
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+  }
+  .gift-modal-section-label {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a43c12;
+    margin: 0 0 0.5rem;
+  }
+  .gift-modal-section-body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #4a4544;
+    margin: 0;
+  }
+  .gift-modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .gift-modal-list li {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #4a4544;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+  .gift-modal-list li:last-child { margin-bottom: 0; }
+  .gift-modal-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.6rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: #a43c12;
+  }
+  .gift-modal-value {
+    background: rgba(254, 126, 79, 0.08);
+    border: 1px solid rgba(164, 60, 18, 0.2);
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #a43c12;
+    line-height: 1.4;
+  }
+  .gift-modal-value .strike {
+    text-decoration: line-through;
+    color: #b59a98;
+    font-weight: 600;
+    margin-right: 0.35rem;
+  }
+  .gift-modal-delivery {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: #6b6362;
+  }
 </style>
 </head>
 <body class="bg-background font-body text-on-surface selection:bg-primary-container">
@@ -2580,8 +2741,10 @@ document.addEventListener('keydown', function(e) {
       </div>
     </div>
 
-    <!-- FREE GIFT (auto-added, non-removable) -->
-    <div class="free-gift-shimmer rounded-lg p-4 mt-4 border border-primary-container/40">
+    <!-- FREE GIFT (auto-added, non-removable) - clickable for details -->
+    <div class="free-gift-shimmer gift-row-clickable rounded-lg p-4 mt-4 border border-primary-container/40"
+         role="button" tabindex="0" aria-haspopup="dialog" aria-controls="gift-modal-toolkit"
+         data-gift-modal="gift-modal-toolkit">
       <div class="flex gap-3">
         <div class="w-12 h-12 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center">
           <span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
@@ -2590,6 +2753,10 @@ document.addEventListener('keydown', function(e) {
           <div class="flex items-center gap-2 flex-wrap">
             <p class="font-bold text-sm text-on-surface">Cycle Wellness Toolkit</p>
             <span class="text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 px-2 py-0.5 rounded-full border border-green-200">FREE</span>
+            <span class="text-[10px] font-semibold text-secondary ml-auto inline-flex items-center gap-0.5">
+              <span class="material-symbols-outlined" style="font-size: 13px;">info</span>
+              Learn more
+            </span>
           </div>
           <p class="text-xs text-on-surface-variant mt-0.5">PDF Guide + 5-Day Email Challenge</p>
           <div class="flex items-center gap-2 mt-1">
@@ -2601,11 +2768,14 @@ document.addEventListener('keydown', function(e) {
             Delivered to your email after purchase
           </p>
         </div>
+        <span class="material-symbols-outlined gift-row-chevron" aria-hidden="true">chevron_right</span>
       </div>
     </div>
 
-    <!-- FREE Period Tracker App (lifetime) -->
-    <div class="free-gift-shimmer rounded-lg p-4 mt-4 border border-primary-container/40">
+    <!-- FREE Period Tracker App (lifetime) - clickable for details -->
+    <div class="free-gift-shimmer gift-row-clickable rounded-lg p-4 mt-4 border border-primary-container/40"
+         role="button" tabindex="0" aria-haspopup="dialog" aria-controls="gift-modal-tracker"
+         data-gift-modal="gift-modal-tracker">
       <div class="flex gap-3">
         <div class="w-12 h-12 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center">
           <span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
@@ -2614,6 +2784,10 @@ document.addEventListener('keydown', function(e) {
           <div class="flex items-center gap-2 flex-wrap">
             <p class="font-bold text-sm text-on-surface">Period Tracker App</p>
             <span class="text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 px-2 py-0.5 rounded-full border border-green-200">FREE FOR LIFE</span>
+            <span class="text-[10px] font-semibold text-secondary ml-auto inline-flex items-center gap-0.5">
+              <span class="material-symbols-outlined" style="font-size: 13px;">info</span>
+              Learn more
+            </span>
           </div>
           <p class="text-xs text-on-surface-variant mt-0.5">Cycle predictions, symptom logging, mood journal &amp; more</p>
           <div class="flex items-center gap-2 mt-1">
@@ -2625,6 +2799,7 @@ document.addEventListener('keydown', function(e) {
             Lifetime access — no subscriptions, ever
           </p>
         </div>
+        <span class="material-symbols-outlined gift-row-chevron" aria-hidden="true">chevron_right</span>
       </div>
     </div>
 
@@ -2693,6 +2868,160 @@ document.addEventListener('keydown', function(e) {
     </p>
   </div>
 </div>
+
+<!-- ============================================ -->
+<!-- FREE-GIFT DETAIL MODALS (overlay cart drawer) -->
+<!-- ============================================ -->
+<div class="gift-modal-overlay" id="gift-modal-toolkit" role="dialog" aria-modal="true" aria-labelledby="gift-modal-toolkit-title" data-gift-modal-overlay>
+  <div class="gift-modal-card" role="document">
+    <button type="button" class="gift-modal-close" aria-label="Close" data-gift-modal-close>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h2 id="gift-modal-toolkit-title" class="gift-modal-heading">Cycle Wellness Toolkit</h2>
+    <p class="gift-modal-subhead">Your free companion guide</p>
+
+    <div style="margin-top: 1.5rem;">
+      <p class="gift-modal-section-label">What it is</p>
+      <p class="gift-modal-section-body">A printable, evidence-based PDF guide plus a 5-day email challenge designed to help you understand and work with your cycle.</p>
+    </div>
+
+    <div style="margin-top: 1.25rem;">
+      <p class="gift-modal-section-label">What you'll get</p>
+      <ul class="gift-modal-list">
+        <li>30-page guide explaining each cycle phase and what's happening in your body</li>
+        <li>5-day relief challenge delivered to your inbox</li>
+        <li>Phase-specific self-care tips (food, movement, rest)</li>
+        <li>Printable cycle tracker you can hang on your fridge</li>
+        <li>Symptom-relief cheat sheet</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <p class="gift-modal-section-label">Value</p>
+      <div class="gift-modal-value">
+        <span class="strike">$19.99</span>Yours FREE with this order
+      </div>
+    </div>
+
+    <div style="margin-top: 1.25rem;" class="gift-modal-delivery">
+      <span class="material-symbols-outlined" style="font-size: 18px; color: #a43c12;">mail</span>
+      <span><strong>How you get it:</strong> Delivered to your email immediately after purchase</span>
+    </div>
+  </div>
+</div>
+
+<div class="gift-modal-overlay" id="gift-modal-tracker" role="dialog" aria-modal="true" aria-labelledby="gift-modal-tracker-title" data-gift-modal-overlay>
+  <div class="gift-modal-card" role="document">
+    <button type="button" class="gift-modal-close" aria-label="Close" data-gift-modal-close>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h2 id="gift-modal-tracker-title" class="gift-modal-heading">Period Tracker App</h2>
+    <p class="gift-modal-subhead">FREE FOR LIFE &mdash; no subscriptions, ever</p>
+
+    <div style="margin-top: 1.5rem;">
+      <p class="gift-modal-section-label">What it is</p>
+      <p class="gift-modal-section-body">HerRelief is a premium cycle-tracking web app &mdash; your private cycle companion you can use on any device.</p>
+    </div>
+
+    <div style="margin-top: 1.25rem;">
+      <p class="gift-modal-section-label">What it does</p>
+      <ul class="gift-modal-list">
+        <li>Predicts your next period, ovulation day, and fertile window</li>
+        <li>Logs symptoms, flow, mood, cramps, and notes</li>
+        <li>Gives daily phase-based insights so you know what's coming</li>
+        <li>Full calendar view of your cycle history</li>
+        <li>Water intake tracker + period prep checklist</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 1.25rem;">
+      <p class="gift-modal-section-label">What you can do with it</p>
+      <ul class="gift-modal-list">
+        <li>Use it from your phone, tablet, or laptop &mdash; anywhere</li>
+        <li>Sync across all your devices with one account</li>
+        <li>Zero ads, zero data selling, zero subscriptions</li>
+        <li>Yours for life</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <p class="gift-modal-section-label">Value</p>
+      <div class="gift-modal-value">
+        <span class="strike">$29.99/year</span>Yours FREE FOR LIFE with this order
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== FREE-GIFT DETAIL MODAL CONTROLLER =====
+(function() {
+  var openModalEl = null;
+  var lastFocused = null;
+
+  function openGiftModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.classList.add('open');
+    openModalEl = modal;
+    // Focus close button for keyboard accessibility
+    var closeBtn = modal.querySelector('[data-gift-modal-close]');
+    if (closeBtn) {
+      // Defer focus to allow transition to start
+      setTimeout(function() { closeBtn.focus(); }, 50);
+    }
+  }
+
+  function closeGiftModal() {
+    if (!openModalEl) return;
+    openModalEl.classList.remove('open');
+    openModalEl = null;
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      try { lastFocused.focus(); } catch (e) {}
+    }
+  }
+
+  // Wire up clickable rows (inside cart drawer)
+  document.querySelectorAll('[data-gift-modal]').forEach(function(row) {
+    row.addEventListener('click', function(e) {
+      var id = row.getAttribute('data-gift-modal');
+      if (id) openGiftModal(id);
+    });
+    row.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        var id = row.getAttribute('data-gift-modal');
+        if (id) openGiftModal(id);
+      }
+    });
+  });
+
+  // Close button inside each modal
+  document.querySelectorAll('[data-gift-modal-close]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeGiftModal();
+    });
+  });
+
+  // Backdrop click closes (only when clicking the overlay itself, not the card)
+  document.querySelectorAll('[data-gift-modal-overlay]').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeGiftModal();
+    });
+  });
+
+  // ESC closes the gift modal first (before cart drawer).
+  // Use capture phase so we run before the existing drawer ESC handler.
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && openModalEl) {
+      e.stopPropagation();
+      closeGiftModal();
+    }
+  }, true);
+})();
+</script>
 
 <!-- ============================================ -->
 <!-- ADDITIONAL CONVERSION SCRIPTS -->
