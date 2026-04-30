@@ -473,7 +473,7 @@
       <p class="text-xs uppercase tracking-wider text-on-surface-variant font-semibold mb-3 mt-6">
         Watch Real Reviews
       </p>
-      <div class="video-thumb-strip grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="video-thumb-strip">
         <button type="button"
                 class="video-thumb-btn group relative rounded-lg overflow-hidden bg-surface-container-low text-left"
                 data-video-src="tiktok_videos/ugc_3.mp4"
@@ -532,6 +532,24 @@
         </button>
       </div>
       <style>
+        .video-thumb-strip {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 12px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 4px;
+        }
+        .video-thumb-strip::-webkit-scrollbar { display: none; }
+        .video-thumb-strip .video-thumb-btn {
+          flex: 0 0 38vw;
+          max-width: 140px;
+          min-width: 110px;
+          scroll-snap-align: start;
+        }
         .video-thumb-strip .video-thumb-btn { transition: transform .2s ease, box-shadow .2s ease; }
         .video-thumb-strip .video-thumb-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.10); }
         .video-thumb-strip .video-thumb-btn video { pointer-events: none; }
