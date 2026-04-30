@@ -277,7 +277,7 @@
 
   /* Navigation arrows (desktop) */
   .tiktok-nav-arrow {
-    display: none;
+    display: flex;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -285,8 +285,9 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: white;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     border: 1px solid rgba(210, 195, 196, 0.3);
     align-items: center;
     justify-content: center;
@@ -303,12 +304,10 @@
     height: 20px;
     fill: #70585b;
   }
-  .tiktok-nav-prev { left: -22px; }
-  .tiktok-nav-next { right: -22px; }
+  .tiktok-nav-prev { left: 8px; }
+  .tiktok-nav-next { right: 8px; }
 
-  @media (min-width: 768px) {
-    .tiktok-nav-arrow { display: flex; }
-  }
+  /* arrows now always visible */
 
   /* Music note animation (header icon) */
   .tiktok-music-note {
@@ -372,7 +371,7 @@
     </div>
 
     <!-- Video Carousel -->
-    <div class="relative" id="tiktok-carousel-wrapper">
+    <div class="relative" id="tiktok-carousel-wrapper" style="overflow: visible;">
 
       <!-- Left Arrow -->
       <button class="tiktok-nav-arrow tiktok-nav-prev" id="tiktok-prev" aria-label="Previous videos">
@@ -423,7 +422,7 @@
     eye: '<svg viewBox="0 0 24 24" width="10" height="10"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="white"/></svg>'
   };
 
-  const NUM_SLOTS = 6;
+  const NUM_SLOTS = 18;
   const carousel = document.getElementById('tiktok-carousel');
   const prevBtn = document.getElementById('tiktok-prev');
   const nextBtn = document.getElementById('tiktok-next');
@@ -447,7 +446,7 @@
         </div>
       </div>
 
-      <!-- Video element -->
+      <!-- Video element — clean, no overlays -->
       <video
         playsinline
         loop
@@ -455,41 +454,14 @@
         preload="none"
         poster=""
         data-video
+        style="cursor:pointer;"
       ></video>
 
-      <!-- Dark overlay -->
-      <div class="tiktok-overlay-gradient"></div>
-
-      <!-- Watermark removed -->
-
-      <!-- Mute toggle -->
-      <div class="tiktok-mute-indicator" data-mute-btn title="Toggle sound">
-        ${ICONS.volumeOff}
-      </div>
-
-      <!-- Play/pause overlay -->
+      <!-- Minimal play button (only shows when paused) -->
       <div class="tiktok-play-overlay" data-play-overlay>
         <div class="tiktok-play-btn">
           <span class="icon-play">${ICONS.play}</span>
           <span class="icon-pause">${ICONS.pause}</span>
-        </div>
-      </div>
-
-      <!-- Author info bottom-left -->
-      <div class="tiktok-author-info">
-        <div class="tiktok-author-name" data-author>@creator</div>
-        <div class="tiktok-author-desc" data-desc>Loading...</div>
-      </div>
-
-      <!-- TikTok-style action buttons (right side) -->
-      <div class="tiktok-actions">
-        <div class="tiktok-action-item" data-like-btn>
-          <div class="tiktok-action-icon">${ICONS.heart}</div>
-          <span class="tiktok-action-count" data-likes>0</span>
-        </div>
-        <div class="tiktok-action-item" data-share-btn>
-          <div class="tiktok-action-icon">${ICONS.share}</div>
-          <span class="tiktok-action-count">Share</span>
         </div>
       </div>
 
@@ -574,25 +546,15 @@
   /* -------------------------------------------------- */
   cards.forEach(function(card) {
     const playOverlay = card.querySelector('[data-play-overlay]');
-    const muteBtn = card.querySelector('[data-mute-btn]');
-    const likeBtn = card.querySelector('[data-like-btn]');
 
-    playOverlay.addEventListener('click', function(e) {
+    // Click anywhere on card opens fullscreen modal
+    card.addEventListener('click', function(e) {
       e.stopPropagation();
-      togglePlay(card);
-    });
-
-    muteBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      toggleMute(card);
-    });
-
-    likeBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const icon = likeBtn.querySelector('.tiktok-action-icon svg');
-      if (icon) icon.style.fill = '#fe2c55';
-      likeBtn.style.transform = 'scale(1.15)';
-      setTimeout(function() { likeBtn.style.transform = ''; }, 200);
+      var video = card.querySelector('[data-video]');
+      var src = (video && video.src) ? video.src : card.dataset.videoSrc;
+      if (src) {
+        openVideoModal(src);
+      }
     });
 
     setupProgressUpdater(card);
@@ -623,14 +585,21 @@
   /* -------------------------------------------------- */
   /*  Navigation arrows                                  */
   /* -------------------------------------------------- */
-  const scrollAmount = 280;
+  function getCardWidth() {
+    if (!cards.length) return 280;
+    var card = cards[0];
+    var style = window.getComputedStyle(card);
+    return card.offsetWidth + parseInt(style.marginRight || 0);
+  }
 
-  prevBtn.addEventListener('click', function() {
-    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  prevBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    carousel.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
   });
 
-  nextBtn.addEventListener('click', function() {
-    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  nextBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    carousel.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
   });
 
   /* -------------------------------------------------- */
@@ -644,24 +613,29 @@
       var card = cards[i];
       var video = card.querySelector('[data-video]');
       var skeleton = card.querySelector('[data-skeleton]');
-      var author = card.querySelector('[data-author]');
-      var desc = card.querySelector('[data-desc]');
-      var likes = card.querySelector('[data-likes]');
 
-      // Set author info immediately
-      if (data.author) author.textContent = data.author;
-      if (data.description) desc.textContent = data.description;
-      if (data.likes) likes.textContent = data.likes;
-
-      // Set thumbnail as poster
-      if (data.thumbnail) {
-        video.poster = data.thumbnail;
-      }
+      // Store video data on the card for modal use
+      card.dataset.videoSrc = data.src || '';
 
       // Set video source
       if (data.src) {
         video.src = data.src;
+
+        // Generate thumbnail from first frame
         video.preload = 'metadata';
+        video.addEventListener('loadedmetadata', function() {
+          video.currentTime = 0.5; // grab frame at 0.5s
+        });
+        video.addEventListener('seeked', function handler() {
+          try {
+            var canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            video.poster = canvas.toDataURL('image/jpeg', 0.7);
+          } catch(e) {}
+          video.removeEventListener('seeked', handler);
+        }, { once: true });
 
         video.addEventListener('loadeddata', function handler() {
           skeleton.classList.add('loaded');
@@ -726,21 +700,415 @@
   /* -------------------------------------------------- */
   /*  Hardcoded example data (placeholder)               */
   /* -------------------------------------------------- */
+  /* -------------------------------------------------- */
+  /*  Fullscreen Video Modal with Add to Cart             */
+  /* -------------------------------------------------- */
+
+  // Inject modal styles
+  var modalStyles = document.createElement('style');
+  modalStyles.textContent = `
+    #video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(26, 28, 26, 0.97);
+      overflow-y: auto;
+    }
+    #video-modal.vm-open {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Subtle brand glow on the inner container */
+    #vm-inner {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 16px 0;
+      box-sizing: border-box;
+    }
+    @media (min-height: 700px) {
+      #vm-inner {
+        justify-content: center;
+        min-height: unset;
+      }
+    }
+
+    /* Close button */
+    #vm-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(254, 126, 79, 0.35);
+      background: rgba(164, 60, 18, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fadadd;
+      font-size: 20px;
+      line-height: 1;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    #vm-close:hover {
+      background: rgba(164, 60, 18, 0.35);
+      border-color: rgba(254, 126, 79, 0.6);
+      transform: scale(1.08);
+    }
+
+    /* Video player wrapper */
+    #vm-video-wrap {
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 0 1.5px rgba(254, 126, 79, 0.2), 0 8px 40px rgba(0,0,0,0.5);
+      background: #000;
+      margin-top: 56px;
+      flex-shrink: 0;
+    }
+    #vm-video {
+      width: 100%;
+      max-height: 72dvh;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+
+    /* Product card */
+    #vm-product-card {
+      width: 100%;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      border-radius: 1rem;
+      background: rgba(250, 218, 221, 0.07);
+      border: 1.5px solid rgba(254, 126, 79, 0.18);
+      padding: 14px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      /* Slide-up animation — starts hidden, triggered when modal opens */
+      transform: translateY(32px);
+      opacity: 0;
+      transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.32s ease;
+    }
+    #video-modal.vm-open #vm-product-card {
+      transform: translateY(0);
+      opacity: 1;
+      /* Small delay so card slides up after modal fades in */
+      transition-delay: 0.12s;
+    }
+
+    /* Product thumbnail */
+    #vm-product-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 0.625rem;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1.5px solid rgba(254, 126, 79, 0.2);
+    }
+
+    /* Product info */
+    #vm-product-info {
+      flex: 1;
+      min-width: 0;
+    }
+    #vm-product-name {
+      color: #faf9f6;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.3;
+      margin: 0 0 3px;
+    }
+    #vm-product-stars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 4px;
+    }
+    #vm-product-stars svg {
+      width: 13px;
+      height: 13px;
+      fill: #fe7e4f;
+    }
+    #vm-product-rating-text {
+      font-size: 11px;
+      color: rgba(250, 218, 221, 0.7);
+      font-weight: 600;
+    }
+    #vm-product-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    #vm-price-current {
+      color: #fe7e4f;
+      font-weight: 800;
+      font-size: 17px;
+    }
+    #vm-price-original {
+      color: rgba(250, 218, 221, 0.35);
+      text-decoration: line-through;
+      font-size: 13px;
+    }
+
+    /* Add to Cart button */
+    #vm-atc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #a43c12;
+      color: #faf9f6;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 16px rgba(164, 60, 18, 0.4);
+      transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+      flex-shrink: 0;
+    }
+    #vm-atc-btn:hover {
+      background: #c94d18;
+      box-shadow: 0 6px 20px rgba(164, 60, 18, 0.55);
+      transform: scale(1.04);
+    }
+    #vm-atc-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Trust badges */
+    #vm-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .vm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(250, 218, 221, 0.65);
+      padding: 3px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(254, 126, 79, 0.15);
+      background: rgba(164, 60, 18, 0.1);
+      white-space: nowrap;
+    }
+    .vm-badge svg {
+      width: 10px;
+      height: 10px;
+      fill: #fe7e4f;
+      flex-shrink: 0;
+    }
+  `;
+  document.head.appendChild(modalStyles);
+
+  // Create modal element
+  var modal = document.createElement('div');
+  modal.id = 'video-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Watch video');
+  modal.innerHTML = `
+    <div id="vm-inner">
+      <!-- Close button -->
+      <button id="vm-close" aria-label="Close video">&times;</button>
+
+      <!-- Nav arrows -->
+      <button id="vm-prev" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:50;background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:24px;">&#8249;</button>
+      <button id="vm-next" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:50;background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:24px;">&#8250;</button>
+
+      <!-- Video player -->
+      <div id="vm-video-wrap">
+        <video id="vm-video" playsinline loop controls autoplay></video>
+      </div>
+
+      <!-- Product card (slides up on open) -->
+      <div id="vm-product-card">
+        <!-- Thumbnail -->
+        <img id="vm-product-thumb" src="images/branded/hero-clean.jpg" alt="HerRelief Belt" loading="lazy" />
+
+        <!-- Info column -->
+        <div id="vm-product-info">
+          <p id="vm-product-name">HerRelief Belt</p>
+
+          <!-- Stars -->
+          <div id="vm-product-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <span id="vm-product-rating-text">4.9 (600+ reviews)</span>
+          </div>
+
+          <!-- Price row -->
+          <div id="vm-product-price">
+            <span id="vm-price-current">$39.99</span>
+            <span id="vm-price-original">$79.99</span>
+          </div>
+
+          <!-- Trust badges -->
+          <div id="vm-badges">
+            <span class="vm-badge">
+              <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5S5.17 15.5 6 15.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+              Free Shipping
+            </span>
+            <span class="vm-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
+              90-Day Guarantee
+            </span>
+          </div>
+        </div>
+
+        <!-- Add to Cart button -->
+        <button id="vm-atc-btn" aria-label="Add HerRelief Belt to cart">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Wire Add to Cart button
+  document.getElementById('vm-atc-btn').addEventListener('click', function() {
+    modal.classList.remove('vm-open');
+    var mv = document.getElementById('vm-video');
+    mv.pause();
+    mv.src = '';
+    if (typeof openCartDrawer === 'function') {
+      openCartDrawer();
+    } else {
+      window.location.href = 'cart.html';
+    }
+  });
+
+  // Helper: close modal cleanly
+  function closeVideoModal() {
+    modal.classList.remove('vm-open');
+    var mv = document.getElementById('vm-video');
+    mv.pause();
+    mv.src = '';
+  }
+
+  // Close button
+  document.getElementById('vm-close').addEventListener('click', closeVideoModal);
+
+  // Close on backdrop click (outside the inner card)
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeVideoModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('vm-open')) {
+      closeVideoModal();
+    }
+  });
+
+  function openVideoModal(videoSrc) {
+    // Pause all carousel videos
+    cards.forEach(function(c) { pauseVideo(c); });
+
+    var mv = document.getElementById('vm-video');
+    mv.src = videoSrc;
+    mv.muted = false;
+    modal.classList.add('vm-open');
+    mv.play().catch(function() {});
+  }
+
+  // Video navigation in modal
+  var allVideoSrcs = [];
+  var currentVideoIdx = 0;
+
+  // Collect all video sources when modal opens
+  function collectVideoSrcs() {
+    allVideoSrcs = [];
+    document.querySelectorAll('#tiktok-carousel .tiktok-card').forEach(function(card) {
+      var src = card.dataset.videoSrc;
+      if (!src) {
+        var v = card.querySelector('[data-video]');
+        if (v && v.src) src = v.src;
+      }
+      if (src) allVideoSrcs.push(src);
+    });
+  }
+
+  function navigateVideo(dir) {
+    collectVideoSrcs();
+    if (allVideoSrcs.length === 0) return;
+    currentVideoIdx = (currentVideoIdx + dir + allVideoSrcs.length) % allVideoSrcs.length;
+    var mv = document.getElementById('vm-video');
+    mv.src = allVideoSrcs[currentVideoIdx];
+    mv.play().catch(function(){});
+  }
+
+  document.getElementById('vm-prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    navigateVideo(-1);
+  });
+  document.getElementById('vm-next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    navigateVideo(1);
+  });
+
+  // Touch swipe support — on modal container, not video (video captures touch for controls)
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var modalEl = document.getElementById('video-modal');
+  modalEl.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  modalEl.addEventListener('touchend', function(e) {
+    var diffX = touchStartX - e.changedTouches[0].clientX;
+    var diffY = touchStartY - e.changedTouches[0].clientY;
+    // Only swipe if horizontal movement > vertical (not scrolling)
+    if (Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY)) {
+      navigateVideo(diffX > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  // Wrap openVideoModal to track index
+  var origOpen = openVideoModal;
+  window.openVideoModal = function(videoSrc) {
+    collectVideoSrcs();
+    // Match by ending path since src could be relative or absolute
+    currentVideoIdx = allVideoSrcs.findIndex(function(s) {
+      return s === videoSrc || videoSrc.endsWith(s) || s.endsWith(videoSrc);
+    });
+    if (currentVideoIdx < 0) currentVideoIdx = 0;
+    origOpen(videoSrc);
+  };
+
+  /* -------------------------------------------------- */
+  /*  Load videos                                        */
+  /* -------------------------------------------------- */
   loadTikTokVideos([
-    {
-      src: "tiktok_videos/ugc_1.mp4",
-      author: "@3astafricangirl",
-      description: "#pms #period #periods #periodcramps #tiktokshop",
-      views: "New",
-      likes: ""
-    },
-    {
-      src: "tiktok_videos/ugc_2.mp4",
-      author: "@homeuxyml5j",
-      description: "Portable heating pad for when it's that time of the month but you're a mom",
-      views: "New",
-      likes: ""
-    },
     {
       src: "tiktok_videos/ugc_3.mp4",
       author: "@kendralatrice4",
@@ -803,48 +1171,6 @@
       description: "Portable Heating Pad \ud83e\udd0d it gets hot!!!!! #portableheatingpad #heatingpad",
       views: "New",
       likes: ""
-    },
-    {
-      src: "tiktok_videos/7582793973551435021.mp4",
-      author: "@nalanibeilhart",
-      description: "This x heating pad combo \ud83d\ude0d #period #fyp",
-      views: "9M",
-      likes: "1.2M"
-    },
-    {
-      src: "tiktok_videos/7326713113523375403.mp4",
-      author: "@purrvanaco",
-      description: "When the period cramps hit hard, there's only one option!",
-      views: "7.1M",
-      likes: "54.9K"
-    },
-    {
-      src: "tiktok_videos/7493966650849578286.mp4",
-      author: "@mrs.martinez.vazquez",
-      description: "Bad back pain #musthaves #massager #relief #period",
-      views: "2.4M",
-      likes: "100.6K"
-    },
-    {
-      src: "tiktok_videos/7607898652765441301.mp4",
-      author: "@pkmart.xyz",
-      description: "When your him gave you this \ud83e\ude77 #heatingpad #cramprelief",
-      views: "1.5M",
-      likes: "21.4K"
-    },
-    {
-      src: "tiktok_videos/7342718396032634155.mp4",
-      author: "@her.haven._",
-      description: "#period #periodrelief #periodtips #shecare",
-      views: "1M",
-      likes: "26.1K"
-    },
-    {
-      src: "tiktok_videos/7335636779158080776.mp4",
-      author: "@kosi_au",
-      description: "Huge hit with people suffering during their periods \u2764\ufe0f #periodpain #endo",
-      views: "790.5K",
-      likes: "65.6K"
     }
   ]);
 
