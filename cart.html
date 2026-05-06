@@ -257,117 +257,6 @@
         </div>
       </div>
 
-      <!-- Shipping Info Form -->
-      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
-        <h2 class="font-headline text-xl mb-6">Shipping Information</h2>
-        <form class="space-y-4" onsubmit="return false;">
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Email Address</label>
-            <input type="email" placeholder="you@email.com" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium mb-1.5">First Name</label>
-              <input type="text" placeholder="Jane" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1.5">Last Name</label>
-              <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Street Address</label>
-            <input type="text" placeholder="123 Main St" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Apartment, Suite (optional)</label>
-            <input type="text" placeholder="Apt 4B" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-          </div>
-          <div class="grid grid-cols-3 gap-4">
-            <div>
-              <label class="block text-sm font-medium mb-1.5">City</label>
-              <input type="text" placeholder="New York" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1.5">State</label>
-              <select class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm text-on-surface-variant">
-                <option value="">State</option>
-                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
-                <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
-                <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-                <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
-                <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
-                <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-                <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1.5">ZIP</label>
-              <input type="text" placeholder="10001" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Phone (for delivery updates)</label>
-            <input type="tel" placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-          </div>
-        </form>
-      </div>
-
-      <!-- Payment -->
-      <div class="bg-white rounded-lg p-6 shadow-sm border border-outline-variant/15">
-        <h2 class="font-headline text-xl mb-6">Payment</h2>
-
-        <!-- Express Checkout -->
-        <div class="grid grid-cols-3 gap-3 mb-6">
-          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.32 2.32-1.55 4.2-3.74 4.25z"/></svg>
-            Pay
-          </button>
-          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
-            <svg width="20" height="14" viewBox="0 0 40 28"><rect width="40" height="28" rx="4" fill="#4285F4"/><text x="20" y="18" font-size="10" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">G Pay</text></svg>
-          </button>
-          <button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container-low transition-colors text-sm font-medium">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#003087"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.55c2.174 0 3.678.56 4.474 1.666.375.52.613 1.073.707 1.643.098.595.038 1.308-.185 2.14l-.01.043v.39l.304.171c.258.139.463.293.62.466.263.288.432.642.503 1.05.073.42.047.918-.078 1.483-.144.651-.378 1.218-.695 1.684a3.753 3.753 0 0 1-1.095 1.099c-.437.288-.952.503-1.534.64-.564.133-1.2.2-1.897.2h-.45a1.36 1.36 0 0 0-1.345 1.148l-.034.18-.563 3.575-.026.13a.129.129 0 0 1-.128.11H7.076z"/></svg>
-            PayPal
-          </button>
-        </div>
-
-        <div class="flex items-center gap-3 mb-6">
-          <div class="flex-1 h-px bg-outline-variant/30"></div>
-          <span class="text-xs text-on-surface-variant uppercase tracking-wider">Or pay with card</span>
-          <div class="flex-1 h-px bg-outline-variant/30"></div>
-        </div>
-
-        <form class="space-y-4" onsubmit="return false;">
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Card Number</label>
-            <div class="relative">
-              <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm pr-24"/>
-              <div class="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1.5 opacity-40">
-                <svg width="28" height="18" viewBox="0 0 28 18"><rect width="28" height="18" rx="3" fill="#1A1F71"/><circle cx="11" cy="9" r="5" fill="#EB001B"/><circle cx="17" cy="9" r="5" fill="#F79E1B" opacity="0.8"/></svg>
-                <svg width="28" height="18" viewBox="0 0 28 18"><rect width="28" height="18" rx="3" fill="#1A1F71"/><text x="14" y="13" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">VISA</text></svg>
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium mb-1.5">Expiry Date</label>
-              <input type="text" placeholder="MM / YY" maxlength="7" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1.5">CVC</label>
-              <input type="text" placeholder="123" maxlength="4" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1.5">Name on Card</label>
-            <input type="text" placeholder="Jane Doe" class="w-full px-4 py-3 rounded-lg border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm"/>
-          </div>
-        </form>
-      </div>
     </div>
 
     <!-- RIGHT: Order Summary (2 cols) -->
@@ -506,9 +395,9 @@
 <script>
 // ===== BUNDLE PRICING =====
 const bundles = [
-  { qty: 1, price: 39.99, original: 79.99, discount: 40.00, label: "HerRelief x 1", pct: 50 },
-  { qty: 2, price: 63.98, original: 159.98, discount: 96.00, label: "HerRelief x 2", pct: 60 },
-  { qty: 3, price: 83.97, original: 239.97, discount: 155.97, label: "HerRelief x 3", pct: 65 },
+  { qty: 1, price: 39.99, original: 79.99, discount: 40.00, label: "HerRelief x 1", pct: 50, link: "https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g" },
+  { qty: 2, price: 63.98, original: 159.98, discount: 96.00, label: "HerRelief x 2", pct: 60, link: "https://buy.stripe.com/6oUfZa7fi1oG1rTdWm3F60h" },
+  { qty: 3, price: 83.97, original: 239.97, discount: 155.97, label: "HerRelief x 3", pct: 65, link: "https://buy.stripe.com/aFa7sE9nq6J0gmN05w3F60i" },
 ];
 let currentBundle = 0;
 let currentQty = 1;
@@ -632,9 +521,9 @@ function handleCheckout() {
     HRTracking.initiateCheckout(b.price);
   }
 
-  // Redirect to Stripe Checkout
+  // Redirect to Stripe Checkout (per-bundle link)
   setTimeout(() => {
-    window.location.href = 'https://buy.stripe.com/test_4gM14g83b5Io6oEaBx6oo0e';
+    window.location.href = bundles[currentBundle].link;
   }, 800);
 }
 
@@ -654,5 +543,5 @@ setInterval(updateViewers, 15000);
 
 <!-- Tracking & Analytics (GA4, Clarity, TikTok Pixel, Meta Pixel) -->
 <script src="tracking.js"></script>
-<script src="email-popup.js"></script>
+<!-- email-popup.js disabled — exit-intent popup on product page only -->
 </body></html>
