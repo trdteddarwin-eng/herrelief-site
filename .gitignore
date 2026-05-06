@@ -1,7 +1,3 @@
-# Videos (too large for GitHub)
-tiktok_videos/*.mp4
-*.mp4
-
 # Python
 __pycache__/
 *.pyc
@@ -25,4 +21,8 @@ deploy/
 SESSION_CONTEXT.md
 instagram_queue.json
 product-1.png
-tiktok_videos/
+tiktok_videos/*
+!tiktok_videos/ugc_3.mp4
+!tiktok_videos/ugc_4.mp4
+!tiktok_videos/ugc_5.mp4
+!tiktok_videos/ugc_6.mp4
