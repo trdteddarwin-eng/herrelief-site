@@ -610,25 +610,112 @@
         </div>
       </div>
 
-      <!-- Thumbnail Row -->
-      <div class="grid grid-cols-4 gap-3">
-        <button class="thumb-btn active rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
-                onclick="switchImage(this, 'images/branded/hero-clean-v2.jpg', 'HerRelief heating belt — front view')">
-          <img src="images/branded/hero-clean-v2.jpg" alt="HerRelief front view" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
-        </button>
-        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
-                onclick="switchImage(this, 'images/branded/product-side.jpg', 'HerRelief side view — USB-C port and buttons')">
-          <img src="images/branded/product-side.jpg" alt="HerRelief side profile" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
-        </button>
-        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
-                onclick="switchImage(this, 'images/branded/product-back.jpg', 'HerRelief back — soft grey flannel material')">
-          <img src="images/branded/product-back.jpg" alt="HerRelief flannel back" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
-        </button>
-        <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
-                onclick="switchImage(this, 'images/branded/product-with-cable.jpg', 'HerRelief with USB-C charging cable')">
-          <img src="images/branded/product-with-cable.jpg" alt="HerRelief with cable" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
-        </button>
+      <!-- Gallery Tabs -->
+      <div class="gallery-tabs flex gap-1 border-b border-outline-variant mb-4" role="tablist" aria-label="Product gallery">
+        <button type="button" class="gallery-tab active" data-tab="product" role="tab" aria-selected="true">Product</button>
+        <button type="button" class="gallery-tab" data-tab="gallery" role="tab" aria-selected="false">Gallery</button>
+        <button type="button" class="gallery-tab" data-tab="science" role="tab" aria-selected="false">Science</button>
+        <button type="button" class="gallery-tab" data-tab="extras" role="tab" aria-selected="false">Extras</button>
       </div>
+
+      <!-- Tab 1: Product (current 4 product angles) -->
+      <div class="gallery-tab-panel" data-panel="product" role="tabpanel">
+        <div class="grid grid-cols-4 gap-3">
+          <button class="thumb-btn active rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                  onclick="switchImage(this, 'images/branded/hero-clean-v2.jpg', 'HerRelief heating belt — front view')">
+            <img src="images/branded/hero-clean-v2.jpg" alt="HerRelief front view" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                  onclick="switchImage(this, 'images/branded/product-side.jpg', 'HerRelief side view — USB-C port and buttons')">
+            <img src="images/branded/product-side.jpg" alt="HerRelief side profile" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                  onclick="switchImage(this, 'images/branded/product-back.jpg', 'HerRelief back — soft grey flannel material')">
+            <img src="images/branded/product-back.jpg" alt="HerRelief flannel back" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
+                  onclick="switchImage(this, 'images/branded/product-with-cable.jpg', 'HerRelief with USB-C charging cable')">
+            <img src="images/branded/product-with-cable.jpg" alt="HerRelief with cable" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 2: Gallery (HQ branded creatives) -->
+      <div class="gallery-tab-panel hidden" data-panel="gallery" role="tabpanel">
+        <div class="grid grid-cols-4 gap-3">
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-D-bundle-math.png', 'HerRelief bundle — $39.99 with free Cycle Wellness Toolkit and tracker')">
+            <img src="images/branded/ads/paid-D-bundle-math.png" alt="HerRelief $39.99 bundle with free toolkit and tracker" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-BB-fits-purse.png', 'HerRelief — at work, on a flight, in bed, anywhere')">
+            <img src="images/branded/ads/paid-BB-fits-purse.png" alt="HerRelief fits anywhere" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-O-day1-two-stories.png', 'Day 1 — two very different stories with HerRelief')">
+            <img src="images/branded/ads/paid-O-day1-two-stories.png" alt="Day 1 with HerRelief vs without" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-I-day1-list-solution.png', 'We know the list — cramps, bloating, back ache. HerRelief.')">
+            <img src="images/branded/ads/paid-I-day1-list-solution.png" alt="HerRelief solves cramps, bloating, back ache" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 3: Science (stub) -->
+      <div class="gallery-tab-panel hidden" data-panel="science" role="tabpanel">
+        <div class="rounded-lg bg-surface-container-low p-8 text-center text-sm text-on-surface-variant">
+          Coming soon — clinical studies + heat therapy facts.
+        </div>
+      </div>
+
+      <!-- Tab 4: Extras (stub) -->
+      <div class="gallery-tab-panel hidden" data-panel="extras" role="tabpanel">
+        <div class="rounded-lg bg-surface-container-low p-8 text-center text-sm text-on-surface-variant">
+          Coming soon — bundles, free wellness toolkit, and more.
+        </div>
+      </div>
+
+      <style>
+        .gallery-tabs .gallery-tab {
+          flex: 1;
+          padding: 10px 8px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--md-sys-color-on-surface-variant, #5f5f5f);
+          background: transparent;
+          border: 0;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          transition: color .15s ease, border-color .15s ease;
+          letter-spacing: .02em;
+        }
+        .gallery-tabs .gallery-tab:hover { color: var(--md-sys-color-on-surface, #1a1a1a); }
+        .gallery-tabs .gallery-tab.active {
+          color: #c84a3a;
+          border-bottom-color: #c84a3a;
+        }
+        .gallery-tab-panel.hidden { display: none; }
+      </style>
+      <script>
+        (function() {
+          var tabs = document.querySelectorAll('.gallery-tab');
+          var panels = document.querySelectorAll('.gallery-tab-panel');
+          tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+              var name = tab.getAttribute('data-tab');
+              tabs.forEach(function(t) {
+                var on = t === tab;
+                t.classList.toggle('active', on);
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+              });
+              panels.forEach(function(p) {
+                p.classList.toggle('hidden', p.getAttribute('data-panel') !== name);
+              });
+            });
+          });
+        })();
+      </script>
 
       <!-- Video Thumbnails Row — opens existing fullscreen video modal from tiktok-section.html -->
       <p class="text-xs uppercase tracking-wider text-on-surface-variant font-semibold mb-3 mt-6">
@@ -702,30 +789,66 @@
           scroll-snap-type: x mandatory;
           -webkit-overflow-scrolling: touch;
           scrollbar-width: none;
-          padding-bottom: 4px;
+          padding-bottom: 8px;
+          scroll-padding-left: 4px;
         }
         .video-thumb-strip::-webkit-scrollbar { display: none; }
+        /* Mobile-first: big readable videos, one at a time with peek of next */
         .video-thumb-strip .video-thumb-btn {
-          flex: 0 0 38vw;
-          max-width: 140px;
-          min-width: 110px;
-          scroll-snap-align: start;
+          flex: 0 0 78vw;
+          max-width: 360px;
+          scroll-snap-align: center;
+        }
+        /* Desktop: compact 4-up strip */
+        @media (min-width: 640px) {
+          .video-thumb-strip .video-thumb-btn {
+            flex: 0 0 38vw;
+            max-width: 140px;
+            min-width: 110px;
+            scroll-snap-align: start;
+          }
         }
         .video-thumb-strip .video-thumb-btn { transition: transform .2s ease, box-shadow .2s ease; }
         .video-thumb-strip .video-thumb-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.10); }
         .video-thumb-strip .video-thumb-btn video { pointer-events: none; }
+        .video-thumb-strip .video-thumb-btn > span:first-child { display: block; }
+        .video-thumb-strip .video-thumb-btn > span.block.text-xs {
+          font-size: 13px;
+          padding: 0 2px;
+          margin-top: 8px;
+          color: var(--md-sys-color-on-surface, #1a1a1a);
+          font-weight: 500;
+        }
+        @media (min-width: 640px) {
+          .video-thumb-strip .video-thumb-btn > span.block.text-xs {
+            font-size: 12px;
+            margin-top: 6px;
+            font-weight: 400;
+          }
+        }
         .video-thumb-strip .video-thumb-play {
           position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
           pointer-events: none;
         }
         .video-thumb-strip .video-thumb-play::before {
-          content: ""; width: 44px; height: 44px; border-radius: 9999px;
+          content: ""; width: 64px; height: 64px; border-radius: 9999px;
           background: rgba(255,255,255,.92); box-shadow: 0 4px 12px rgba(0,0,0,.25);
+        }
+        @media (min-width: 640px) {
+          .video-thumb-strip .video-thumb-play::before {
+            width: 44px; height: 44px;
+          }
         }
         .video-thumb-strip .video-thumb-play-triangle {
           position: absolute; width: 0; height: 0;
-          border-top: 9px solid transparent; border-bottom: 9px solid transparent;
-          border-left: 14px solid #111; margin-left: 4px;
+          border-top: 12px solid transparent; border-bottom: 12px solid transparent;
+          border-left: 18px solid #111; margin-left: 5px;
+        }
+        @media (min-width: 640px) {
+          .video-thumb-strip .video-thumb-play-triangle {
+            border-top-width: 9px; border-bottom-width: 9px;
+            border-left-width: 14px; margin-left: 4px;
+          }
         }
       </style>
       <script>
