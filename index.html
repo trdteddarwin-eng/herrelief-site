@@ -200,35 +200,48 @@
 <!-- ============================================ -->
 <!-- SCROLL VIDEO HERO                            -->
 <!-- ============================================ -->
-<div id="vh-wrap" style="position:relative;height:300vh;background:#1a1c1a;margin-top:-1px;">
+<div id="vh-wrap" class="vh-wrap" style="position:relative;background:#1a1c1a;margin-top:-1px;">
   <div style="position:fixed;top:0;left:0;height:100vh;width:100%;overflow:hidden;z-index:30;" id="vh-fixed">
-    <video id="vh-video" muted playsinline preload="auto" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;" src="hero-video.mp4"></video>
+    <video id="vh-video" muted playsinline preload="auto" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:1;" src="hero-video-web.mp4"></video>
     <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4);z-index:2;"></div>
 
-    <div class="vh-slide vh-on" data-r="0,25" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;transition:opacity 0.5s;">
+    <!-- Scene 1: Day 1 — curled up in pain -->
+    <div class="vh-slide vh-on" data-r="0,20" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;transition:opacity 0.5s;">
       <div style="max-width:700px;">
-        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">HERRELIEF</p>
-        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Pain should never stop you from enjoying life.</h2>
-        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Every month, millions of women lose days to cramp pain. Not anymore.</p>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">DAY 1</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">You shouldn't have to curl up in pain.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Not for a day. Not for five days. Not ever.</p>
       </div>
     </div>
 
-    <div class="vh-slide" data-r="25,50" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+    <!-- Scene 2: 15 min later — city walking -->
+    <div class="vh-slide" data-r="20,40" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+      <div style="max-width:700px;">
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">15 MIN LATER</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Take your day back.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Wireless. Discreet. Under your clothes.</p>
+      </div>
+    </div>
+
+    <!-- Scene 3: At work — desk -->
+    <div class="vh-slide" data-r="40,60" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
       <div style="max-width:700px;">
         <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">AT WORK</p>
-        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Take it to work.</h2>
-        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Discreet enough for the office. Powerful enough for your worst days.</p>
+        <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Focus, not flinch.</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Heat + vibration. Nobody notices but you.</p>
       </div>
     </div>
 
-    <div class="vh-slide" data-r="50,80" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
+    <!-- Scene 4: Yoga flow -->
+    <div class="vh-slide" data-r="60,80" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
       <div style="max-width:700px;">
-        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">FREEDOM</p>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fe7e4f;margin-bottom:1rem;">IN MOTION</p>
         <h2 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,0.4);">Move freely.</h2>
-        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Yoga, gym, walks in the park. The belt moves with you.</p>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);text-shadow:0 1px 8px rgba(0,0,0,0.3);">Yoga, gym, morning runs — the belt keeps up.</p>
       </div>
     </div>
 
+    <!-- Scene 5: Travel + CTA -->
     <div class="vh-slide" data-r="80,100" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;opacity:0;transition:opacity 0.5s;">
       <div style="max-width:700px;">
         <a href="product.html" style="display:inline-block;padding:1rem 2.5rem;background:#fe7e4f;color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none;border-radius:999px;box-shadow:0 4px 24px rgba(254,126,79,0.4);">$39.99 — Shop Now</a>
@@ -244,7 +257,14 @@
     </div>
   </div>
 </div>
-<style>@keyframes vhbob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}</style>
+<style>
+@keyframes vhbob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+/* Runway: desktop gets longer slow scrub; mobile gets tighter so fingers don't die */
+.vh-wrap{height:800vh;}
+@media (max-width:768px){ .vh-wrap{height:500vh;} }
+/* Keep subject framed on narrow portrait screens */
+@media (max-width:768px){ #vh-video{object-position:50% 42% !important;} }
+</style>
 <script>
 (function(){
   var v=document.getElementById('vh-video');
@@ -256,21 +276,30 @@
   function go(){
     var dur=v.duration;
     if(!dur||isNaN(dur))return;
-    var ticking=false, targetP=0, curP=-1;
+    var targetP=0, curP=0, running=true;
 
+    // Continuous rAF loop — lerp curP toward targetP every frame for butter-smooth playback
     function render(){
-      ticking=false;
-      // ease towards target so we never spam seeks on tiny deltas
-      var delta=Math.abs(targetP-curP);
-      if(delta<0.002) return;
-      curP=targetP;
-      try{ v.currentTime=curP*dur; }catch(e){}
+      if(!running) return;
+      curP += (targetP - curP) * 0.14;   // 0.14 = tighter follow (less laggy), still smooth
+      if(Math.abs(targetP-curP) < 0.0005) curP = targetP;
+      try{ v.currentTime = curP * dur; }catch(e){}
       slides.forEach(function(sl){
         var r=sl.dataset.r.split(',');
         var a=parseFloat(r[0])/100, b=parseFloat(r[1])/100;
-        sl.style.opacity=(curP>=a&&curP<b)?'1':'0';
+        // Smooth fade at edges — 5% overlap zone for crossfade feel
+        var fade = 0;
+        if(curP < a) fade = 0;
+        else if(curP > b) fade = 0;
+        else {
+          var edge = 0.05;
+          fade = Math.min(1, Math.min((curP-a)/edge, (b-curP)/edge, 1));
+        }
+        sl.style.opacity = fade;
       });
+      requestAnimationFrame(render);
     }
+    requestAnimationFrame(render);
 
     function tick(){
       var rect=w.getBoundingClientRect();
@@ -278,7 +307,7 @@
       if(total<=0)return;
       var s=Math.max(0,-rect.top);
       targetP=Math.min(1,s/total);
-      if(!ticking){ ticking=true; requestAnimationFrame(render); }
+      // render() runs on its own rAF loop — scroll just updates the target
     }
 
     window.addEventListener('scroll',tick,{passive:true});
