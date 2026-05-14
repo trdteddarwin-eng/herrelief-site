@@ -608,7 +608,7 @@
       <div class="gallery-tabs flex gap-1 border-b border-outline-variant mb-4" role="tablist" aria-label="Product gallery">
         <button type="button" class="gallery-tab active" data-tab="product" role="tab" aria-selected="true">Product</button>
         <button type="button" class="gallery-tab" data-tab="gallery" role="tab" aria-selected="false">Gallery</button>
-        <button type="button" class="gallery-tab" data-tab="science" role="tab" aria-selected="false">Science</button>
+        <button type="button" class="gallery-tab" data-tab="science" role="tab" aria-selected="false">Science &amp; Research</button>
         <button type="button" class="gallery-tab" data-tab="extras" role="tab" aria-selected="false">Extras</button>
       </div>
 
@@ -634,33 +634,420 @@
         </div>
       </div>
 
-      <!-- Tab 2: Gallery (HQ branded creatives, web-optimized JPEGs) -->
+      <!-- Tab 2: Gallery (8 code-rendered creatives spanning every archetype) -->
       <div class="gallery-tab-panel hidden" data-panel="gallery" role="tabpanel">
         <div class="grid grid-cols-4 gap-3">
           <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
-                  onclick="switchImage(this, 'images/branded/ads/paid-D-bundle-math-web.jpg', 'HerRelief bundle — $39.99 with free Cycle Wellness Toolkit and tracker')">
-            <img src="images/branded/ads/paid-D-bundle-math-web.jpg" alt="HerRelief $39.99 bundle with free toolkit and tracker" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+                  onclick="switchImage(this, 'images/branded/ads/paid-O-day1-two-stories-code-web.jpg', 'Day 1 — two very different stories with HerRelief')">
+            <img src="images/branded/ads/paid-O-day1-two-stories-code-web.jpg" alt="Day 1 with HerRelief vs without" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
           </button>
           <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
-                  onclick="switchImage(this, 'images/branded/ads/paid-BB-fits-purse-web.jpg', 'HerRelief — at work, on a flight, in bed, anywhere')">
-            <img src="images/branded/ads/paid-BB-fits-purse-web.jpg" alt="HerRelief fits anywhere" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+                  onclick="switchImage(this, 'images/branded/ads/paid-A-day1-sucks-code-web.jpg', 'Day 1 sucks — but it doesn\'t have to. HerRelief.')">
+            <img src="images/branded/ads/paid-A-day1-sucks-code-web.jpg" alt="Day 1 sucks — HerRelief" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
           </button>
           <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
-                  onclick="switchImage(this, 'images/branded/ads/paid-O-day1-two-stories-web.jpg', 'Day 1 — two very different stories with HerRelief')">
-            <img src="images/branded/ads/paid-O-day1-two-stories-web.jpg" alt="Day 1 with HerRelief vs without" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+                  onclick="switchImage(this, 'images/branded/ads/paid-B-15min-code-web.jpg', '15 minutes — from cant get out of bed to back at your desk')">
+            <img src="images/branded/ads/paid-B-15min-code-web.jpg" alt="15 minutes — HerRelief stat" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
           </button>
           <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
-                  onclick="switchImage(this, 'images/branded/ads/paid-I-day1-list-solution-web.jpg', 'We know the list — cramps, bloating, back ache. HerRelief.')">
-            <img src="images/branded/ads/paid-I-day1-list-solution-web.jpg" alt="HerRelief solves cramps, bloating, back ache" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+                  onclick="switchImage(this, 'images/branded/ads/paid-I-day1-list-solution-code-web.jpg', 'We know the list — cramps, bloating, back ache. HerRelief.')">
+            <img src="images/branded/ads/paid-I-day1-list-solution-code-web.jpg" alt="HerRelief solves cramps, bloating, back ache" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-BB-fits-purse-code-web.jpg', 'HerRelief — at work, on a flight, in bed, anywhere')">
+            <img src="images/branded/ads/paid-BB-fits-purse-code-web.jpg" alt="HerRelief fits anywhere" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-Q-quiet-relief-code-web.jpg', 'Quiet relief, finally. HerRelief.')">
+            <img src="images/branded/ads/paid-Q-quiet-relief-code-web.jpg" alt="Quiet relief, finally" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-JJ-testimonial-grace-code-web.jpg', 'I wore it through a 4-hour client meeting. Nobody knew. — Grace I.')">
+            <img src="images/branded/ads/paid-JJ-testimonial-grace-code-web.jpg" alt="Grace I. testimonial — HerRelief" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+          </button>
+          <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-1"
+                  onclick="switchImage(this, 'images/branded/ads/paid-TT-mechanism-code-web.jpg', 'Heat relaxes the muscle. Vibration interrupts the pain. HerRelief.')">
+            <img src="images/branded/ads/paid-TT-mechanism-code-web.jpg" alt="HerRelief mechanism — heat and vibration" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
           </button>
         </div>
       </div>
 
-      <!-- Tab 3: Science (stub) -->
+      <!-- Tab 3: Science & Research — tap/swipe slider of 3 science-backed slides -->
       <div class="gallery-tab-panel hidden" data-panel="science" role="tabpanel">
-        <div class="rounded-lg bg-surface-container-low p-8 text-center text-sm text-on-surface-variant">
-          Coming soon — clinical studies + heat therapy facts.
+        <div class="science-slider">
+          <!-- Slider stage — tap to advance, click dots to jump, swipe on mobile -->
+          <div class="science-mg" id="science-mg" data-active="0" role="region" aria-label="Science of HerRelief — 3 slides">
+            <div class="science-stage" tabindex="0">
+              <!-- Always-running visual animations; opacity gated by [data-active] -->
+              <div class="hub" aria-hidden="true">
+                <div class="hub-display"><span class="hub-dot"></span></div>
+              </div>
+              <div class="ripples ripples-heat" aria-hidden="true">
+                <span class="ripple"></span>
+                <span class="ripple"></span>
+                <span class="ripple"></span>
+              </div>
+              <div class="ripples ripples-vib" aria-hidden="true">
+                <span class="ripple"></span>
+                <span class="ripple"></span>
+                <span class="ripple"></span>
+              </div>
+
+              <!-- 3 slides, only the active one is visible -->
+              <article class="slide is-active" data-slide="0">
+                <span class="cap-eyebrow">Phase 1 · Heat</span>
+                <h3 class="cap-h">Relaxes the muscle.</h3>
+                <p class="cap-p">40 °C heat activates TRPV1 receptors and increases uterine blood flow — easing the ischemia that drives cramps.</p>
+                <span class="cap-cite"><strong>As effective as 400 mg ibuprofen.</strong><br/>Akin MD et al. — <em>Obstet&nbsp;Gynecol</em>, 2001</span>
+              </article>
+              <article class="slide" data-slide="1">
+                <span class="cap-eyebrow">Phase 2 · Vibration</span>
+                <h3 class="cap-h">Interrupts the pain signal.</h3>
+                <p class="cap-p">Vibration recruits Aβ mechanoreceptors that close the spinal "pain gate" before nociceptive signals reach the brain.</p>
+                <span class="cap-cite"><strong>Gate Control Theory.</strong><br/>Melzack R, Wall PD — <em>Science</em>, 1965</span>
+              </article>
+              <article class="slide" data-slide="2">
+                <span class="cap-eyebrow">Phase 3 · Together</span>
+                <h3 class="cap-h">Drug-free Day&nbsp;1.</h3>
+                <p class="cap-p">Heat and vibration work on two different pain pathways — measurable relief without the NSAID side-effect profile.</p>
+                <span class="cap-cite"><strong>6-trial meta-analysis: heat ≈ NSAIDs.</strong><br/>Jo J, Lee SH — <em>Sci Reports</em>, 2018</span>
+              </article>
+
+              <!-- Tap hint badge -->
+              <span class="tap-hint" aria-hidden="true">Tap to advance</span>
+            </div>
+
+            <!-- Slide dots — tappable -->
+            <div class="science-nav" role="tablist" aria-label="Slides">
+              <button type="button" class="science-dot is-active" data-go="0" role="tab" aria-selected="true"  aria-label="Slide 1: Heat"></button>
+              <button type="button" class="science-dot"           data-go="1" role="tab" aria-selected="false" aria-label="Slide 2: Vibration"></button>
+              <button type="button" class="science-dot"           data-go="2" role="tab" aria-selected="false" aria-label="Slide 3: Together"></button>
+            </div>
+          </div>
         </div>
+
+        <style>
+          /* Brand-locked palette */
+          .science-slider {
+            --cream: #f7f2ed;
+            --cream-deep: #ece4dc;
+            --terracotta: #b75c3d;
+            --terracotta-deep: #a04d2f;
+            --pink: #f5cdc4;
+            --pink-soft: #f9dfd6;
+            --grey-warm: #6b5e57;
+            --ink: #2f211c;
+            font-family: 'Playfair Display', Georgia, serif;
+          }
+
+          .science-mg {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(183,92,61,0.10);
+            position: relative;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+          }
+          .science-stage {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;          /* mobile-first portrait */
+            min-height: 460px;
+            max-height: 620px;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            padding: 0;
+            display: block;
+            outline: none;
+          }
+          .science-stage:focus-visible { outline: 2px solid var(--terracotta); outline-offset: -4px; }
+          @media (min-width: 640px) {
+            .science-stage { aspect-ratio: 16 / 11; min-height: 380px; max-height: 480px; }
+          }
+
+          /* Belt hub */
+          .hub {
+            position: absolute;
+            top: 36%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110px; height: 64px;
+            background: var(--pink);
+            border-radius: 999px;
+            border: 4px solid var(--pink-soft);
+            box-shadow: 0 6px 18px rgba(183,92,61,0.18);
+            z-index: 4;
+          }
+          .hub::before, .hub::after {
+            content: "";
+            position: absolute; top: 50%;
+            width: 56px; height: 14px;
+            background: #d5d0cb;
+            border-radius: 999px;
+            transform: translateY(-50%);
+          }
+          .hub::before { left: -52px; }
+          .hub::after  { right: -52px; }
+          .hub-display {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px; height: 18px;
+            background: var(--ink);
+            border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+          }
+          .hub-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--terracotta);
+            animation: hubBlink 1.4s ease-in-out infinite;
+          }
+          @keyframes hubBlink {
+            0%, 100% { opacity: 0.35; }
+            50%      { opacity: 1; }
+          }
+
+          /* Ripple layers — animation runs always, opacity is gated by [data-active] */
+          .ripples {
+            position: absolute;
+            top: 36%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0; height: 0;
+            z-index: 2;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+          }
+          .ripples .ripple {
+            position: absolute;
+            top: 50%; left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+          }
+
+          /* Heat — visible on slide 0 + 2 */
+          .ripples-heat .ripple {
+            width: 80px; height: 80px;
+            border: 3px solid var(--terracotta);
+            animation: ripplePulse 3.2s ease-out infinite;
+          }
+          .ripples-heat .ripple:nth-child(2) { animation-delay: 1.07s; }
+          .ripples-heat .ripple:nth-child(3) { animation-delay: 2.14s; }
+          .science-mg[data-active="1"] .ripples-heat { opacity: 0; }
+
+          /* Vibration — visible on slide 1 + 2 */
+          .ripples-vib  .ripple {
+            width: 60px; height: 38px;
+            border: 3px solid var(--pink);
+            border-radius: 999px;
+            animation: ripplePulse 2.2s ease-out infinite;
+          }
+          .ripples-vib .ripple:nth-child(2) { animation-delay: 0.73s; }
+          .ripples-vib .ripple:nth-child(3) { animation-delay: 1.46s; }
+          .science-mg[data-active="0"] .ripples-vib { opacity: 0; }
+
+          @keyframes ripplePulse {
+            0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            10%  { opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(3.4); opacity: 0; }
+          }
+
+          /* ===== Slides ===== */
+          .slide {
+            position: absolute;
+            left: 22px; right: 22px; bottom: 70px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+            pointer-events: none;
+            z-index: 5;
+          }
+          .slide.is-active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+          .cap-eyebrow {
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            font-size: 11px;
+            color: var(--terracotta);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+          .cap-h {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 30px;
+            color: var(--terracotta);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin: 0 0 10px 0;
+          }
+          .cap-p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--grey-warm);
+            line-height: 1.45;
+            margin: 0 0 12px 0;
+            max-width: 96%;
+          }
+          .cap-cite {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 12px;
+            color: var(--grey-warm);
+            line-height: 1.4;
+            padding-top: 10px;
+            border-top: 1px solid rgba(183,92,61,0.18);
+            max-width: 96%;
+          }
+          .cap-cite strong { color: var(--terracotta); font-weight: 600; }
+
+          /* Tap-hint pill */
+          .tap-hint {
+            position: absolute;
+            top: 16px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(183,92,61,0.10);
+            color: var(--terracotta);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            z-index: 6;
+            pointer-events: none;
+            animation: tapHintFade 6s ease-out forwards;
+          }
+          @keyframes tapHintFade {
+            0%, 60%  { opacity: 1; }
+            100%     { opacity: 0; }
+          }
+
+          /* Dots */
+          .science-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 0 18px 0;
+          }
+          .science-dot {
+            width: 38px; height: 6px;
+            border: 0;
+            background: rgba(183,92,61,0.18);
+            border-radius: 999px;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.25s ease, transform 0.2s ease;
+            /* Larger tap target */
+            position: relative;
+          }
+          .science-dot::after {
+            content: "";
+            position: absolute;
+            inset: -14px;
+          }
+          .science-dot:hover { background: rgba(183,92,61,0.32); }
+          .science-dot.is-active { background: var(--terracotta); }
+          .science-dot:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 4px; }
+
+          /* Mobile */
+          @media (max-width: 640px) {
+            .cap-h { font-size: 26px; }
+            .cap-p { font-size: 14px; }
+            .cap-cite { font-size: 11px; }
+            .slide { left: 18px; right: 18px; bottom: 60px; }
+            .hub { width: 96px; height: 56px; top: 32%; }
+            .hub::before, .hub::after { width: 48px; height: 12px; }
+            .hub::before { left: -46px; }
+            .hub::after  { right: -46px; }
+          }
+
+          /* Respect reduced-motion */
+          @media (prefers-reduced-motion: reduce) {
+            .ripples .ripple, .hub-dot { animation: none !important; }
+            .slide { transition: none; }
+            .tap-hint { animation: none; opacity: 1; }
+          }
+        </style>
+
+        <script>
+          (function() {
+            var mg     = document.getElementById('science-mg');
+            if (!mg) return;
+            var stage  = mg.querySelector('.science-stage');
+            var slides = mg.querySelectorAll('.slide');
+            var dots   = mg.querySelectorAll('.science-dot');
+            var idx    = 0;
+            var timer  = null;
+            var AUTO_MS = 7000;
+            var PAUSE_AFTER_TAP_MS = 14000;
+
+            function go(n) {
+              idx = ((n % slides.length) + slides.length) % slides.length;
+              mg.setAttribute('data-active', String(idx));
+              slides.forEach(function(el, i) { el.classList.toggle('is-active', i === idx); });
+              dots.forEach(function(el, i) {
+                var on = i === idx;
+                el.classList.toggle('is-active', on);
+                el.setAttribute('aria-selected', on ? 'true' : 'false');
+              });
+            }
+            function tick() { go(idx + 1); }
+            function startAuto() { stopAuto(); timer = setInterval(tick, AUTO_MS); }
+            function stopAuto()  { if (timer) { clearInterval(timer); timer = null; } }
+            function bumpAuto() { stopAuto(); setTimeout(startAuto, PAUSE_AFTER_TAP_MS); }
+
+            // Click stage (not a dot) → next slide
+            stage.addEventListener('click', function(e) {
+              if (e.target.closest('.science-dot')) return;
+              go(idx + 1);
+              bumpAuto();
+            });
+            // Keyboard support on stage
+            stage.addEventListener('keydown', function(e) {
+              if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); go(idx + 1); bumpAuto(); }
+              if (e.key === 'ArrowLeft')  { e.preventDefault(); go(idx - 1); bumpAuto(); }
+            });
+            // Dots → jump
+            dots.forEach(function(dot) {
+              dot.addEventListener('click', function(e) {
+                e.stopPropagation();
+                go(parseInt(dot.getAttribute('data-go'), 10));
+                bumpAuto();
+              });
+            });
+            // Swipe (mobile)
+            var sx = 0, sy = 0;
+            stage.addEventListener('touchstart', function(e) {
+              sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+            }, { passive: true });
+            stage.addEventListener('touchend', function(e) {
+              var dx = e.changedTouches[0].clientX - sx;
+              var dy = e.changedTouches[0].clientY - sy;
+              if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+                go(idx + (dx < 0 ? 1 : -1));
+                bumpAuto();
+              }
+            }, { passive: true });
+
+            // Pause when offscreen / tab not visible
+            if ('IntersectionObserver' in window) {
+              new IntersectionObserver(function(entries) {
+                entries.forEach(function(en) { en.isIntersecting ? startAuto() : stopAuto(); });
+              }, { threshold: 0.25 }).observe(mg);
+            } else {
+              startAuto();
+            }
+          })();
+        </script>
       </div>
 
       <!-- Tab 4: Extras (stub) -->
