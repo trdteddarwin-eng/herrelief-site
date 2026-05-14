@@ -593,13 +593,13 @@
 
     <!-- LEFT COLUMN: Image Gallery -->
     <div class="flex-1 lg:max-w-[55%]">
-      <!-- Main Image — [#11] Hover zoom -->
+      <!-- Main Image — [#11] Hover zoom — defaults to the value-bundle hero -->
       <div class="relative bg-surface-container-low rounded-lg overflow-hidden mb-4 aspect-square flex items-center justify-center product-image-zoom">
         <div class="absolute inset-0 relief-pulse scale-110 opacity-50"></div>
         <img id="main-product-image"
-             alt="HerRelief heating belt — clean product shot on white background"
-             class="relative z-10 w-full h-full object-contain p-8"
-             src="images/branded/hero-clean-v2.jpg"
+             alt="HerRelief heating belt + free Cycle Tracker app + free Cycle Wellness Toolkit — $39.99 (was $79.99)"
+             class="relative z-10 w-full h-full object-contain p-4"
+             src="images/branded/bundle-value-hero.jpg"
              fetchpriority="high"
              decoding="async"/>
       </div>
@@ -616,8 +616,8 @@
       <div class="gallery-tab-panel" data-panel="product" role="tabpanel">
         <div class="grid grid-cols-4 gap-3">
           <button class="thumb-btn active rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
-                  onclick="switchImage(this, 'images/branded/hero-clean-v2.jpg', 'HerRelief heating belt — front view')">
-            <img src="images/branded/hero-clean-v2.jpg" alt="HerRelief front view" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
+                  onclick="switchImage(this, 'images/branded/bundle-value-hero.jpg', 'HerRelief heating belt + free Cycle Tracker app + free Cycle Wellness Toolkit')">
+            <img src="images/branded/bundle-value-hero.jpg" alt="HerRelief bundle — belt plus free Cycle Tracker and Wellness Toolkit" class="w-full h-full object-contain" loading="lazy" decoding="async"/>
           </button>
           <button class="thumb-btn rounded-lg overflow-hidden bg-surface-container-low aspect-square flex items-center justify-center p-2"
                   onclick="switchImage(this, 'images/branded/product-side.jpg', 'HerRelief side view — USB-C port and buttons')">
