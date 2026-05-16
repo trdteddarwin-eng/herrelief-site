@@ -3958,4 +3958,17 @@ function captureEmail(email, source) {
   }
 })();
 </script>
+<script>
+  // Fire ViewContent so Meta can optimize ads toward people who view the product page
+  document.addEventListener('DOMContentLoaded', function() {
+    function fire() {
+      if (window.HRTracking) {
+        HRTracking.viewContent(39.99, 'USD');
+      } else {
+        setTimeout(fire, 200);
+      }
+    }
+    fire();
+  });
+</script>
 </body></html>

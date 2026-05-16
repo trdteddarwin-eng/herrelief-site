@@ -427,9 +427,10 @@ function selectBundle(idx) {
 
   updatePricing(b);
 
-  // Track bundle selection
+  // Track bundle selection (custom event + standard AddToCart for Meta optimization)
   if (window.HRTracking) {
     HRTracking.selectBundle(b.label, b.price);
+    HRTracking.addToCart(b.price, b.qty);
   }
 }
 
