@@ -67,6 +67,7 @@
   .fade-in-up-4 { animation-delay: 0.8s; }
   .fade-in-up-5 { animation-delay: 1s; }
 </style>
+<script src="tracking.js"></script>
 </head>
 <body class="bg-brand-cream font-body text-gray-800 min-h-screen">
 
@@ -226,5 +227,19 @@
   </div>
 </footer>
 
+<script>
+  // Fire a custom Lead event for the free Cycle Wellness Toolkit conversion
+  document.addEventListener('DOMContentLoaded', function() {
+    function fire() {
+      if (window.HRTracking) {
+        HRTracking.track('Lead', { content_name: 'Cycle Wellness Toolkit', content_type: 'lead_magnet' });
+        if (window.fbq) fbq('track', 'Lead', { content_name: 'Cycle Wellness Toolkit' });
+      } else {
+        setTimeout(fire, 200);
+      }
+    }
+    fire();
+  });
+</script>
 </body>
 </html>

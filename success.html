@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You for Your Order — HerRelief</title>
+<meta name="description" content="Thank you for ordering the HerRelief Belt. Your order has been received and is on its way."/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "brand-pink": "#fadadd",
+          "brand-brown": "#a43c12",
+          "brand-orange": "#fe7e4f",
+          "brand-cream": "#faf9f6",
+          "brand-dark": "#281719",
+          "primary": "#70585b",
+          "secondary": "#a43c12",
+        },
+        fontFamily: {
+          "headline": ["Noto Serif"],
+          "body": ["Plus Jakarta Sans"],
+        },
+        borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "full": "9999px"},
+      },
+    },
+  };
+</script>
+<script src="tracking.js"></script>
+</head>
+<body class="bg-brand-cream font-body text-brand-dark min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-xl w-full text-center py-16">
+    <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-secondary/10 flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+      </svg>
+    </div>
+    <h1 class="font-headline text-4xl md:text-5xl mb-4">Thank you for your order.</h1>
+    <p class="text-lg text-primary mb-2">Your HerRelief Belt is on its way.</p>
+    <p class="text-base text-primary/80 mb-10">A confirmation email is on its way to your inbox.</p>
+
+    <div id="order-summary" class="hidden bg-white rounded-2xl p-6 mb-8 text-left shadow-sm">
+      <div class="text-sm uppercase tracking-wide text-primary/60 mb-2">Order Total</div>
+      <div class="font-headline text-2xl text-brand-dark" id="order-total">$0.00</div>
+      <div id="order-id-row" class="hidden mt-3 text-xs text-primary/60">
+        Order ID: <span id="order-id" class="font-mono"></span>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="index.html" class="px-6 py-3 rounded-full bg-secondary text-white font-semibold hover:scale-[1.02] transition">
+        Back to Home
+      </a>
+      <a href="cycle-wellness-toolkit.html" class="px-6 py-3 rounded-full border border-primary/20 text-primary font-semibold hover:bg-primary/5 transition">
+        Get Your Free Toolkit
+      </a>
+    </div>
+  </div>
+
+<script>
+  // Fire Purchase event for Meta / TikTok / GA4 based on URL params
+  // Stripe Payment Link Success URL format:
+  //   https://heatrelief-pro.vercel.app/success.html?value=39.99&session_id={CHECKOUT_SESSION_ID}
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const rawValue = params.get('value');
+    const sessionId = params.get('session_id') || params.get('order_id') || '';
+    const value = rawValue ? parseFloat(rawValue) : null;
+
+    if (value && !isNaN(value)) {
+      // Show order summary
+      const el = document.getElementById('order-summary');
+      const total = document.getElementById('order-total');
+      total.textContent = '$' + value.toFixed(2);
+      el.classList.remove('hidden');
+
+      if (sessionId) {
+        document.getElementById('order-id').textContent = sessionId;
+        document.getElementById('order-id-row').classList.remove('hidden');
+      }
+
+      // Fire purchase event (will run as soon as tracking.js + pixels load)
+      function firePurchase() {
+        if (window.HRTracking) {
+          HRTracking.purchase(value, sessionId);
+        } else {
+          setTimeout(firePurchase, 200);
+        }
+      }
+      firePurchase();
+    }
+  })();
+</script>
+</body>
+</html>

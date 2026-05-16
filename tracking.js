@@ -31,7 +31,7 @@ const TRACKING_CONFIG = {
   GA4_ID: 'G-XXXXXXXXXX',           // Google Analytics 4
   CLARITY_ID: 'CLARITY_PROJECT_ID',  // Microsoft Clarity
   TIKTOK_ID: 'TIKTOK_PIXEL_ID',     // TikTok Pixel
-  META_ID: 'META_PIXEL_ID',         // Meta (Facebook/Instagram) Pixel
+  META_ID: '2157748721747843',      // Meta (Facebook/Instagram) Pixel
 };
 
 // ============================================
