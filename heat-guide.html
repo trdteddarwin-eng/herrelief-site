@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Heat Gift | HerRelief</title>
+<meta name="description" content="The cordless HerRelief heat belt. 5 heat levels, free US shipping and a 90-day money-back guarantee.">
+<meta name="theme-color" content="#faf9f6">
+<meta property="og:title" content="The cordless heat belt | HerRelief">
+<meta property="og:description" content="Your heating pad has a cord. Your life does not.">
+<meta property="og:image" content="images/v2/hero-still-life-1200.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rust:#a43c12; --coral:#fe7e4f; --blush:#fadadd; --pink:#f4b8c0; --plum:#3b1f2b;
+  --cream:#faf9f6; --surf:#f4f1ee; --ink:#1a1c1a; --mauve:#70585b; --line:rgba(112,88,91,.16);
+  --serif:'Fraunces',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --r:26px; --shadow:0 14px 34px rgba(59,31,43,.10),0 2px 0 rgba(112,88,91,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background-color:var(--cream);
+  background-image:linear-gradient(rgba(112,88,91,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(112,88,91,.07) 1.5px,transparent 1.5px);
+  background-size:40px 40px;font-size:16.5px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:600px;margin:0 auto;padding:0 16px}
+[hidden]{display:none!important}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;max-width:1080px;margin:0 auto}
+.top .tag{font-weight:800;font-size:11.5px;letter-spacing:.14em;color:var(--mauve);text-transform:uppercase}
+
+/* shared bits */
+.chip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 6px;border-radius:17px;background:#fff;
+  font-weight:800;font-size:12px;letter-spacing:.12em;color:var(--plum);text-transform:uppercase;box-shadow:0 2px 0 rgba(112,88,91,.12)}
+.chip .dot{width:24px;height:24px;border-radius:12px;background:var(--rust);display:grid;place-items:center}
+.pill{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:14px;background:var(--rust);color:var(--cream);
+  font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.src{display:inline-flex;align-items:center;gap:6px;padding:5px 11px 5px 8px;border-radius:999px;background:var(--surf);font-size:12px;font-weight:700;color:var(--mauve)}
+h1,h2{font-family:var(--serif);font-weight:800;letter-spacing:-.02em;color:var(--plum);font-variation-settings:'SOFT' 50,'WONK' 0,'opsz' 144}
+h1 em,h2 em{font-style:italic;font-weight:700;color:var(--rust)}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:20px 18px;position:relative}
+
+/* ===== gift popup + strip ===== */
+.strip{position:sticky;top:0;z-index:55;display:flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 14px;background:var(--plum);color:var(--cream);font-size:13.5px;font-weight:600;text-align:center}
+.strip b{font-weight:800;color:var(--coral);letter-spacing:.02em}
+.gm{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px}
+.gm-back{position:absolute;inset:0;background:rgba(26,16,20,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);animation:fade .3s ease both}
+.gm-card{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:30px;background:var(--plum);color:var(--cream);padding:34px 24px 22px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.4);animation:rise .45s cubic-bezier(.2,1.1,.3,1) both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+.gm-card .glow{position:absolute;left:50%;top:-150px;width:360px;height:360px;margin-left:-180px;border-radius:50%;background:radial-gradient(circle,rgba(254,126,79,.5),rgba(254,126,79,0) 70%);pointer-events:none}
+.gm-x{position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:19px;border:0;background:rgba(250,249,246,.1);color:var(--cream);display:grid;place-items:center;cursor:pointer;z-index:2}
+.gm-gift{position:relative;width:92px;height:92px;margin:0 auto;border-radius:28px;background:rgba(250,249,246,.08);display:grid;place-items:center}
+.gm-card h2{position:relative;color:var(--cream);font-size:42px;line-height:1.02;margin-top:16px}
+.gm-card h2 em{color:var(--coral)}
+.gm-card p{position:relative;font-size:17px;font-weight:600;color:rgba(250,249,246,.86);margin:10px auto 0;max-width:19em}
+.gm-card .applied{position:relative;margin-top:18px}
+.gm-go{position:relative;margin-top:20px;background:var(--coral);color:var(--plum);box-shadow:0 10px 24px rgba(254,126,79,.3),inset 0 -3px 0 rgba(0,0,0,.12)}
+.gm-go:hover{background:#ff9064}
+.gm-card h2,.gm-card p,.gm-card .applied,.gm-gift,.gm-go{position:relative;z-index:1}
+.btn:focus{outline:none}
+.btn:focus-visible{outline:3px solid #f4b8c0;outline-offset:3px}
+.gm-card .gm-fine{font-size:12.5px;font-weight:600;color:rgba(250,249,246,.6);margin-top:12px}
+.applied{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 18px 0 8px;border-radius:23px;background:var(--cream);color:var(--plum);font-weight:800;font-size:15px}
+.applied .ok{width:30px;height:30px;border-radius:15px;background:var(--rust);display:grid;place-items:center}
+.applied code{font-family:var(--sans);font-size:18px;letter-spacing:.1em;color:var(--rust)}
+.applied small{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mauve)}
+body.locked{overflow:hidden}
+.spark{position:absolute;pointer-events:none}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;top:-14px;display:block;border-radius:2px;opacity:0;animation:fall 2.1s cubic-bezier(.2,.6,.4,1) forwards}
+@keyframes fall{0%{opacity:1;transform:translate(0,0) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot))}}
+.twinkle{animation:tw 1.6s ease-in-out 3 both}
+@keyframes tw{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+.pop{animation:pop .55s cubic-bezier(.2,1.4,.4,1) both .2s}
+@keyframes pop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+
+/* ===== belt hero + shop ===== */
+.belt{margin-top:6px;padding:20px 16px 18px}
+.belt .head{padding:0 2px}
+.belt h2{font-size:clamp(31px,8.6vw,44px);line-height:1.03;margin-top:12px}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.feats span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;background:var(--blush);color:var(--plum);font-size:13px;font-weight:800}
+.shot{position:relative;margin:14px 0 10px;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 50% 45%,#fff 0%,#fdeeee 55%,#fadadd 100%)}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 50%}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 2px 0}
+.price .now{font-weight:800;font-size:34px;color:var(--plum);letter-spacing:-.01em}
+.price s{font-weight:700;font-size:19px;color:var(--mauve);text-decoration-thickness:2px}
+.price .off{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:13px;background:var(--coral);color:var(--plum);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;align-self:center}
+.atc{font-size:13px;font-weight:700;color:var(--rust);margin:2px 2px 0;display:flex;align-items:center;gap:6px}
+
+.opts{display:grid;gap:10px;margin-top:16px;scroll-margin-top:64px}
+.opt{position:relative;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border-radius:18px;border:2px solid var(--line);background:var(--cream);cursor:pointer;transition:border-color .15s,background .15s}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .im{flex:none;width:54px;height:54px;border-radius:14px;background:var(--blush);display:grid;place-items:center;overflow:hidden}
+.opt .im img{width:52px;height:52px;object-fit:contain}
+.opt .tx{flex:1;min-width:0}
+.opt .nm{display:block;font-weight:800;font-size:15.5px;color:var(--plum);line-height:1.25}
+.opt .sb{display:block;font-size:12.5px;font-weight:600;color:var(--mauve);line-height:1.3;margin-top:2px}
+.opt .pr{flex:none;text-align:right;line-height:1.15}
+.opt .pr b{display:block;font-weight:800;font-size:18px;color:var(--plum)}
+.opt .pr s{display:block;font-size:12.5px;font-weight:700;color:var(--mauve)}
+.opt .rd{flex:none;width:22px;height:22px;border-radius:11px;border:2px solid var(--pink);background:#fff;display:grid;place-items:center}
+.opt .rd::after{content:"";width:10px;height:10px;border-radius:5px;background:var(--rust);transform:scale(0);transition:transform .15s}
+.opt.on{border-color:var(--rust);background:#fff6f2}
+.opt.on .rd{border-color:var(--rust)}
+.opt.on .rd::after{transform:scale(1)}
+.opt .flag{position:absolute;top:-10px;right:14px;height:22px;padding:0 9px;border-radius:11px;background:var(--plum);color:var(--cream);font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center}
+.opt:focus-within{outline:3px solid rgba(254,126,79,.45);outline-offset:2px}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;padding:0 20px;border-radius:29px;border:0;margin-top:16px;
+  background:var(--rust);color:var(--cream);font-family:var(--sans);font-weight:800;font-size:17px;text-decoration:none;cursor:pointer;
+  box-shadow:0 10px 22px rgba(164,60,18,.28),inset 0 -3px 0 rgba(0,0,0,.14);transition:transform .15s ease,background .15s ease}
+.btn:hover{background:#8f340f}
+.btn:active{transform:scale(.98)}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:12px;font-size:13px;font-weight:700;color:var(--mauve)}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+
+/* ===== why heat works (compact) ===== */
+.why{margin-top:22px;background:var(--plum);color:var(--cream);padding:22px 18px}
+.why h2{color:var(--cream);font-size:clamp(29px,8vw,40px);line-height:1.04;margin-top:12px}
+.why h2 em{color:var(--coral)}
+.why .chip{background:rgba(250,249,246,.1);color:var(--cream);box-shadow:none}
+.why .lede{color:rgba(250,249,246,.86);margin-top:10px}
+.why .art{background:rgba(250,249,246,.06);border-radius:18px;margin:14px 0 10px}
+.why .art svg{display:block;width:100%;height:auto}
+.why .src{background:rgba(250,249,246,.1);color:rgba(250,249,246,.8)}
+.minis{display:grid;gap:10px;margin-top:16px}
+.mini{display:flex;gap:12px;align-items:flex-start;background:rgba(250,249,246,.07);border-radius:18px;padding:13px 14px}
+.mini .n{flex:none;width:30px;height:30px;border-radius:15px;background:var(--coral);color:var(--plum);display:grid;place-items:center;font-weight:800;font-size:14px}
+.mini b{display:block;font-size:15.5px;font-weight:800;line-height:1.3}
+.mini .d{display:block;font-size:14px;color:rgba(250,249,246,.78);line-height:1.45;margin-top:2px}
+.mini q{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:16.5px;line-height:1.35;color:var(--coral);margin-top:5px;quotes:none}
+
+/* ===== buy again ===== */
+.again{margin-top:22px;text-align:center;padding:24px 18px 20px}
+.again h2{font-size:clamp(28px,7.6vw,38px);line-height:1.05}
+.again p{color:#3a3236;margin-top:8px}
+.again .burrito{background:var(--blush);border-radius:20px;margin:14px 0 4px;padding:8px 6px 0}
+.again .burrito svg{display:block}
+.again .change{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--rust)}
+
+/* ===== promises ===== */
+.promise{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pcard{background:var(--blush);border-radius:20px;padding:16px 14px}
+.pcard svg{display:block}
+.pcard b{display:block;font-family:var(--serif);font-weight:800;font-size:21px;line-height:1.1;color:var(--plum);margin-top:8px;font-variation-settings:'SOFT' 50,'WONK' 0}
+.pcard span{display:block;font-size:13px;font-weight:600;color:var(--mauve);line-height:1.4;margin-top:4px}
+.pcard.wide{grid-column:1/-1;display:flex;gap:14px;align-items:center;background:#fff;box-shadow:var(--shadow)}
+.pcard.wide b{margin-top:0;font-size:19px}
+
+.fine{margin-top:22px;padding:18px;border-radius:var(--r);background:rgba(255,255,255,.7);border:1.5px solid var(--line);font-size:13px;color:var(--mauve)}
+.fine h3{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--plum);margin-bottom:6px}
+.fine ul{margin:4px 0 0 18px}
+.fine li{margin-top:4px}
+.fine a{color:var(--rust);font-weight:700}
+.fine p{margin-top:10px}
+footer{text-align:center;padding:24px 18px 110px;font-size:12.5px;color:var(--mauve)}
+footer a{color:var(--mauve);margin:0 6px}
+
+/* sticky bar */
+.bar{visibility:hidden;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 16px;border-radius:24px;
+  background:var(--plum);color:var(--cream);box-shadow:0 16px 36px rgba(59,31,43,.35);transform:translateY(140%);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.bar.show{transform:translateY(0);visibility:visible}
+.bar .bt{flex:1;min-width:0;line-height:1.25}
+.bar .bt b{display:block;font-size:14.5px;font-weight:800}
+.bar .bt span{display:block;font-size:12.5px;font-weight:600;color:rgba(250,249,246,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .bt span i{font-style:normal;color:var(--coral);font-weight:800}
+.bar a{flex:none;display:inline-flex;align-items:center;gap:6px;height:46px;padding:0 18px;border-radius:23px;background:var(--coral);color:var(--plum);font-weight:800;font-size:15px;text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.twinkle,.pop,.gm-back,.gm-card{animation:none}.confetti{display:none}}
+
+@media (min-width:900px){
+  .wrap{max-width:1040px}
+  .top{padding:18px 28px}
+  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start;margin-top:24px}
+  .belt,.why{margin-top:0}
+  .lower{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;align-items:start}
+  .lower .again{margin-top:14px}
+  .bar{display:none}
+  footer{padding-bottom:40px}
+}
+</style>
+</head>
+<body>
+<div class="strip" id="giftStrip" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fe7e4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>HEAT10 applied:</b> 10% off + free shipping</span></div>
+
+<header class="top">
+  <a href="index.html" aria-label="HerRelief home">
+    <svg width="150" height="30" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a43c12"/><stop offset="100%" stop-color="#fe7e4f"/></linearGradient></defs>
+      <g transform="translate(5,3)">
+        <path d="M30 58 L30 35 C30 30, 28 26, 22 20 C16 14, 6 12, 4 18 C2 24, 8 30, 14 28 C18 27, 22 24, 24 20" fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30 35 C30 30, 32 26, 38 20 C44 14, 54 12, 56 18 C58 24, 52 30, 46 28 C42 27, 38 24, 36 20" fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M26 38 C26 42, 28 46, 30 48 C32 46, 34 42, 34 38" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="4" cy="16" r="3" fill="#a43c12" opacity="0.3"/><circle cx="56" cy="16" r="3" fill="#fe7e4f" opacity="0.3"/>
+      </g>
+      <text x="78" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5"><tspan fill="#fe7e4f">Her</tspan><tspan fill="#1a1c1a">Relief</tspan></text>
+    </svg>
+  </a>
+  <span class="tag" id="topTag">Free US shipping</span>
+</header>
+
+<main class="wrap">
+
+<!-- ===== GIFT POPUP + STRIP (only with ?gift=HEAT10) ===== -->
+<div class="gm" id="giftModal" hidden>
+  <div class="gm-back" data-close></div>
+  <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gmTitle" aria-describedby="gmDesc">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+    <button type="button" class="gm-x" data-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <svg class="spark twinkle" width="26" height="26" viewBox="0 0 24 24" style="left:26px;top:28px" aria-hidden="true"><path d="M12 1 C13 8 16 11 23 12 C16 13 13 16 12 23 C11 16 8 13 1 12 C8 11 11 8 12 1Z" fill="#fe7e4f"/></svg>
+    <svg class="spark twinkle" width="14" height="14" viewBox="0 0 24 24" style="left:62px;top:70px;animation-delay:.4s" aria-hidden="true"><path d="M12 1 C13 8 16 11 23 12 C16 13 13 16 12 23 C11 16 8 13 1 12 C8 11 11 8 12 1Z" fill="#fadadd"/></svg>
+    <svg class="spark twinkle" width="18" height="18" viewBox="0 0 24 24" style="right:70px;top:120px;animation-delay:.8s" aria-hidden="true"><path d="M12 1 C13 8 16 11 23 12 C16 13 13 16 12 23 C11 16 8 13 1 12 C8 11 11 8 12 1Z" fill="#fe7e4f"/></svg>
+    <div class="gm-gift pop" aria-hidden="true">
+      <svg width="64" height="64" viewBox="0 0 100 100"><rect x="14" y="44" width="72" height="48" rx="6" fill="#a43c12"/><rect x="8" y="30" width="84" height="18" rx="5" fill="#fe7e4f"/><rect x="44" y="30" width="12" height="62" fill="#fadadd"/><path d="M50 30 C42 14 24 12 26 24 C28 32 44 31 50 30 Z M50 30 C58 14 76 12 74 24 C72 32 56 31 50 30 Z" fill="#fadadd" stroke="#3b1f2b" stroke-width="3" stroke-linejoin="round"/></svg>
+    </div>
+    <h2 id="gmTitle">Discount <em>applied!</em></h2>
+    <p id="gmDesc">10% off + free shipping is already on your order.</p>
+    <span class="applied pop"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#faf9f6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><code>HEAT10</code><small>Applied</small></span>
+    <button type="button" class="btn gm-go" id="gmGo">Shop the belt
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="gm-fine">The code fills in for you at checkout.</p>
+  </div>
+</div>
+
+<div class="grid">
+<!-- ===== BELT + BUY ===== -->
+<section class="card belt" id="buy">
+  <div class="head">
+    <span class="chip"><span class="dot"><svg width="15" height="15" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#faf9f6" stroke-width="10" stroke-linecap="round"><path d="M30 80 C18 64 42 54 30 38 C22 27 34 20 30 12"/><path d="M52 84 C40 66 64 56 52 40 C44 29 56 22 52 12"/><path d="M74 80 C62 64 86 54 74 38 C66 27 78 20 74 12"/></g></svg></span>The HerRelief belt</span>
+    <h2>Your heating pad has a cord. <em>Your life does not.</em></h2>
+    <div class="feats">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cordless</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>5 heat levels</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>USB-C rechargeable</span>
+    </div>
+  </div>
+  <div class="shot">
+    <img src="images/v2/bundle-solo.webp" width="1000" height="1000" alt="The HerRelief cordless heat belt in pink with a grey strap" fetchpriority="high">
+  </div>
+  <div class="price">
+    <span class="now" id="heroNow">$39.99</span>
+    <s id="heroWas" hidden>$39.99</s>
+    <span class="off" id="heroOff" hidden>10% off</span>
+  </div>
+  <p class="atc" id="atcNote" hidden><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Discount applied at checkout</p>
+
+  <div class="opts" id="bundles" role="radiogroup" aria-label="Choose how many belts">
+    <label class="opt on">
+      <input type="radio" name="bundle" value="1" checked data-link="https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g" data-price="39.99" data-qty="1">
+      <span class="rd" aria-hidden="true"></span>
+      <span class="im"><img src="images/v2/bundle-solo.webp" width="1000" height="1000" alt="" loading="lazy"></span>
+      <span class="tx"><span class="nm">Just me</span><span class="sb">1 belt</span></span>
+      <span class="pr"><b data-price="39.99">$39.99</b><s data-was="39.99" hidden>$39.99</s></span>
+    </label>
+    <label class="opt">
+      <input type="radio" name="bundle" value="2" data-link="https://buy.stripe.com/00wfZaczCgjA9Yp5pQ3F60j" data-price="63.99" data-qty="2">
+      <span class="rd" aria-hidden="true"></span>
+      <span class="im"><img src="images/v2/bundle-duo.webp" width="1000" height="1000" alt="" loading="lazy"></span>
+      <span class="tx"><span class="nm">Me + my bestie</span><span class="sb" data-each="63.99" data-n="2">2 belts</span></span>
+      <span class="pr"><b data-price="63.99">$63.99</b><s data-was="63.99" hidden>$63.99</s></span>
+    </label>
+    <label class="opt">
+      <span class="flag">Best value</span>
+      <input type="radio" name="bundle" value="3" data-link="https://buy.stripe.com/5kQbIUdDGffw5I9dWm3F60k" data-price="83.99" data-qty="3">
+      <span class="rd" aria-hidden="true"></span>
+      <span class="im"><img src="images/v2/bundle-trio.webp" width="1000" height="1000" alt="" loading="lazy"></span>
+      <span class="tx"><span class="nm">The group chat</span><span class="sb" data-each="83.99" data-n="3">3 belts</span></span>
+      <span class="pr"><b data-price="83.99">$83.99</b><s data-was="83.99" hidden>$83.99</s></span>
+    </label>
+  </div>
+
+  <a class="btn" data-buy data-stripe href="https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g" id="buyBtn"><span data-buy-label>Get 1 belt for $39.99</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="trust">
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8" fill="#fff"/><circle cx="17" cy="17.5" r="1.8" fill="#fff"/></svg>Free US shipping</span>
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>Money back for 90 days</span>
+  </div>
+</section>
+
+<!-- ===== WHY HEAT WORKS (compact) ===== -->
+<section class="card why" id="why">
+  <span class="chip"><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#faf9f6" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg></span>Why heat works</span>
+  <h2>There's a <em>gate</em> in your spine.</h2>
+  <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 360 150">
+      <rect x="160" y="12" width="40" height="112" rx="20" fill="none" stroke="#faf9f6" stroke-opacity=".55" stroke-width="3"/>
+      <g stroke="#fe7e4f" stroke-width="4" stroke-linecap="round"><path d="M160 68 H200"/><path d="M164 56 V80 M172 56 V80 M180 56 V80 M188 56 V80 M196 56 V80"/></g>
+      <g fill="none" stroke="#fe7e4f" stroke-width="4" stroke-linecap="round">
+        <path d="M24 68 C40 56 52 80 68 68 C84 56 96 80 112 68 C124 60 134 70 150 68"/>
+        <path d="M144 62 l10 6 -10 6" stroke-linejoin="round"/>
+      </g>
+      <g fill="none" stroke="#f4b8c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M336 68 L320 56 L306 80 L292 56 L278 80 L264 56 L250 80 L236 60 L214 68"/><path d="M222 60 l-10 8 10 8"/>
+      </g>
+      <g font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="12" letter-spacing="1.4">
+        <text x="24" y="40" fill="#fe7e4f">WARMTH</text>
+        <text x="336" y="40" text-anchor="end" fill="#f4b8c0">PAIN</text>
+        <text x="180" y="144" text-anchor="middle" fill="#faf9f6" fill-opacity=".6">SPINAL CORD</text>
+      </g>
+    </svg>
+  </div>
+  <p class="lede">Warmth switches on heat sensors in your skin. Those signals compete with pain signals in your spinal cord, so less pain makes it up to your brain. Basically, heat starts a group chat with your spine and the pain gets left on read.</p>
+  <p style="margin-top:10px"><span class="src"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/></svg>Source: NIH review</span></p>
+  <div class="minis">
+    <div class="mini"><span class="n">1</span><div><b>Start at the first twinge</b><span class="d">Not when it's already a 9 out of 10. Lower belly or lower back, wherever the ache lives. Mayo Clinic suggests the lower belly.</span><q>Heat is a bodyguard, not an ambulance.</q></div></div>
+    <div class="mini"><span class="n">2</span><div><b>Low and steady, for hours</b><span class="d">The cramp studies used gentle heat, around 39&deg;C (about 102&deg;F), worn for hours. Keep a layer of clothing between you and the heat.</span><q>Slow cooker, not blowtorch.</q></div></div>
+    <div class="mini"><span class="n">3</span><div><b>Warm, not hot. Never sleep on high.</b><span class="d">If it stings or your skin goes red, turn it down. Nap incoming? Lowest level, or take it off.</span><q>Naps are self care. Waking up medium rare is not.</q></div></div>
+  </div>
+</section>
+</div>
+
+<div class="lower">
+<!-- ===== BUY AGAIN ===== -->
+<section class="card again" id="again">
+  <span class="pill">Ready for day one</span>
+  <h2 style="margin-top:12px">Day one, minus the <em>couch burrito.</em></h2>
+  <div class="burrito" aria-hidden="true">
+    <svg viewBox="0 30 400 180" width="100%">
+      <g fill="none" stroke="#a43c12" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M44 146 V86 C44 68 56 58 74 58 H326 C344 58 356 68 356 86 V146"/>
+        <path d="M28 118 C28 104 46 100 56 110 V180 H344 V110 C354 100 372 104 372 118 V186 C372 196 364 202 354 202 H46 C36 202 28 196 28 186 Z" fill="#faf9f6"/>
+      </g>
+      <g stroke="#a43c12" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="96" y="110" width="222" height="70" rx="35" fill="#fe7e4f"/>
+        <path d="M150 112 C142 130 142 160 150 178 M200 112 C192 130 192 160 200 178 M250 112 C242 130 242 160 250 178" fill="none" stroke="#faf9f6" stroke-width="3" opacity=".7"/>
+        <ellipse cx="300" cy="145" rx="18" ry="35" fill="#f4b8c0"/>
+        <path d="M300 122 C312 130 312 160 300 168 C292 160 292 134 300 122" fill="none" stroke="#a43c12" stroke-width="3"/>
+      </g>
+      <g stroke="#3b1f2b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M58 146 C50 118 68 92 96 94 C122 96 134 120 126 146" fill="#3b1f2b"/>
+        <circle cx="94" cy="140" r="28" fill="#fadadd"/>
+        <path d="M68 130 C72 108 108 102 122 126 C110 120 86 118 68 130 Z" fill="#3b1f2b"/>
+        <path d="M82 142 q5 4 10 0 M100 142 q5 4 10 0 M92 154 q4 -3 8 0" fill="none" stroke-width="3"/>
+      </g>
+      <g fill="none" stroke="#a43c12" stroke-width="3.5" stroke-linecap="round"><path d="M126 78 h14 l-14 16 h14"/><path d="M150 54 h10 l-10 12 h10"/></g>
+      <g transform="translate(250 34)"><rect width="128" height="34" rx="17" fill="#3b1f2b"/><text x="64" y="22" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="12" letter-spacing="1.4" fill="#faf9f6">OPTIONAL NOW</text></g>
+    </svg>
+  </div>
+  <p>Cordless, 5 heat levels, and a free cycle tracker app with every belt. Warmth that goes with you.</p>
+  <a class="btn" data-buy data-stripe href="https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g" id="buyBtn2"><span data-buy-label>Get 1 belt for $39.99</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="change" href="#buy">Want 2 or 3? Pick a bundle</a>
+</section>
+
+<!-- ===== PROMISES ===== -->
+<section id="promise">
+  <div class="promise">
+    <div class="pcard"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8" fill="#fadadd"/><circle cx="17" cy="17.5" r="1.8" fill="#fadadd"/></svg><b>Free US shipping</b><span>On every order. Most arrive in 3 to 6 business days.</span></div>
+    <div class="pcard"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg><b>90 day guarantee</b><span>Not for you? Full refund within 90 days. We cover return shipping.</span></div>
+    <div class="pcard wide"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a43c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/><circle cx="12" cy="15" r="1.6" fill="#a43c12"/></svg><div><b>Free cycle tracker app</b><span>Comes with every belt, free for life.</span></div></div>
+  </div>
+  <div class="fine">
+    <h3>Where the facts come from</h3>
+    <ul>
+      <li>Heat and the pain gate: NIH (PubMed) review of heat therapy for period pain. <a href="https://pubmed.ncbi.nlm.nih.gov/41657584/" target="_blank" rel="noopener">Read it</a></li>
+      <li>Gentle heat around 39&deg;C worn for hours: a randomized trial on PubMed (NIH). <a href="https://pubmed.ncbi.nlm.nih.gov/11239634/" target="_blank" rel="noopener">Read it</a></li>
+      <li>Heating pad on the lower belly: Mayo Clinic. <a href="https://www.mayoclinic.org/diseases-conditions/menstrual-cramps/diagnosis-treatment/drc-20374944" target="_blank" rel="noopener">Read it</a></li>
+    </ul>
+    <p>General info, not medical advice. If your cramps are severe, new, or getting worse, please see a doctor.</p>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <a href="index.html">HerRelief</a> <a href="refund-policy.html">Refunds</a> <a href="shipping-policy.html">Shipping</a> <a href="privacy-policy.html">Privacy</a>
+</footer>
+
+<div class="bar" id="bar" aria-hidden="true">
+  <div class="bt"><b id="barTitle">The cordless heat belt</b><span id="barSub">Free US shipping, from $39.99</span></div>
+  <a href="#buy" tabindex="-1">Get mine
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+
+<script src="tracking.js"></script>
+<script>
+(function(){
+  'use strict';
+  var CODE = 'HEAT10', PCT = 10;
+  function track(n, d){ try{ if(window.HRTracking && HRTracking.track){ HRTracking.track(n, d || {}); } }catch(e){} }
+  function money(v){ return '$' + v.toFixed(2); }
+  function off(v){ return Math.round(v * (100 - PCT)) / 100; }   // exact cents: 39.99 -> 35.99, 63.99 -> 57.59, 83.99 -> 75.59
+
+  var qs = null; try{ qs = new URLSearchParams(location.search); }catch(e){}
+  var gift = !!(qs && (qs.get('gift') || '').toUpperCase() === CODE);
+
+  /* UTM -> Stripe client_reference_id (only when present) */
+  var ref = '';
+  if(qs){
+    var parts = ['utm_source','utm_medium','utm_campaign','utm_content'].map(function(k){ return qs.get(k) || ''; }).filter(Boolean);
+    if(parts.length){ ref = parts.join('__').replace(/[^A-Za-z0-9_-]/g, '_').slice(0, 200); }
+  }
+  function checkoutUrl(base){
+    try{
+      var u = new URL(base);
+      if(gift){ u.searchParams.set('prefilled_promo_code', CODE); }
+      if(ref){ u.searchParams.set('client_reference_id', ref); }
+      return u.toString();
+    }catch(e){ return base; }
+  }
+
+  /* prices */
+  function priceFor(base){ return gift ? off(base) : base; }
+  document.querySelectorAll('.opt .pr b[data-price]').forEach(function(b){ b.textContent = money(priceFor(parseFloat(b.dataset.price))); });
+  document.querySelectorAll('.opt .pr s[data-was]').forEach(function(s){ s.hidden = !gift; });
+  document.querySelectorAll('.opt .sb[data-each]').forEach(function(el){
+    var each = Math.round(priceFor(parseFloat(el.dataset.each)) / parseInt(el.dataset.n, 10) * 100) / 100;
+    el.textContent = el.dataset.n + ' belts, ' + money(each) + ' each';
+  });
+
+  var inputs = Array.prototype.slice.call(document.querySelectorAll('.opt input'));
+  function current(){ return inputs.filter(function(i){ return i.checked; })[0] || inputs[0]; }
+  function render(){
+    var inp = current(), base = parseFloat(inp.dataset.price), q = inp.dataset.qty, p = priceFor(base);
+    document.querySelectorAll('.opt').forEach(function(o){ o.classList.toggle('on', o.contains(inp)); });
+    document.querySelectorAll('[data-buy]').forEach(function(a){
+      a.href = checkoutUrl(inp.dataset.link);
+      a.dataset.price = p.toFixed(2);
+      a.querySelector('[data-buy-label]').textContent = 'Get ' + q + (q === '1' ? ' belt' : ' belts') + ' for ' + money(p);
+    });
+    document.getElementById('heroNow').textContent = money(p);
+    var was = document.getElementById('heroWas'); was.textContent = money(base); was.hidden = !gift;
+  }
+  inputs.forEach(function(inp){ inp.addEventListener('change', function(){ render(); track('bundle_select', { bundle: inp.value, gift: gift }); }); });
+  render();
+
+  /* gift mode UI: popup first, then a slim sticky strip */
+  if(gift){
+    var modal = document.getElementById('giftModal'), strip = document.getElementById('giftStrip');
+    document.getElementById('heroOff').hidden = false;
+    document.getElementById('atcNote').hidden = false;
+    document.getElementById('topTag').textContent = 'Gift: 10% off';
+    document.getElementById('barTitle').textContent = 'Your 10% off is applied';
+    document.getElementById('barSub').innerHTML = 'Code <i>HEAT10</i>, from ' + money(off(39.99));
+    strip.hidden = false;
+    modal.hidden = false;
+    document.body.classList.add('locked');
+    var lastFocus = document.activeElement;
+    var go = document.getElementById('gmGo');
+    setTimeout(function(){ try{ go.focus({ preventScroll: true }); }catch(e){ go.focus(); } }, 60);
+    function closeModal(scroll){
+      if(modal.hidden) return;
+      modal.hidden = true;
+      document.body.classList.remove('locked');
+      if(scroll){
+        var t = document.getElementById('bundles');
+        var reduce2 = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        t.scrollIntoView({ behavior: reduce2 ? 'auto' : 'smooth', block: 'start' });
+        var first = document.querySelector('.opt input:checked');
+        if(first){ try{ first.focus({ preventScroll: true }); }catch(e){} }
+      } else if(lastFocus && lastFocus.focus){ try{ lastFocus.focus(); }catch(e){} }
+      track('gift_modal_close', { via: scroll ? 'shop' : 'dismiss' });
+    }
+    go.addEventListener('click', function(){ closeModal(true); });
+    modal.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', function(){ closeModal(false); }); });
+    document.addEventListener('keydown', function(e){
+      if(modal.hidden) return;
+      if(e.key === 'Escape'){ closeModal(false); }
+      if(e.key === 'Tab'){ // keep focus inside the popup
+        var f = modal.querySelectorAll('button'); var first = f[0], last = f[f.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+    track('gift_landing', { code: CODE });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduce){
+      var box = document.getElementById('confetti'), cols = ['#fe7e4f','#a43c12','#fadadd','#f4b8c0','#faf9f6'];
+      for(var i = 0; i < 40; i++){
+        var c = document.createElement('i'), w = 5 + (i * 7) % 6, h = i % 3 === 0 ? w : w * 2;
+        c.style.left = ((i * 37) % 100) + '%';
+        c.style.width = w + 'px'; c.style.height = h + 'px';
+        c.style.background = cols[i % cols.length];
+        if(i % 4 === 0){ c.style.borderRadius = '50%'; }
+        c.style.setProperty('--dx', (((i * 53) % 80) - 40) + 'px');
+        c.style.setProperty('--dy', (260 + (i * 29) % 200) + 'px');
+        c.style.setProperty('--rot', (((i * 97) % 540) - 270) + 'deg');
+        c.style.animationDelay = (0.15 + ((i * 41) % 600) / 1000) + 's';
+        box.appendChild(c);
+      }
+      setTimeout(function(){ box.innerHTML = ''; }, 3200);
+    }
+  }
+
+  /* checkout click */
+  document.querySelectorAll('a[data-stripe]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var p = parseFloat(a.dataset.price) || 39.99;
+      try{ if(window.HRTracking && HRTracking.initiateCheckout){ HRTracking.initiateCheckout(p); } }catch(e){}
+      track('heat_gift_checkout', { price: p, gift: gift, placement: a.id });
+    });
+  });
+
+  /* sticky bar: after first scroll, hidden while a buy button is on screen */
+  var bar = document.getElementById('bar'), onScreen = 0, seen = {};
+  function update(){
+    var show = window.scrollY > 200 && onScreen === 0;
+    bar.classList.toggle('show', show);
+    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    bar.querySelector('a').tabIndex = show ? 0 : -1;
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ seen[e.target.id] = e.isIntersecting; });
+      onScreen = Object.keys(seen).filter(function(k){ return seen[k]; }).length;
+      update();
+    });
+    document.querySelectorAll('[data-buy]').forEach(function(a){ io.observe(a); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+
+  try{ if(window.HRTracking && HRTracking.viewContent){ HRTracking.viewContent(priceFor(39.99), 'USD'); } }catch(e){}
+})();
+</script>
+</body>
+</html>
