@@ -235,6 +235,12 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
 .vmodal.open{display:flex}
 .vmodal video{max-width:100%;max-height:86vh;border-radius:14px;background:#000}
 .vmodal-x{position:absolute;top:12px;right:12px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:48px;cursor:pointer}
+.stage{touch-action:pan-y}
+.stage img{transition:opacity .18s}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--rust);box-shadow:0 4px 14px rgba(59,31,43,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.nav-arrow.prev{left:10px}.nav-arrow.next{right:10px}
+.nav-arrow:active{transform:translateY(-50%) scale(.94)}
+.stage-count{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(59,31,43,.72);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
 </style>
 </head>
 <body>
@@ -256,6 +262,9 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
       <div class="gallery">
         <div class="stage">
           <img id="stage-img" src="images/opt/product-front-1024.webp" width="1024" height="1024" alt="The HerRelief heat belt in pink with a grey elastic strap" fetchpriority="high" decoding="async">
+          <button type="button" class="nav-arrow prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="nav-arrow next" aria-label="Next photo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="stage-count" aria-live="polite"><span id="stage-n">1</span> / 6</span>
         </div>
         <ul class="thumbs" aria-label="Product photos">
           <li><button type="button" aria-current="true" data-src="images/opt/product-front-1024.webp" data-alt="The HerRelief heat belt in pink with a grey elastic strap"><img src="images/opt/product-front-1024.webp" width="1024" height="1024" alt="Front view"></button></li>
@@ -343,7 +352,7 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
           </div>
 
           <a class="cta" id="cta" href="https://buy.stripe.com/3cI9AM6be9VcfiJ9G63F60o" data-value="35.99">
-            <b>Continue to checkout</b>
+            <b>Add to cart</b>
             <span id="cta-sub">1 belt, $35.99</span>
           </a>
           <p class="pay-note">Payment is handled by Stripe. We ship to US addresses.</p>
@@ -582,14 +591,30 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
   /* gallery */
   var stage = document.getElementById('stage-img');
   var thumbs = document.querySelectorAll('.thumbs button');
-  Array.prototype.forEach.call(thumbs, function (btn) {
-    btn.addEventListener('click', function () {
-      stage.src = btn.getAttribute('data-src');
-      stage.alt = btn.getAttribute('data-alt');
-      Array.prototype.forEach.call(thumbs, function (b) { b.removeAttribute('aria-current'); });
-      btn.setAttribute('aria-current', 'true');
-    });
+  var cur = 0, stageN = document.getElementById('stage-n');
+  function show(i) {
+    cur = (i + thumbs.length) % thumbs.length;
+    var btn = thumbs[cur];
+    stage.src = btn.getAttribute('data-src');
+    stage.alt = btn.getAttribute('data-alt');
+    Array.prototype.forEach.call(thumbs, function (b) { b.removeAttribute('aria-current'); });
+    btn.setAttribute('aria-current', 'true');
+    if (stageN) { stageN.textContent = cur + 1; }
+    var nx = new Image(); nx.src = thumbs[(cur + 1) % thumbs.length].getAttribute('data-src');
+  }
+  Array.prototype.forEach.call(thumbs, function (btn, i) {
+    btn.addEventListener('click', function () { show(i); });
   });
+  document.querySelector('.nav-arrow.prev').addEventListener('click', function () { show(cur - 1); });
+  document.querySelector('.nav-arrow.next').addEventListener('click', function () { show(cur + 1); });
+  var box = stage.parentNode, x0 = null, y0 = null;
+  box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  box.addEventListener('touchend', function (e) {
+    if (x0 === null) { return; }
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { show(cur + (dx < 0 ? 1 : -1)); }
+    x0 = null;
+  }, { passive: true });
 
   /* bundle picker */
   var cta = document.getElementById('cta');
