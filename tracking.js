@@ -164,6 +164,7 @@ const HRTracking = {
     this.track('select_bundle', { bundle: bundleName, value: value });
   },
 };
+window.HRTracking = HRTracking;  // pages call window.HRTracking (a top-level const is not a window property)
 
 // ============================================
 // 6. AUTO-TRACKING (runs on every page)
