@@ -14,6 +14,12 @@
   // Don't show more than once per session
   if (sessionStorage.getItem(SESSION_KEY)) return;
 
+  // Skip visitors who come from Instagram (in-app browser, IG referrer or the HEAT10 DM gift)
+  var fromIG = /Instagram/i.test(navigator.userAgent) || /instagram\.com/i.test(document.referrer) ||
+    /[?&](gift=|utm_source=(ig|instagram))/i.test(location.search);
+  try { if (sessionStorage.getItem('hr_gift')) fromIG = true; } catch (e) {}
+  if (fromIG) return;
+
   var popupShown = false;
   var exitTimer = null;
 
