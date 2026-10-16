@@ -412,16 +412,27 @@
     drawLabels();
   }
 
+  // Only animate while the canvas is on screen; the clock keeps running so it resumes seamlessly.
+  let visible = true;
+  let rafId = null;
+
   function tick(now) {
+    rafId = null;
     if (startTime === null) startTime = now;
     const t = (now - startTime) / 1000;
     render(t);
-    if (!reduceMotion) requestAnimationFrame(tick);
+    if (!reduceMotion && visible) rafId = requestAnimationFrame(tick);
   }
 
   if (reduceMotion) {
     render(0.5);
   } else {
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[entries.length - 1].isIntersecting;
+        if (visible && rafId === null) rafId = requestAnimationFrame(tick);
+      }).observe(canvas);
+    }
   }
 })();

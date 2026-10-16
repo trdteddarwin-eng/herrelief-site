@@ -619,23 +619,19 @@
 
       // Set video source
       if (data.src) {
+        // Thumbnail: a pre-rendered poster of the frame at 0.5s, instead of
+        // downloading every video up front and drawing that frame to a canvas.
+        // The video itself loads only when it plays (scrolled into view) or opens in the modal.
+        var poster = 'images/ugc-posters/' + data.src.split('/').pop().replace('.mp4', '') + '-t05.webp';
+        video.preload = 'none';
+        video.poster = poster;
         video.src = data.src;
-
-        // Generate thumbnail from first frame
-        video.preload = 'metadata';
         video.addEventListener('loadedmetadata', function() {
-          video.currentTime = 0.5; // grab frame at 0.5s
+          video.currentTime = 0.5; // start from the poster frame, as before
         });
-        video.addEventListener('seeked', function handler() {
-          try {
-            var canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas.getContext('2d').drawImage(video, 0, 0);
-            video.poster = canvas.toDataURL('image/jpeg', 0.7);
-          } catch(e) {}
-          video.removeEventListener('seeked', handler);
-        }, { once: true });
+        var posterImg = new Image();
+        posterImg.onload = function() { skeleton.classList.add('loaded'); };
+        posterImg.src = poster;
 
         video.addEventListener('loadeddata', function handler() {
           skeleton.classList.add('loaded');
@@ -947,7 +943,7 @@
       <!-- Product card (slides up on open) -->
       <div id="vm-product-card">
         <!-- Thumbnail -->
-        <img id="vm-product-thumb" src="images/branded/hero-clean.jpg" alt="HerRelief Belt" loading="lazy" />
+        <img id="vm-product-thumb" src="images/opt/hero-clean-336.webp" alt="HerRelief Belt" loading="lazy" />
 
         <!-- Info column -->
         <div id="vm-product-info">
