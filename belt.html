@@ -219,6 +219,22 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
 .bar p b{display:block;font-size:15px;color:var(--plum)}
 .bar a{flex:none;display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:14px;background:var(--rust);color:#fff;font-weight:800;font-size:15px;text-decoration:none}
 @media (min-width:960px){.bar{display:none}}
+.gallery{min-width:0}
+.vids{margin-top:22px}
+.vids-t{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:10px}
+.vid-strip{display:flex;gap:10px;overflow-x:auto;list-style:none;padding:0 0 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.vid-strip li{flex:0 0 38%;max-width:150px;scroll-snap-align:start}
+.vid{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.vid-pic{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#f3eee7}
+.vid-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid-play{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.vid-play::after{content:"";position:absolute;left:17px;top:13px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent var(--rust)}
+.vid-h{display:block;font-size:12px;color:#7a6a6c;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vids-note{font-size:12px;color:#7a6a6c;margin-top:4px}
+.vmodal{position:fixed;inset:0;z-index:100;background:rgba(20,10,14,.92);display:none;align-items:center;justify-content:center;padding:16px}
+.vmodal.open{display:flex}
+.vmodal video{max-width:100%;max-height:86vh;border-radius:14px;background:#000}
+.vmodal-x{position:absolute;top:12px;right:12px;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:48px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -249,6 +265,34 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
           <li><button type="button" data-src="images/opt/led-display-760.webp" data-alt="Close-up of the LED display and control buttons"><img src="images/opt/led-display-760.webp" width="760" height="760" alt="LED display" loading="lazy" decoding="async"></button></li>
           <li><button type="button" data-src="images/opt/adjustable-strap-760.webp" data-alt="The belt worn on the lower back with the adjustable strap"><img src="images/opt/adjustable-strap-760.webp" width="760" height="760" alt="Worn on the lower back" loading="lazy" decoding="async"></button></li>
         </ul>
+        <div class="vids">
+          <p class="vids-t">See it on real people</p>
+          <ul class="vid-strip" aria-label="Videos of people wearing the belt">
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_3.mp4" aria-label="Play video by @kendralatrice4"><span class="vid-pic"><img src="images/ugc-posters/ugc_3-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@kendralatrice4</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_4.mp4" aria-label="Play video by @blasianliv"><span class="vid-pic"><img src="images/ugc-posters/ugc_4-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@blasianliv</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_5.mp4" aria-label="Play video by @carlisclearance"><span class="vid-pic"><img src="images/ugc-posters/ugc_5-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@carlisclearance</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_6.mp4" aria-label="Play video by @mae_snyder"><span class="vid-pic"><img src="images/ugc-posters/ugc_6-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@mae_snyder</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_13.mp4" aria-label="Play video by @hott.pynkkkk"><span class="vid-pic"><img src="images/ugc-posters/ugc_13-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@hott.pynkkkk</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_14.mp4" aria-label="Play video by @mom68403"><span class="vid-pic"><img src="images/ugc-posters/ugc_14-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@mom68403</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_15.mp4" aria-label="Play video by @shopmavensavings"><span class="vid-pic"><img src="images/ugc-posters/ugc_15-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@shopmavensavings</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_16.mp4" aria-label="Play video by @3astafricangirl"><span class="vid-pic"><img src="images/ugc-posters/ugc_16-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@3astafricangirl</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_17.mp4" aria-label="Play video by @shopaholictyler"><span class="vid-pic"><img src="images/ugc-posters/ugc_17-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@shopaholictyler</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_18.mp4" aria-label="Play video by @ttshopright2"><span class="vid-pic"><img src="images/ugc-posters/ugc_18-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@ttshopright2</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_19.mp4" aria-label="Play video by @patriceshayy"><span class="vid-pic"><img src="images/ugc-posters/ugc_19-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@patriceshayy</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_20.mp4" aria-label="Play video by @wifipayoutt"><span class="vid-pic"><img src="images/ugc-posters/ugc_20-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@wifipayoutt</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_21.mp4" aria-label="Play video by @shopmavensavings"><span class="vid-pic"><img src="images/ugc-posters/ugc_21-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@shopmavensavings</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_22.mp4" aria-label="Play video by @amourindiaaa"><span class="vid-pic"><img src="images/ugc-posters/ugc_22-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@amourindiaaa</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_23.mp4" aria-label="Play video by @extentionofkai"><span class="vid-pic"><img src="images/ugc-posters/ugc_23-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@extentionofkai</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_24.mp4" aria-label="Play video by @pinkloversunite"><span class="vid-pic"><img src="images/ugc-posters/ugc_24-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@pinkloversunite</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_25.mp4" aria-label="Play video by @girlcessity"><span class="vid-pic"><img src="images/ugc-posters/ugc_25-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@girlcessity</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_26.mp4" aria-label="Play video by @skynievess"><span class="vid-pic"><img src="images/ugc-posters/ugc_26-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@skynievess</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_27.mp4" aria-label="Play video by @theceahnsamaar"><span class="vid-pic"><img src="images/ugc-posters/ugc_27-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@theceahnsamaar</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_28.mp4" aria-label="Play video by @hericagomez_"><span class="vid-pic"><img src="images/ugc-posters/ugc_28-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@hericagomez_</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_29.mp4" aria-label="Play video by @ohheyitssteph"><span class="vid-pic"><img src="images/ugc-posters/ugc_29-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@ohheyitssteph</span></button></li>
+          <li><button type="button" class="vid" data-video="tiktok_videos/ugc_30.mp4" aria-label="Play video by @ashiana.walls"><span class="vid-pic"><img src="images/ugc-posters/ugc_30-t01.webp" alt="" loading="lazy" decoding="async"><span class="vid-play" aria-hidden="true"></span></span><span class="vid-h">@ashiana.walls</span></button></li>
+          </ul>
+          <p class="vids-note">Videos by TikTok creators, credited under each one.</p>
+        </div>
       </div>
 
       <div class="info">
@@ -594,6 +638,24 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
   window.addEventListener('load', function () {
     try { var t = hrt(); if (t && t.viewContent) { t.viewContent(35.99, 'USD'); } } catch (e) {}
   });
+})();
+</script>
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Video">
+  <button type="button" class="vmodal-x" aria-label="Close video">&times;</button>
+  <video id="vmodal-v" controls playsinline preload="none"></video>
+</div>
+<script>
+(function () {
+  var m = document.getElementById('vmodal'), v = document.getElementById('vmodal-v');
+  function close() { v.pause(); v.removeAttribute('src'); v.load(); m.classList.remove('open'); document.body.style.overflow = ''; }
+  Array.prototype.forEach.call(document.querySelectorAll('.vid'), function (b) {
+    b.addEventListener('click', function () {
+      v.src = b.getAttribute('data-video'); m.classList.add('open'); document.body.style.overflow = 'hidden';
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    });
+  });
+  m.addEventListener('click', function (e) { if (e.target === m || e.target.className === 'vmodal-x') close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && m.classList.contains('open')) close(); });
 })();
 </script>
 </body>
