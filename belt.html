@@ -100,14 +100,12 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
 .opt .each{display:block;font-size:13px;color:var(--mauve);font-weight:500;white-space:nowrap}
 .opt .price{text-align:right;line-height:1.25}
 .opt .price b{display:block;font-size:18px;font-weight:800;color:var(--ink)}
-.opt .price small{display:block;font-size:12px;font-weight:700;color:var(--rust);white-space:nowrap}
+.opt .price small{display:block;font-size:12px;font-weight:600;color:var(--mauve);white-space:nowrap}
 
-.code{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:12px 12px 12px 14px;border-radius:16px;background:var(--surf)}
-.code p{font-size:14px;line-height:1.45;color:#3d3436}
-.code p b{color:var(--plum)}
-.copy{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border-radius:12px;border:1.5px dashed var(--rust);background:#fff;color:var(--rust);font-weight:800;font-size:14.5px;letter-spacing:.08em;cursor:pointer}
-.copy svg{width:16px;height:16px}
-.copy.done{border-style:solid;background:var(--rust);color:#fff}
+.gift{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:center;margin-top:14px;padding:12px 14px 12px 12px;border-radius:16px;background:var(--blush-l);border:1px solid #f1c9cf}
+.gift .ic{background:#fff}
+.gift p{font-size:14px;line-height:1.45;color:#3d3436}
+.gift p b{display:block;color:var(--plum);font-size:14.5px}
 
 .cta{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:58px;margin-top:14px;padding:10px 18px;border-radius:16px;background:var(--rust);color:#fff;text-decoration:none;text-align:center;transition:background-color .15s,transform .15s}
 .cta:hover{background:var(--rust-d)}
@@ -215,8 +213,8 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
 .foot .copy-r{font-size:12.5px;color:var(--mauve)}
 
 /* sticky mobile bar */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(59,31,43,.08);transform:translateY(110%);transition:transform .25s ease;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.bar.on{transform:none}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(59,31,43,.08);transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.bar.on{transform:none;visibility:visible;transition:transform .25s ease}
 .bar p{font-size:13px;line-height:1.35;color:var(--mauve)}
 .bar p b{display:block;font-size:15px;color:var(--plum)}
 .bar a{flex:none;display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:14px;background:var(--rust);color:#fff;font-weight:800;font-size:15px;text-decoration:none}
@@ -273,39 +271,36 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
           <fieldset class="opts">
             <legend class="sr">Number of belts</legend>
             <label class="opt">
-              <input type="radio" name="qty" value="1" checked data-link="https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g?prefilled_promo_code=HEAT10" data-label="1 belt" data-total="39.99" data-code-total="35.99">
+              <input type="radio" name="qty" value="1" checked data-link="https://buy.stripe.com/3cI9AM6be9VcfiJ9G63F60o" data-label="1 belt" data-price="35.99">
               <span class="dot" aria-hidden="true"></span>
               <span class="pic"><img src="images/opt/bundle-solo-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
-              <span><span class="name">1 belt</span><span class="each">Single belt</span></span>
-              <span class="price"><b>$39.99</b><small>$35.99 with HEAT10</small></span>
+              <span><span class="name">1 belt</span><span class="each">$35.99 per belt</span></span>
+              <span class="price"><b>$35.99</b><small>Regular $39.99</small></span>
             </label>
             <label class="opt">
-              <input type="radio" name="qty" value="2" data-link="https://buy.stripe.com/00wfZaczCgjA9Yp5pQ3F60j?prefilled_promo_code=HEAT10" data-label="2 belts" data-total="63.99" data-code-total="57.59">
+              <input type="radio" name="qty" value="2" data-link="https://buy.stripe.com/eVqdR2aru6J02vXaKa3F60p" data-label="2 belts" data-price="57.59">
               <span class="dot" aria-hidden="true"></span>
               <span class="pic"><img src="images/opt/bundle-duo-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
-              <span><span class="name">2 belts</span><span class="each">$32.00 each</span></span>
-              <span class="price"><b>$63.99</b><small>$57.59 with HEAT10</small></span>
+              <span><span class="name">2 belts</span><span class="each">$28.80 each</span></span>
+              <span class="price"><b>$57.59</b><small>Regular $63.99</small></span>
             </label>
             <label class="opt">
-              <input type="radio" name="qty" value="3" data-link="https://buy.stripe.com/5kQbIUdDGffw5I9dWm3F60k?prefilled_promo_code=HEAT10" data-label="3 belts" data-total="83.99" data-code-total="75.59">
+              <input type="radio" name="qty" value="3" data-link="https://buy.stripe.com/9B628kczC6J01rT19A3F60q" data-label="3 belts" data-price="75.59">
               <span class="dot" aria-hidden="true"></span>
               <span class="pic"><img src="images/opt/bundle-trio-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
-              <span><span class="name">3 belts</span><span class="each">$28.00 each</span></span>
-              <span class="price"><b>$83.99</b><small>$75.59 with HEAT10</small></span>
+              <span><span class="name">3 belts</span><span class="each">$25.20 each</span></span>
+              <span class="price"><b>$75.59</b><small>Regular $83.99</small></span>
             </label>
           </fieldset>
 
-          <div class="code">
-            <p>Your code <b>HEAT10</b> takes 10% off at checkout. It is filled in for you.</p>
-            <button type="button" class="copy" id="copy" aria-label="Copy the code HEAT10">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>
-              <span>HEAT10</span>
-            </button>
+          <div class="gift">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="2"/><path d="M2.5 9h19"/><path d="M12 9v11.5"/><path d="M12 9c-1.6-3.6-5.5-4.2-5.5-1.6C6.5 9 12 9 12 9z"/><path d="M12 9c1.6-3.6 5.5-4.2 5.5-1.6C17.5 9 12 9 12 9z"/></svg></span>
+            <p><b>Your HEAT10 gift: 10% off, <span class="nw">already applied.</span></b>The prices above include it.</p>
           </div>
 
-          <a class="cta" id="cta" href="https://buy.stripe.com/aFadR28jm2sKc6x2dE3F60g?prefilled_promo_code=HEAT10" data-value="35.99">
+          <a class="cta" id="cta" href="https://buy.stripe.com/3cI9AM6be9VcfiJ9G63F60o" data-value="35.99">
             <b>Continue to checkout</b>
-            <span id="cta-sub">1 belt, $35.99 with HEAT10</span>
+            <span id="cta-sub">1 belt, $35.99</span>
           </a>
           <p class="pay-note">Payment is handled by Stripe. We ship to US addresses.</p>
 
@@ -441,14 +436,14 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
             <li><span>Standard delivery</span><b>5 to 7 business days</b></li>
           </ul>
           <p>You'll get an email with tracking once your order ships. Delivery times are typical estimates, not guarantees. We don't ship outside the US yet.</p>
-          <a class="more" href="shipping-policy.html">Read the shipping policy</a>
+          <a class="more" href="belt-shipping.html">Read the shipping policy</a>
         </article>
         <article class="pcard">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span>
           <h3>90-day money-back guarantee</h3>
           <p>If you're not happy with it for any reason within 90 days of purchase, email us with "Refund Request" in the subject and your order number. We'll refund the full purchase price. You don't need to send the belt back.</p>
           <p>If your belt arrives damaged or faulty, tell us within 30 days of delivery and we'll send a free replacement or a full refund.</p>
-          <a class="more" href="refund-policy.html">Read the refund policy</a>
+          <a class="more" href="belt-refund.html">Read the refund policy</a>
         </article>
       </div>
     </div>
@@ -471,7 +466,7 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
         </details>
         <details>
           <summary>How do returns and refunds work?</summary>
-          <div class="a"><p>You have 90 days from purchase. Email <a class="mail-link" href="mailto:support@herrelief.com?subject=Refund%20Request">support@herrelief.com</a> with "Refund Request" in the subject, plus your order number or the email you ordered with. You don't need to return the belt.</p><p>We confirm within 1 to 2 business days and process the refund in 3 to 5 business days. Your bank may take a few more days to show it. Refunds are limited to one per customer per product.</p></div>
+          <div class="a"><p>You have 90 days from purchase. Email <a class="mail-link" href="mailto:support@herrelief.store?subject=Refund%20Request">support@herrelief.store</a> with "Refund Request" in the subject, plus your order number or the email you ordered with. You don't need to return the belt.</p><p>We confirm within 1 to 2 business days and process the refund in 3 to 5 business days. Your bank may take a few more days to show it. Refunds are limited to one per customer per product.</p></div>
         </details>
         <details>
           <summary>How do I charge it, and how long does it last?</summary>
@@ -486,12 +481,12 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
           <div class="a"><p>Please don't. Take it off before you sleep or nap, even though it has an auto-shutoff timer.</p></div>
         </details>
         <details>
-          <summary>How does the HEAT10 code work?</summary>
-          <div class="a"><p>HEAT10 takes 10% off your order. When you tap the checkout button it is filled in for you on the Stripe checkout page. If it isn't showing, type HEAT10 into the promotion code box.</p></div>
+          <summary>What is the HEAT10 gift?</summary>
+          <div class="a"><p>It is 10% off, already built into the prices on this page. Standard US shipping is free.</p></div>
         </details>
         <details>
           <summary>How do I contact you?</summary>
-          <div class="a"><p>Email <a class="mail-link" href="mailto:support@herrelief.com">support@herrelief.com</a>. We reply within 1 to 2 business days. For an order question, include your order number.</p></div>
+          <div class="a"><p>Email <a class="mail-link" href="mailto:support@herrelief.store">support@herrelief.store</a>. We reply within 1 to 2 business days. For an order question, include your order number.</p></div>
         </details>
       </div>
     </div>
@@ -500,7 +495,7 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
   <section class="sec close" aria-labelledby="h-close">
     <div class="wrap">
       <h2 id="h-close">Comforting heat, <em>ready when you are.</em></h2>
-      <p>From $35.99 with HEAT10. Free US standard shipping and a <span class="nw">90-day</span> money-back guarantee.</p>
+      <p>From $35.99 with your HEAT10 gift. Free US standard shipping and a <span class="nw">90-day</span> money-back guarantee.</p>
       <a class="cta" href="#buy"><b>Choose how many</b></a>
     </div>
   </section>
@@ -511,22 +506,22 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
     <a class="logo" href="#top">Her<span>Relief</span></a>
     <nav aria-label="Policies">
       <ul>
-        <li><a href="shipping-policy.html">Shipping policy</a></li>
-        <li><a href="refund-policy.html">Refund policy</a></li>
-        <li><a href="privacy-policy.html">Privacy policy</a></li>
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="belt-shipping.html">Shipping policy</a></li>
+        <li><a href="belt-refund.html">Refund policy</a></li>
+        <li><a href="belt-privacy.html">Privacy policy</a></li>
+        <li><a href="belt-terms.html">Terms</a></li>
+        <li><a href="belt-contact.html">Contact</a></li>
       </ul>
     </nav>
     <div>
-      <p class="mail">Questions? <a class="mail-link" href="mailto:support@herrelief.com">support@herrelief.com</a></p>
+      <p class="mail">Questions? <a class="mail-link" href="mailto:support@herrelief.store">support@herrelief.store</a></p>
       <p class="copy-r">&copy; 2026 HerRelief</p>
     </div>
   </div>
 </footer>
 
 <div class="bar" id="bar" aria-hidden="true">
-  <p><b>HerRelief Heat Belt</b>From $35.99 with HEAT10</p>
+  <p><b>HerRelief Heat Belt</b>From $35.99</p>
   <a href="#buy" tabindex="-1">Choose</a>
 </div>
 
@@ -560,13 +555,13 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
     var on = document.querySelector('input[name="qty"]:checked');
     if (!on) { return; }
     cta.href = on.getAttribute('data-link');
-    cta.setAttribute('data-value', on.getAttribute('data-code-total'));
-    ctaSub.textContent = on.getAttribute('data-label') + ', $' + on.getAttribute('data-code-total') + ' with HEAT10';
+    cta.setAttribute('data-value', on.getAttribute('data-price'));
+    ctaSub.textContent = on.getAttribute('data-label') + ', $' + on.getAttribute('data-price');
   }
   Array.prototype.forEach.call(radios, function (r) {
     r.addEventListener('change', function () {
       sync();
-      try { var t = hrt(); if (t && t.selectBundle) { t.selectBundle(r.getAttribute('data-label'), parseFloat(r.getAttribute('data-code-total'))); } } catch (e) {}
+      try { var t = hrt(); if (t && t.selectBundle) { t.selectBundle(r.getAttribute('data-label'), parseFloat(r.getAttribute('data-price'))); } } catch (e) {}
     });
   });
   sync();
@@ -575,52 +570,29 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--rust)}
     try { var t = hrt(); if (t && t.initiateCheckout) { t.initiateCheckout(parseFloat(cta.getAttribute('data-value'))); } } catch (e) {}
   });
 
-  /* copy code */
-  var copyBtn = document.getElementById('copy');
-  var copyLabel = copyBtn.querySelector('span');
-  function copied() {
-    copyBtn.classList.add('done');
-    copyLabel.textContent = 'Copied';
-    setTimeout(function () { copyBtn.classList.remove('done'); copyLabel.textContent = 'HEAT10'; }, 1800);
-  }
-  function fallbackCopy() {
-    try {
-      var ta = document.createElement('textarea');
-      ta.value = 'HEAT10';
-      ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      document.execCommand('copy'); document.body.removeChild(ta);
-    } catch (e) {}
-    copied();
-  }
-  copyBtn.addEventListener('click', function () {
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText('HEAT10').then(copied, fallbackCopy);
-      } else { fallbackCopy(); }
-    } catch (e) { fallbackCopy(); }
-  });
-
-  /* sticky bar on small screens: visible once the buy box is out of view */
+  /* sticky bar on small screens: visible once the buy box is scrolled past, hidden over the closing section */
   var bar = document.getElementById('bar');
   var buy = document.getElementById('buy');
   var closer = document.querySelector('.close');
-  if ('IntersectionObserver' in window && bar && buy) {
-    var pastBuy = false, closeVisible = false;
-    var update = function () { bar.classList.toggle('on', pastBuy && !closeVisible); };
-    new IntersectionObserver(function (es) {
-      var e = es[es.length - 1];
-      pastBuy = !e.isIntersecting && e.boundingClientRect.top < 0;
-      update();
-    }, { threshold: 0 }).observe(buy);
-    if (closer) {
-      new IntersectionObserver(function (es) { closeVisible = es[es.length - 1].isIntersecting; update(); }, { threshold: 0 }).observe(closer);
-    }
+  if (bar && buy) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var pastBuy = buy.getBoundingClientRect().bottom < 0;
+      var closeVisible = false;
+      if (closer) { var c = closer.getBoundingClientRect(); closeVisible = c.top < vh && c.bottom > 0; }
+      bar.classList.toggle('on', pastBuy && !closeVisible);
+    };
+    var onScroll = function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
   }
 
   /* page view event for the product */
   window.addEventListener('load', function () {
-    try { var t = hrt(); if (t && t.viewContent) { t.viewContent(39.99, 'USD'); } } catch (e) {}
+    try { var t = hrt(); if (t && t.viewContent) { t.viewContent(35.99, 'USD'); } } catch (e) {}
   });
 })();
 </script>
